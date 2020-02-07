@@ -843,7 +843,7 @@ class __TwigTemplate_78240087d1d68f2994dba1941b888b6846f8ffe045bd9a2e79810b1bc0e
             $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "macro", "dump_request_data"));
 
             // line 513
-            $context["__internal_c0f1a48f700124002ea05b7f418c981e388f8465386ea49d51c5f279e00ae239"] = $this;
+            $context["__internal_548c4129969aea76aaa1547df310b0d7356530599eb4956d119dcdb25d02c0b9"] = $this;
             // line 514
             echo "                {
                     \"id\": \"";
@@ -857,7 +857,7 @@ class __TwigTemplate_78240087d1d68f2994dba1941b888b6846f8ffe045bd9a2e79810b1bc0e
                     \"events\": [
 ";
             // line 518
-            echo $context["__internal_c0f1a48f700124002ea05b7f418c981e388f8465386ea49d51c5f279e00ae239"]->getdump_events(($context["events"] ?? $this->getContext($context, "events")));
+            echo $context["__internal_548c4129969aea76aaa1547df310b0d7356530599eb4956d119dcdb25d02c0b9"]->getdump_events(($context["events"] ?? $this->getContext($context, "events")));
             echo "
                     ]
                 }

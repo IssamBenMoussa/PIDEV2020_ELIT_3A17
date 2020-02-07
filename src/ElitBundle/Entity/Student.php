@@ -12,17 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Student extends User {
 
 
-    /**
-     * Student constructor.
-     * @param string $moyenne
-     */
-    public function __construct()
-    {
-        parent::__construct();
-
-
-    }
-
 }
 
 

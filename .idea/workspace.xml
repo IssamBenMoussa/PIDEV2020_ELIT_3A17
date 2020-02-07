@@ -74,20 +74,20 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SYMFONY" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/composer.phar" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="c dump-autoload" />
-      <command value="s doctrine:database:create" />
       <command value="s generate:bundle" />
-      <command value="s doctrine:schema:create" />
       <command value="s doctrine:generate:form" />
       <command value="s doctrine:generate:form ElitBundle:User" />
       <command value="s generate:controller " />
       <command value="s doctrine:generate:entity" />
+      <command value="s doctrine:database:create" />
+      <command value="s doctrine:schema:create" />
       <command value="s doctrine:schema:update --force" />
     </option>
   </component>
@@ -123,6 +123,9 @@
       <workItem from="1581032627086" duration="4016000" />
       <workItem from="1581036817259" duration="710000" />
       <workItem from="1581062827834" duration="6603000" />
+      <workItem from="1581082566994" duration="120000" />
+      <workItem from="1581082724969" duration="1050000" />
+      <workItem from="1581096136949" duration="3112000" />
     </task>
     <servers />
   </component>
