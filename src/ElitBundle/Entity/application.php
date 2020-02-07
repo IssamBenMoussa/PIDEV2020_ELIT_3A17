@@ -22,6 +22,38 @@ class application
     private $id;
 
     /**
+     * @return string
+     */
+    public function getNiveauScolaire()
+    {
+        return $this->niveau_Scolaire;
+    }
+
+    /**
+     * @param string $niveau_Scolaire
+     */
+    public function setNiveauScolaire($niveau_Scolaire)
+    {
+        $this->niveau_Scolaire = $niveau_Scolaire;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNombreMoisPayer()
+    {
+        return $this->nombre_Mois_payer;
+    }
+
+    /**
+     * @param string $nombre_Mois_payer
+     */
+    public function setNombreMoisPayer($nombre_Mois_payer)
+    {
+        $this->nombre_Mois_payer = $nombre_Mois_payer;
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)
@@ -38,16 +70,16 @@ class application
     /**
      * @var string
      *
-     * @ORM\Column(name="anne_sc", type="string", length=255)
+     * @ORM\Column(name="annee_scolaire", type="string", length=255)
      */
-    private $anneSc;
+    private $anneeScolaire;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="niveau_sc", type="string", length=255)
+     * @ORM\Column(name="niveau_scolaire", type="string", length=255)
      */
-    private $niveauSc;
+    private $niveau_Scolaire;
 
 
 
@@ -59,6 +91,22 @@ class application
     private $frais;
 
     /**
+     * @return string
+     */
+    public function getAnneeScolaire()
+    {
+        return $this->anneeScolaire;
+    }
+
+    /**
+     * @param string $anneeScolaire
+     */
+    public function setAnneeScolaire($anneeScolaire)
+    {
+        $this->anneeScolaire = $anneeScolaire;
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="type_payment", type="string", length=255)
@@ -68,9 +116,9 @@ class application
     /**
      * @var string
      *
-     * @ORM\Column(name="nbr_mois", type="integer")
+     * @ORM\Column(name="nombre_mois_payer", type="integer")
      */
-    private $nbrMois;
+    private $nombre_Mois_payer;
 
     /**
      * @var string
@@ -78,6 +126,22 @@ class application
      * @ORM\Column(name="etat", type="string", length=255)
      */
     private $etat;
+
+    /**
+     * @return string
+     */
+    public function getNombreMois()
+    {
+        return $this->nombre_Mois;
+    }
+
+    /**
+     * @param string $nombre_Mois
+     */
+    public function setNombreMois($nombre_Mois)
+    {
+        $this->nombre_Mois = $nombre_Mois;
+    }
 
 
     /**
