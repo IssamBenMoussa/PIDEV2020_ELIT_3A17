@@ -307,7 +307,78 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         elseif (0 === strpos($pathinfo, '/E')) {
-            if (0 === strpos($pathinfo, '/E/classes')) {
+            if (0 === strpos($pathinfo, '/E/application')) {
+                // application_index
+                if ('/E/application' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\applicationController::indexAction',  '_route' => 'application_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_application_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'application_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_application_index;
+                    }
+
+                    return $ret;
+                }
+                not_application_index:
+
+                // application_show
+                if (preg_match('#^/E/application/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'application_show']), array (  '_controller' => 'ElitBundle\\Controller\\applicationController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_application_show;
+                    }
+
+                    return $ret;
+                }
+                not_application_show:
+
+                // application_new
+                if ('/E/application/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\applicationController::newAction',  '_route' => 'application_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_application_new;
+                    }
+
+                    return $ret;
+                }
+                not_application_new:
+
+                // application_edit
+                if (preg_match('#^/E/application/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'application_edit']), array (  '_controller' => 'ElitBundle\\Controller\\applicationController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_application_edit;
+                    }
+
+                    return $ret;
+                }
+                not_application_edit:
+
+                // application_delete
+                if (preg_match('#^/E/application/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'application_delete']), array (  '_controller' => 'ElitBundle\\Controller\\applicationController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_application_delete;
+                    }
+
+                    return $ret;
+                }
+                not_application_delete:
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/E/classes')) {
                 // classes_index
                 if ('/E/classes' === $trimmedPathinfo) {
                     $ret = array (  '_controller' => 'ElitBundle\\Controller\\ClassesController::indexAction',  '_route' => 'classes_index',);
