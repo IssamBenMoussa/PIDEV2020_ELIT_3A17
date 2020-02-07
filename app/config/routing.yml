@@ -3,7 +3,7 @@ fos_user:
 
 elit:
     resource: "@ElitBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /E
 
 app:
     resource: '@AppBundle/Controller/'

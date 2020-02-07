@@ -9,8 +9,16 @@ use FOS\UserBundle\Model\User as BaseUser;
 /**
  * User
  *
- * @ORM\Table(name="`user`")
+ * @ORM\Table(name="`user`", indexes={@ORM\Index(name="type_idx", columns={"type"})})
+ * @ORM\InheritanceType("SINGLE_TABLE")
+ * @ORM\DiscriminatorColumn(name="type", type="string", length=20)
  * @ORM\Entity(repositoryClass="ElitBundle\Repository\UserRepository")
+ * @ORM\DiscriminatorMap({
+ *     "Admin"="Admin",
+ *     "Student"="Student",
+ *     "Teacher"="Teacher",
+ *     "User"="User"
+ * })
  */
 class User extends BaseUser
 {
