@@ -14,3 +14,12 @@ ajout_student:
 affiche_student:
     path:     /A
     defaults: { _controller: ElitBundle:Student:affiche }
+
+
+elit_application:
+    resource: "@ElitBundle/Resources/config/routing/application.yml"
+    prefix:   /application
+
+elit_classrooms:
+        resource: "@ElitBundle/Resources/config/routing/classrooms.yml"
+        prefix:   /classrooms
