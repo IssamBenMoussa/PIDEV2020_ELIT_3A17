@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/security.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/security.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/StudentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Student.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/UserType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/UserType.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +74,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Examen2020" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SYMFONY" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
@@ -78,11 +83,11 @@
       <command value="c dump-autoload" />
       <command value="s doctrine:database:create" />
       <command value="s generate:bundle" />
-      <command value="s doctrine:generate:entity" />
       <command value="s doctrine:schema:create" />
       <command value="s doctrine:generate:form" />
       <command value="s doctrine:generate:form ElitBundle:User" />
       <command value="s generate:controller " />
+      <command value="s doctrine:generate:entity" />
       <command value="s doctrine:schema:update --force" />
     </option>
   </component>
@@ -116,7 +121,8 @@
       <workItem from="1581016599434" duration="2820000" />
       <workItem from="1581020449061" duration="1002000" />
       <workItem from="1581032627086" duration="4016000" />
-      <workItem from="1581036817259" duration="670000" />
+      <workItem from="1581036817259" duration="710000" />
+      <workItem from="1581062827834" duration="6603000" />
     </task>
     <servers />
   </component>

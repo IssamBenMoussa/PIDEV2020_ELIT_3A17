@@ -10,12 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  *
  */
 class Student extends User {
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="Moyenne", type="string", length=100)
-     */
-    private $moyenne;
+
 
     /**
      * Student constructor.
@@ -28,21 +23,6 @@ class Student extends User {
 
     }
 
-    /**
-     * @return string
-     */
-    public function getMoyenne()
-    {
-        return $this->moyenne;
-    }
-
-    /**
-     * @param string $moyenne
-     */
-    public function setMoyenne($moyenne)
-    {
-        $this->moyenne = $moyenne;
-    }
 }
 
 

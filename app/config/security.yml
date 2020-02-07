@@ -6,6 +6,8 @@ security:
         ROLE_STUDENT : ROLE_USER
         ROLE_ADMIN:       ROLE_USER
         ROLE_SUPER_ADMIN: ROLE_ADMIN
+        ROLE_TEACHER : ROLE_USER
+
 
     providers:
         fos_userbundle:
@@ -27,4 +29,5 @@ security:
         - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
-        - { path: ^/E/, role: ROLE_USER }
+        - { path: ^/S/, role: ROLE_STUDENT }
+        - { path: ^/T/, role: ROLE_TEACHER }
