@@ -44,11 +44,11 @@ class __TwigTemplate_33ead04028c05617299e29130352c630dde324d57676362696ac01057d9
             echo "</h1>
     ";
             // line 4
-            echo twig_escape_filter($this->env, $this->getAttribute($context["s"], "moyenne", []), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($context["s"], "firstname", []), "html", null, true);
             echo "
     ";
             // line 5
-            echo twig_escape_filter($this->env, $this->getAttribute($context["s"], "name", []), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($this->getAttribute($context["s"], "idClass", []), "name", []), "html", null, true);
             echo "
 ";
         }
@@ -91,8 +91,8 @@ class __TwigTemplate_33ead04028c05617299e29130352c630dde324d57676362696ac01057d9
         return new Source("{% for s in tabS %}
 
 <h1>{{ s.username }}</h1>
-    {{ s.moyenne }}
-    {{ s.name }}
+    {{ s.firstname }}
+    {{ s.idClass.name }}
 {% endfor %}", "@Elit/Default/affiche.html.twig", "D:\\wamp64\\www\\PIDEV2020_ELIT_3A17\\src\\ElitBundle\\Resources\\views\\Default\\affiche.html.twig");
     }
 }

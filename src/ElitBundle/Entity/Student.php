@@ -12,6 +12,30 @@ use Doctrine\ORM\Mapping as ORM;
 class Student extends User {
 
 
+    /**
+
+     * @ORM\ManyToOne(targetEntity="ElitBundle\Entity\Classes")
+     * @ORM\JoinColumn(name="idClass",referencedColumnName="id")
+     *
+     */
+    private $idClass;
+
+    /**
+     * @return mixed
+     */
+    public function getIdClass()
+    {
+        return $this->idClass;
+    }
+
+    /**
+     * @param mixed $idClass
+     */
+    public function setIdClass($idClass)
+    {
+        $this->idClass = $idClass;
+    }
+
 }
 
 

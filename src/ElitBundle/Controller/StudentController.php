@@ -2,6 +2,7 @@
 
 namespace ElitBundle\Controller;
 
+use ElitBundle\Entity\Classes;
 use ElitBundle\Entity\Student;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,13 +13,20 @@ class StudentController extends Controller
 public function ajoutAction(Request $request)
     {
         $student = new Student();
-        $student->setMoyenne("17");
-        $student->setUsername("user3");
-        $student->setEmail("ses@ss.fr");
-        $student->setPassword("3");
+        $student->setUsername("student2");
+        $student->setEmail("seggs@ss.fr");
+        $student->setPassword("123456789");
         $student->setEnabled(True);
         $student->addRole('ROLE_STUDENT');
-        $student->setName("Issouuu");
+        $student->setEmailParent("papa@papa.fr");
+        $student->setPhoneNumber(9898899);
+        $student->setProfilePicture("4");
+        $student->setFirstname("issam");
+        $student->setLastname("missou");
+        $class= $this->getDoctrine()->getRepository(Classes::class)->find(2);
+        $student->setIdClass($class);
+
+
         $birthday = new \DateTime('1999-03-14');
         $student->setBirthDate($birthday);
 
