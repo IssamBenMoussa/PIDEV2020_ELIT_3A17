@@ -13,7 +13,7 @@ class applicationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('prenom')->add('anneSc')->add('niveauSc')->add('frais')->add('typePayment')->add('nbrMois')->add('etat');
+        $builder->add('nom')->add('prenom')->add('annee_Scolaire')->add('niveau_Scolaire')->add('frais')->add('type_Payment')->add('nombre_mois_payer')->add('etat');
     }/**
      * {@inheritdoc}
      */
