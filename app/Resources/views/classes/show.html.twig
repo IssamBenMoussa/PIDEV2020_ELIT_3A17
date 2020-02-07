@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Class</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ class.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ class.name }}</td>
+            </tr>
+            <tr>
+                <th>Level</th>
+                <td>{{ class.level }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('classes_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('classes_edit', { 'id': class.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

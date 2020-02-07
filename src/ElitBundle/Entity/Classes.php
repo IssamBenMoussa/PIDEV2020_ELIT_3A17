@@ -43,8 +43,6 @@ class Classes
      */
     private $idClassroom;
 
-
-
     /**
      * Classes constructor.
      */
@@ -99,6 +97,22 @@ class Classes
         $this->level = $level;
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdClassroom()
+    {
+        return $this->idClassroom;
+    }
+
+    /**
+     * @param mixed $idClassroom
+     */
+    public function setIdClassroom($idClassroom)
+    {
+        $this->idClassroom = $idClassroom;
     }
 
     /**

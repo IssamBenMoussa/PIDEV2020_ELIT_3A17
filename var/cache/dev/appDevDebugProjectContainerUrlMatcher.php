@@ -307,6 +307,77 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         elseif (0 === strpos($pathinfo, '/E')) {
+            if (0 === strpos($pathinfo, '/E/classes')) {
+                // classes_index
+                if ('/E/classes' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\ClassesController::indexAction',  '_route' => 'classes_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_classes_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'classes_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_classes_index;
+                    }
+
+                    return $ret;
+                }
+                not_classes_index:
+
+                // classes_show
+                if (preg_match('#^/E/classes/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'classes_show']), array (  '_controller' => 'ElitBundle\\Controller\\ClassesController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_classes_show;
+                    }
+
+                    return $ret;
+                }
+                not_classes_show:
+
+                // classes_new
+                if ('/E/classes/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\ClassesController::newAction',  '_route' => 'classes_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_classes_new;
+                    }
+
+                    return $ret;
+                }
+                not_classes_new:
+
+                // classes_edit
+                if (preg_match('#^/E/classes/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'classes_edit']), array (  '_controller' => 'ElitBundle\\Controller\\ClassesController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_classes_edit;
+                    }
+
+                    return $ret;
+                }
+                not_classes_edit:
+
+                // classes_delete
+                if (preg_match('#^/E/classes/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'classes_delete']), array (  '_controller' => 'ElitBundle\\Controller\\ClassesController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_classes_delete;
+                    }
+
+                    return $ret;
+                }
+                not_classes_delete:
+
+            }
+
             // elit_homepage
             if ('/E' === $trimmedPathinfo) {
                 $ret = array (  '_controller' => 'ElitBundle\\Controller\\DefaultController::indexAction',  '_route' => 'elit_homepage',);

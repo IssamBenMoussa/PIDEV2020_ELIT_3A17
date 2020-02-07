@@ -89,6 +89,7 @@
       <command value="s doctrine:database:create" />
       <command value="s doctrine:schema:create" />
       <command value="s doctrine:schema:update --force" />
+      <command value="s generate:doctrine:crud" />
     </option>
   </component>
   <component name="RunDashboard">
