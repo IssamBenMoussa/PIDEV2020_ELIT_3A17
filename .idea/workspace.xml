@@ -101,15 +101,15 @@
       <command value="s generate:doctrine:crud" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -137,6 +137,7 @@
       <workItem from="1581082724969" duration="1050000" />
       <workItem from="1581096136949" duration="3616000" />
       <workItem from="1581109039652" duration="1817000" />
+      <workItem from="1581112102591" duration="888000" />
     </task>
     <servers />
   </component>
