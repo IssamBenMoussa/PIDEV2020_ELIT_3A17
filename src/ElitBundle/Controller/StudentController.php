@@ -13,9 +13,11 @@ public function ajoutAction(Request $request)
     {
         $student = new Student();
         $student->setMoyenne("17");
-        $student->setUsername("userHerite");
-        $student->setEmail("ss@ss.fr");
-        $student->setPassword("1");
+        $student->setUsername("user3");
+        $student->setEmail("ses@ss.fr");
+        $student->setPassword("3");
+        $student->setEnabled(True);
+        $student->addRole('ROLE_STUDENT');
         $student->setName("Issouuu");
         $birthday = new \DateTime('1999-03-14');
         $student->setBirthDate($birthday);
