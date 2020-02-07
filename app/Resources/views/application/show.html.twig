@@ -3,7 +3,7 @@
 {% block content %}
     <h1>Application</h1>
 
-    <table>
+    <table class="table">
         <tbody>
             <tr>
                 <th>Id</th>
@@ -53,7 +53,7 @@
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input class="btn btn-custon-four btn-primary" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
     </ul>
