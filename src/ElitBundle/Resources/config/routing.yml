@@ -28,3 +28,6 @@ elit_application:
 elit_classrooms:
         resource: "@ElitBundle/Resources/config/routing/classrooms.yml"
         prefix:   /classrooms
+elit_equipement:
+    resource: "@ElitBundle/Resources/config/routing/equipement.yml"
+    prefix:   /equipement

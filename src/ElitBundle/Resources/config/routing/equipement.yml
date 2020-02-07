@@ -1,0 +1,24 @@
+equipement_index:
+    path:     /
+    defaults: { _controller: "ElitBundle:Equipement:index" }
+    methods:  GET
+
+equipement_show:
+    path:     /{id}/show
+    defaults: { _controller: "ElitBundle:Equipement:show" }
+    methods:  GET
+
+equipement_new:
+    path:     /new
+    defaults: { _controller: "ElitBundle:Equipement:new" }
+    methods:  [GET, POST]
+
+equipement_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ElitBundle:Equipement:edit" }
+    methods:  [GET, POST]
+
+equipement_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ElitBundle:Equipement:delete" }
+    methods:  DELETE

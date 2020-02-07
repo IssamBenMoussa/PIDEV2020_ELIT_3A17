@@ -1,16 +1,16 @@
 {% extends 'base.html.twig' %}
 
 {% block content %}
-    <br><br>   <h1>Classroom edit</h1>
-
-    {{ form_start(edit_form) }}
+    <br><br>
+     <h1>Equipement edit</h1>
+     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
         <input class="btn btn-custon-four btn-primary" type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 
     <ul>
         <li>
-            <a href="{{ path('classrooms_index') }}">Back to the list</a>
+            <a href="{{ path('equipement_index') }}">Back to the list</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
@@ -18,4 +18,5 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+
 {% endblock %}

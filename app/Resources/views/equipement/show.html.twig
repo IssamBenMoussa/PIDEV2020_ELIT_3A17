@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<br><br>
+    <h1>Equipement</h1>
+<br><br>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ equipement.id }}</td>
+            </tr>
+            <tr>
+                <th>Label</th>
+                <td>{{ equipement.label }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ equipement.category }}</td>
+            </tr>
+            <tr>
+                <th>Qte</th>
+                <td>{{ equipement.qte }}</td>
+            </tr>
+            <tr>
+                <th>Qteinit</th>
+                <td>{{ equipement.qteInit }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('equipement_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('equipement_edit', { 'id': equipement.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-custon-four btn-primary" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

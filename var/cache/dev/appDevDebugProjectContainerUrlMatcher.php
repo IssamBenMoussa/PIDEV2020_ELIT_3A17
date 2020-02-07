@@ -545,6 +545,77 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
+            elseif (0 === strpos($pathinfo, '/E/equipement')) {
+                // equipement_index
+                if ('/E/equipement' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\EquipementController::indexAction',  '_route' => 'equipement_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_equipement_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'equipement_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_equipement_index;
+                    }
+
+                    return $ret;
+                }
+                not_equipement_index:
+
+                // equipement_show
+                if (preg_match('#^/E/equipement/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'equipement_show']), array (  '_controller' => 'ElitBundle\\Controller\\EquipementController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_equipement_show;
+                    }
+
+                    return $ret;
+                }
+                not_equipement_show:
+
+                // equipement_new
+                if ('/E/equipement/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\EquipementController::newAction',  '_route' => 'equipement_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_equipement_new;
+                    }
+
+                    return $ret;
+                }
+                not_equipement_new:
+
+                // equipement_edit
+                if (preg_match('#^/E/equipement/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'equipement_edit']), array (  '_controller' => 'ElitBundle\\Controller\\EquipementController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_equipement_edit;
+                    }
+
+                    return $ret;
+                }
+                not_equipement_edit:
+
+                // equipement_delete
+                if (preg_match('#^/E/equipement/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'equipement_delete']), array (  '_controller' => 'ElitBundle\\Controller\\EquipementController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_equipement_delete;
+                    }
+
+                    return $ret;
+                }
+                not_equipement_delete:
+
+            }
+
         }
 
         // homepage
