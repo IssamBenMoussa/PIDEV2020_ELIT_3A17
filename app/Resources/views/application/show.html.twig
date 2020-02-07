@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Application</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ application.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ application.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ application.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Annesc</th>
+                <td>{{ application.anneSc }}</td>
+            </tr>
+            <tr>
+                <th>Niveausc</th>
+                <td>{{ application.niveauSc }}</td>
+            </tr>
+            <tr>
+                <th>Frais</th>
+                <td>{{ application.frais }}</td>
+            </tr>
+            <tr>
+                <th>Typepayment</th>
+                <td>{{ application.typePayment }}</td>
+            </tr>
+            <tr>
+                <th>Nbrmois</th>
+                <td>{{ application.nbrMois }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ application.etat }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('application_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('application_edit', { 'id': application.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

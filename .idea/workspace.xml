@@ -16,7 +16,6 @@
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" beforeDir="false" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -76,12 +75,17 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XO5zwFjvOT3Rk1r5vzCjjlXBoj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SYMFONY" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -97,15 +101,15 @@
       <command value="s generate:doctrine:crud" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -132,6 +136,7 @@
       <workItem from="1581082566994" duration="120000" />
       <workItem from="1581082724969" duration="1050000" />
       <workItem from="1581096136949" duration="3616000" />
+      <workItem from="1581109039652" duration="197000" />
     </task>
     <servers />
   </component>
@@ -150,5 +155,27 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="684" y="398" key="ComposerCompositePathDialog" timestamp="1581109221696">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581109221696" />
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1581109230519">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581109230519" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1581109235761">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581109235761" />
+    <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581109233223">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581109233223" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581109242621">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581109242621" />
   </component>
 </project>
