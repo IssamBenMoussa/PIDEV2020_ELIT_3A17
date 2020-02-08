@@ -1,0 +1,24 @@
+rendez_index:
+    path:     /
+    defaults: { _controller: "ElitBundle:rendezvous:index" }
+    methods:  GET
+
+rendez_show:
+    path:     /{id}/show
+    defaults: { _controller: "ElitBundle:rendezvous:show" }
+    methods:  GET
+
+rendez_new:
+    path:     /new
+    defaults: { _controller: "ElitBundle:rendezvous:new" }
+    methods:  [GET, POST]
+
+rendez_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ElitBundle:rendezvous:edit" }
+    methods:  [GET, POST]
+
+rendez_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ElitBundle:rendezvous:delete" }
+    methods:  DELETE

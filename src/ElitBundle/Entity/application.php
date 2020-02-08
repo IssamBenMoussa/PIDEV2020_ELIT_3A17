@@ -54,6 +54,28 @@ class application
     }
 
     /**
+     * @return mixed
+     */
+    public function getIdrendezvous()
+    {
+        return $this->idrendezvous;
+    }
+
+    /**
+     * @param mixed $idrendezvous
+     */
+    public function setIdrendezvous($idrendezvous)
+    {
+        $this->idrendezvous = $idrendezvous;
+    }
+    /**
+
+     * @ORM\ManyToOne(targetEntity="ElitBundle\Entity\rendezvous")
+     * @ORM\JoinColumn(name="id_rendezvous",referencedColumnName="id")
+     *
+     */
+    private $idrendezvous;
+    /**
      * @var string
      *
      * @ORM\Column(name="nom", type="string", length=255)

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Rendezvouses list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>nom</th>
+                <th>prenom</th>
+                <th>Date</th>
+
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for rendezvous in rendezvouses %}
+            <tr>
+                <td>{{ rendezvous.nom }}</td>
+                <td>{{ rendezvous.prenom }}</td>
+                <td>{% if rendezvous.date %}{{ rendezvous.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('rendez_show', { 'id': rendezvous.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('rendez_edit', { 'id': rendezvous.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('rendez_new') }}">Create a new rendezvous</a>
+        </li>
+    </ul>
+{% endblock %}

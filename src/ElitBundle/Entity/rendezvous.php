@@ -17,7 +17,7 @@ class rendezvous
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+
      */
     private $id;
 
@@ -28,12 +28,51 @@ class rendezvous
      */
     private $date;
 
+
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="heure", type="time")
+     * @ORM\Column(name="prenom", type="string", length=255)
      */
-    private $heure;
+    private $prenom;
+
+    /**
+     * @return string
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * @param string $prenom
+     */
+    public function setPrenom($prenom)
+    {
+        $this->prenom = $prenom;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255)
+     */
+    private $nom;
 
 
     /**
@@ -44,6 +83,14 @@ class rendezvous
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @param int $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
     }
 
     /**
@@ -70,28 +117,7 @@ class rendezvous
         return $this->date;
     }
 
-    /**
-     * Set heure
-     *
-     * @param \DateTime $heure
-     *
-     * @return rendezvous
-     */
-    public function setHeure($heure)
-    {
-        $this->heure = $heure;
 
-        return $this;
-    }
 
-    /**
-     * Get heure
-     *
-     * @return \DateTime
-     */
-    public function getHeure()
-    {
-        return $this->heure;
-    }
 }
 

@@ -307,7 +307,78 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         elseif (0 === strpos($pathinfo, '/E')) {
-            if (0 === strpos($pathinfo, '/E/application')) {
+            if (0 === strpos($pathinfo, '/E/rendez')) {
+                // rendez_index
+                if ('/E/rendez' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\rendezvousController::indexAction',  '_route' => 'rendez_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_rendez_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'rendez_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_rendez_index;
+                    }
+
+                    return $ret;
+                }
+                not_rendez_index:
+
+                // rendez_show
+                if (preg_match('#^/E/rendez/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'rendez_show']), array (  '_controller' => 'ElitBundle\\Controller\\rendezvousController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_rendez_show;
+                    }
+
+                    return $ret;
+                }
+                not_rendez_show:
+
+                // rendez_new
+                if ('/E/rendez/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\rendezvousController::newAction',  '_route' => 'rendez_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_rendez_new;
+                    }
+
+                    return $ret;
+                }
+                not_rendez_new:
+
+                // rendez_edit
+                if (preg_match('#^/E/rendez/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'rendez_edit']), array (  '_controller' => 'ElitBundle\\Controller\\rendezvousController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_rendez_edit;
+                    }
+
+                    return $ret;
+                }
+                not_rendez_edit:
+
+                // rendez_delete
+                if (preg_match('#^/E/rendez/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'rendez_delete']), array (  '_controller' => 'ElitBundle\\Controller\\rendezvousController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_rendez_delete;
+                    }
+
+                    return $ret;
+                }
+                not_rendez_delete:
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/E/application')) {
                 // application_index
                 if ('/E/application' === $trimmedPathinfo) {
                     $ret = array (  '_controller' => 'ElitBundle\\Controller\\applicationController::indexAction',  '_route' => 'application_index',);

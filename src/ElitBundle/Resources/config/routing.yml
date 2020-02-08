@@ -1,3 +1,7 @@
+elit_rendez:
+    resource: "@ElitBundle/Resources/config/routing/rendezvous.yml"
+    prefix:   /rendez
+
 elit_application:
     resource: "@ElitBundle/Resources/config/routing/application.yml"
     prefix:   /application
