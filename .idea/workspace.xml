@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" beforeDir="false" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,6 +27,9 @@
     <execution>
       <phar pharPath="$PROJECT_DIR$/composer.phar" interpreterId="14f5ca7b-af93-435c-bb59-04a39f1dce13" />
     </execution>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="PIDEV2020_ELIT_3A17" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -99,17 +103,19 @@
       <command value="s doctrine:schema:create" />
       <command value="s generate:doctrine:crud" />
       <command value="s doctrine:schema:update --force" />
+      <command value="fos:user:create" />
+      <command value="php bin/console fos:user:create" />
     </option>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -141,6 +147,7 @@
       <workItem from="1581158019431" duration="3337000" />
       <workItem from="1581169843448" duration="2156000" />
       <workItem from="1581172359658" duration="5040000" />
+      <workItem from="1581191151945" duration="1543000" />
     </task>
     <servers />
   </component>
