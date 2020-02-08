@@ -9,7 +9,7 @@ elit_application:
 
 elit_classes:
     resource: "@ElitBundle/Resources/config/routing/classes.yml"
-    prefix:   /classes
+    prefix:   /admin/classes
 
 elit_homepage:
     path:     /
