@@ -197,7 +197,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
             ";
         // line 85
         $this->displayBlock('aliBar', $context, $blocks);
-        // line 243
+        // line 237
         echo "
 </div>
 <!-- End Left menu area -->
@@ -263,7 +263,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
                                                             <a href=\"#\">
                                                                 <div class=\"message-img\">
                                                                     <img src=\"";
-        // line 307
+        // line 301
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/img/contact/1.jpg"), "html", null, true);
         echo "\" alt=\"\">
                                                                 </div>
@@ -379,7 +379,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
                                             <li class=\"nav-item\">
                                                 <a href=\"#\" data-toggle=\"dropdown\" role=\"button\" aria-expanded=\"false\" class=\"nav-link dropdown-toggle\">
                                                     <img src=\"";
-        // line 420
+        // line 414
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/img/product/pro4.jpg"), "html", null, true);
         echo "\" alt=\"\" />
                                                     <span class=\"admin-name\">Prof.Anderson</span>
@@ -1030,9 +1030,9 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
         </div>
         Mobile Menu end -->
         ";
-        // line 1068
+        // line 1062
         $this->displayBlock('content', $context, $blocks);
-        // line 1081
+        // line 1075
         echo "        <div class=\"footer-copyright-area\">
             <div class=\"container-fluid\">
                 <div class=\"row\">
@@ -1049,143 +1049,143 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
     <!-- jquery
         ============================================ -->
     <script src=\"";
-        // line 1096
+        // line 1090
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/vendor/jquery-1.12.4.min.js"), "html", null, true);
         echo "\"></script>
     <!-- bootstrap JS
         ============================================ -->
     <script src=\"";
-        // line 1099
+        // line 1093
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
     <!-- wow JS
         ============================================ -->
     <script src=\"";
-        // line 1102
+        // line 1096
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/wow.min.js"), "html", null, true);
         echo "\"></script>
     <!-- price-slider JS
         ============================================ -->
     <script src=\"";
-        // line 1105
+        // line 1099
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/jquery-price-slider.js"), "html", null, true);
         echo "\"></script>
     <!-- meanmenu JS
         ============================================ -->
     <script src=\"";
-        // line 1108
+        // line 1102
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/jquery.meanmenu.js"), "html", null, true);
         echo "\"></script>
     <!-- owl.carousel JS
         ============================================ -->
     <script src=\"";
-        // line 1111
+        // line 1105
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/owl.carousel.min.js"), "html", null, true);
         echo "\"></script>
     <!-- sticky JS
         ============================================ -->
     <script src=\"";
-        // line 1114
+        // line 1108
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/jquery.sticky.js"), "html", null, true);
         echo "\"></script>
     <!-- scrollUp JS
         ============================================ -->
     <script src=\"";
-        // line 1117
+        // line 1111
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/jquery.scrollUp.min.js"), "html", null, true);
         echo "\"></script>
     <!-- counterup JS
         ============================================ -->
     <script src=\"";
-        // line 1120
+        // line 1114
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/counterup/jquery.counterup.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1121
+        // line 1115
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/counterup/waypoints.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1122
+        // line 1116
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/counterup/counterup-active.js"), "html", null, true);
         echo "\"></script>
     <!-- mCustomScrollbar JS
         ============================================ -->
     <script src=\"";
-        // line 1125
+        // line 1119
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1126
+        // line 1120
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/scrollbar/mCustomScrollbar-active.js"), "html", null, true);
         echo "\"></script>
     <!-- metisMenu JS
         ============================================ -->
     <script src=\"";
-        // line 1129
+        // line 1123
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/metisMenu/metisMenu.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1130
+        // line 1124
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/metisMenu/metisMenu-active.js"), "html", null, true);
         echo "\"></script>
     <!-- morrisjs JS
         ============================================ -->
     <script src=\"";
-        // line 1133
+        // line 1127
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/morrisjs/raphael-min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1134
+        // line 1128
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/morrisjs/morris.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1135
+        // line 1129
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/morrisjs/morris-active.js"), "html", null, true);
         echo "\"></script>
     <!-- morrisjs JS
         ============================================ -->
     <script src=\"";
-        // line 1138
+        // line 1132
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/sparkline/jquery.sparkline.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1139
+        // line 1133
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/sparkline/jquery.charts-sparkline.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1140
+        // line 1134
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/sparkline/sparkline-active.js"), "html", null, true);
         echo "\"></script>
     <!-- calendar JS
         ============================================ -->
     <script src=\"";
-        // line 1143
+        // line 1137
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/calendar/moment.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1144
+        // line 1138
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/calendar/fullcalendar.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 1145
+        // line 1139
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/calendar/fullcalendar-active.js"), "html", null, true);
         echo "\"></script>
     <!-- plugins JS
         ============================================ -->
     <script src=\"";
-        // line 1148
+        // line 1142
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/plugins.js"), "html", null, true);
         echo "\"></script>
     <!-- main JS
         ============================================ -->
     <script src=\"";
-        // line 1151
+        // line 1145
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/main.js"), "html", null, true);
         echo "\"></script>
     <!-- tawk chat JS
         ============================================ -->
     <script src=\"";
-        // line 1154
+        // line 1148
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/tawk-chat.js"), "html", null, true);
         echo "\"></script>
 </body>
@@ -1356,82 +1356,58 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
         // line 165
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
         echo "\">
-                            <span class=\"educate-icon educate-home icon-wrap\"></span>
+                            <span class=\"educate-icon educate-department icon-wrap\"></span>
                             <span class=\"mini-click-non\">Classes</span>
                         </a>
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
                             <li><a title=\"Dashboard v.1\" href=\"";
         // line 171
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("classes_new");
         echo "\"><span class=\"mini-sub-pro\">Add</span></a></li>
                             <li><a title=\"Dashboard v.2\" href=\"";
         // line 172
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
-        echo "\"><span class=\"mini-sub-pro\">Update</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"";
-        // line 173
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
-        echo "\"><span class=\"mini-sub-pro\">Remove</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"";
-        // line 174
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("classes_index");
         echo "\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                         </ul>
                     </li>
                     <li class=\"\">
                         <a class=\"has-arrow\" href=\"";
-        // line 178
+        // line 176
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
         echo "\">
-                            <span class=\"educate-icon educate-home icon-wrap\"></span>
+                            <span class=\"educate-icon educate-department icon-wrap\"></span>
                             <span class=\"mini-click-non\">Classrooms</span>
                         </a>
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
                             <li><a title=\"Dashboard v.1\" href=\"";
-        // line 184
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
+        // line 182
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("classrooms_new");
         echo "\"><span class=\"mini-sub-pro\">Add</span></a></li>
                             <li><a title=\"Dashboard v.2\" href=\"";
-        // line 185
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
-        echo "\"><span class=\"mini-sub-pro\">Update</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"";
-        // line 186
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
-        echo "\"><span class=\"mini-sub-pro\">Remove</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"";
-        // line 187
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
+        // line 183
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("classrooms_index");
         echo "\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                         </ul>
                     </li>
                     <li class=\"\">
                         <a class=\"has-arrow\" href=\"";
-        // line 191
+        // line 187
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
         echo "\">
-                            <span class=\"educate-icon educate-home icon-wrap\"></span>
+                            <span class=\"educate-icon educate-department icon-wrap\"></span>
                             <span class=\"mini-click-non\">Equipments</span>
                         </a>
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
                             <li><a title=\"Dashboard v.1\" href=\"";
-        // line 197
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
+        // line 193
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("equipement_new");
         echo "\"><span class=\"mini-sub-pro\">Add</span></a></li>
                             <li><a title=\"Dashboard v.2\" href=\"";
-        // line 198
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
-        echo "\"><span class=\"mini-sub-pro\">Update</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"";
-        // line 199
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
-        echo "\"><span class=\"mini-sub-pro\">Remove</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"";
-        // line 200
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
+        // line 194
+        echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("equipement_index");
         echo "\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                         </ul>
                     </li>
@@ -1442,7 +1418,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
                     <li class=\"\">
                         <a class=\"has-arrow\" href=\"";
-        // line 209
+        // line 203
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
         echo "\">
                             <span class=\"educate-icon educate-star icon-wrap\"></span>
@@ -1453,11 +1429,11 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
                             <li><a title=\"browse_event\" href=\"";
-        // line 217
+        // line 211
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
         echo "\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                             <li><a title=\"create_event\" href=\"";
-        // line 218
+        // line 212
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
         echo "\"><span class=\"mini-sub-pro\">Add new</span></a></li>
 
@@ -1466,7 +1442,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
                     <li class=\"\">
                         <a class=\"has-arrow\" href=\"";
-        // line 224
+        // line 218
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
         echo "\">
                             <span class=\"educate-icon educate-star icon-wrap\"></span>
@@ -1475,15 +1451,15 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
                             <li><a title=\"browse_event\" href=\"";
-        // line 230
+        // line 224
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index.html"), "html", null, true);
         echo "\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                             <li><a title=\"create_event\" href=\"";
-        // line 231
+        // line 225
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
         echo "\"><span class=\"mini-sub-pro\">Add new</span></a></li>
                             <li><a title=\"browse_club_event\" href=\"";
-        // line 232
+        // line 226
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/index-1.html"), "html", null, true);
         echo "\"><span class=\"mini-sub-pro\">Browse Club Events</span></a></li>
 
@@ -1504,7 +1480,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
     }
 
-    // line 1068
+    // line 1062
     public function block_content($context, array $blocks = [])
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
@@ -1513,7 +1489,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "content"));
 
-        // line 1069
+        // line 1063
         echo "            <H2>SeTART</H2>
             <div class=\"container-fluid\">
                 <div class=\"row\">
@@ -1546,7 +1522,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
     public function getDebugInfo()
     {
-        return array (  1517 => 1069,  1508 => 1068,  1487 => 232,  1483 => 231,  1479 => 230,  1470 => 224,  1461 => 218,  1457 => 217,  1446 => 209,  1434 => 200,  1430 => 199,  1426 => 198,  1422 => 197,  1413 => 191,  1406 => 187,  1402 => 186,  1398 => 185,  1394 => 184,  1385 => 178,  1378 => 174,  1374 => 173,  1370 => 172,  1366 => 171,  1357 => 165,  1348 => 159,  1341 => 155,  1334 => 151,  1327 => 147,  1321 => 144,  1315 => 141,  1306 => 135,  1302 => 134,  1293 => 128,  1284 => 122,  1280 => 121,  1271 => 115,  1263 => 110,  1259 => 109,  1250 => 103,  1243 => 99,  1239 => 98,  1235 => 97,  1231 => 96,  1227 => 95,  1218 => 89,  1213 => 86,  1204 => 85,  1189 => 1154,  1183 => 1151,  1177 => 1148,  1171 => 1145,  1167 => 1144,  1163 => 1143,  1157 => 1140,  1153 => 1139,  1149 => 1138,  1143 => 1135,  1139 => 1134,  1135 => 1133,  1129 => 1130,  1125 => 1129,  1119 => 1126,  1115 => 1125,  1109 => 1122,  1105 => 1121,  1101 => 1120,  1095 => 1117,  1089 => 1114,  1083 => 1111,  1077 => 1108,  1071 => 1105,  1065 => 1102,  1059 => 1099,  1053 => 1096,  1036 => 1081,  1034 => 1068,  383 => 420,  267 => 307,  201 => 243,  199 => 85,  193 => 82,  189 => 81,  185 => 80,  181 => 79,  167 => 68,  161 => 65,  155 => 62,  149 => 59,  145 => 58,  139 => 55,  135 => 54,  129 => 51,  123 => 48,  117 => 45,  111 => 42,  105 => 39,  99 => 36,  93 => 33,  87 => 30,  83 => 29,  79 => 28,  73 => 25,  67 => 22,  58 => 16,  50 => 11,  38 => 1,);
+        return array (  1493 => 1063,  1484 => 1062,  1463 => 226,  1459 => 225,  1455 => 224,  1446 => 218,  1437 => 212,  1433 => 211,  1422 => 203,  1410 => 194,  1406 => 193,  1397 => 187,  1390 => 183,  1386 => 182,  1377 => 176,  1370 => 172,  1366 => 171,  1357 => 165,  1348 => 159,  1341 => 155,  1334 => 151,  1327 => 147,  1321 => 144,  1315 => 141,  1306 => 135,  1302 => 134,  1293 => 128,  1284 => 122,  1280 => 121,  1271 => 115,  1263 => 110,  1259 => 109,  1250 => 103,  1243 => 99,  1239 => 98,  1235 => 97,  1231 => 96,  1227 => 95,  1218 => 89,  1213 => 86,  1204 => 85,  1189 => 1148,  1183 => 1145,  1177 => 1142,  1171 => 1139,  1167 => 1138,  1163 => 1137,  1157 => 1134,  1153 => 1133,  1149 => 1132,  1143 => 1129,  1139 => 1128,  1135 => 1127,  1129 => 1124,  1125 => 1123,  1119 => 1120,  1115 => 1119,  1109 => 1116,  1105 => 1115,  1101 => 1114,  1095 => 1111,  1089 => 1108,  1083 => 1105,  1077 => 1102,  1071 => 1099,  1065 => 1096,  1059 => 1093,  1053 => 1090,  1036 => 1075,  1034 => 1062,  383 => 414,  267 => 301,  201 => 237,  199 => 85,  193 => 82,  189 => 81,  185 => 80,  181 => 79,  167 => 68,  161 => 65,  155 => 62,  149 => 59,  145 => 58,  139 => 55,  135 => 54,  129 => 51,  123 => 48,  117 => 45,  111 => 42,  105 => 39,  99 => 36,  93 => 33,  87 => 30,  83 => 29,  79 => 28,  73 => 25,  67 => 22,  58 => 16,  50 => 11,  38 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1724,41 +1700,35 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
                     <li class=\" \">
                         <a class=\"has-arrow\" href=\"{{ asset('kiaalap-master/kiaalap-master/index.html')}}\">
-                            <span class=\"educate-icon educate-home icon-wrap\"></span>
+                            <span class=\"educate-icon educate-department icon-wrap\"></span>
                             <span class=\"mini-click-non\">Classes</span>
                         </a>
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
-                            <li><a title=\"Dashboard v.1\" href=\"{{ asset('kiaalap-master/kiaalap-master/index.html')}}\"><span class=\"mini-sub-pro\">Add</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Update</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Remove</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Browse</span></a></li>
+                            <li><a title=\"Dashboard v.1\" href=\"{{ path('classes_new') }}\"><span class=\"mini-sub-pro\">Add</span></a></li>
+                            <li><a title=\"Dashboard v.2\" href=\"{{ path('classes_index') }}\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                         </ul>
                     </li>
                     <li class=\"\">
                         <a class=\"has-arrow\" href=\"{{ asset('kiaalap-master/kiaalap-master/index.html')}}\">
-                            <span class=\"educate-icon educate-home icon-wrap\"></span>
+                            <span class=\"educate-icon educate-department icon-wrap\"></span>
                             <span class=\"mini-click-non\">Classrooms</span>
                         </a>
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
-                            <li><a title=\"Dashboard v.1\" href=\"{{ asset('kiaalap-master/kiaalap-master/index.html')}}\"><span class=\"mini-sub-pro\">Add</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Update</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Remove</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Browse</span></a></li>
+                            <li><a title=\"Dashboard v.1\" href=\"{{ path('classrooms_new')}}\"><span class=\"mini-sub-pro\">Add</span></a></li>
+                            <li><a title=\"Dashboard v.2\" href=\"{{ path('classrooms_index')}}\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                         </ul>
                     </li>
                     <li class=\"\">
                         <a class=\"has-arrow\" href=\"{{ asset('kiaalap-master/kiaalap-master/index.html')}}\">
-                            <span class=\"educate-icon educate-home icon-wrap\"></span>
+                            <span class=\"educate-icon educate-department icon-wrap\"></span>
                             <span class=\"mini-click-non\">Equipments</span>
                         </a>
                         <ul class=\"submenu-angle\" aria-expanded=\"true\">
 
-                            <li><a title=\"Dashboard v.1\" href=\"{{ asset('kiaalap-master/kiaalap-master/index.html')}}\"><span class=\"mini-sub-pro\">Add</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Update</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Remove</span></a></li>
-                            <li><a title=\"Dashboard v.2\" href=\"{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}\"><span class=\"mini-sub-pro\">Browse</span></a></li>
+                            <li><a title=\"Dashboard v.1\" href=\"{{path('equipement_new')}}\"><span class=\"mini-sub-pro\">Add</span></a></li>
+                            <li><a title=\"Dashboard v.2\" href=\"{{path('equipement_index')}}\"><span class=\"mini-sub-pro\">Browse</span></a></li>
                         </ul>
                     </li>
 
