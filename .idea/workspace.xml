@@ -16,6 +16,7 @@
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" beforeDir="false" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -138,6 +139,8 @@
       <workItem from="1581096136949" duration="3616000" />
       <workItem from="1581109039652" duration="1817000" />
       <workItem from="1581112102591" duration="888000" />
+      <workItem from="1581158019431" duration="3337000" />
+      <workItem from="1581169843448" duration="283000" />
     </task>
     <servers />
   </component>
