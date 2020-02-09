@@ -1,0 +1,24 @@
+lessons_index:
+    path:     /
+    defaults: { _controller: "ElitBundle:Lessons:index" }
+    methods:  GET
+
+lessons_show:
+    path:     /{id}/show
+    defaults: { _controller: "ElitBundle:Lessons:show" }
+    methods:  GET
+
+lessons_new:
+    path:     /new
+    defaults: { _controller: "ElitBundle:Lessons:new" }
+    methods:  [GET, POST]
+
+lessons_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ElitBundle:Lessons:edit" }
+    methods:  [GET, POST]
+
+lessons_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ElitBundle:Lessons:delete" }
+    methods:  DELETE

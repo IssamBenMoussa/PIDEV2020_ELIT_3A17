@@ -2,19 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/StudentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/StudentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Resources/views/Default/affiche.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Resources/views/Default/affiche.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/annotations.map" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/annotations.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/C/B/gePN--18RZdWQ30Iw-GY" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/C/B/gePN--18RZdWQ30Iw-GY" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/D/3/47KlYBsXBiU+kULei2WA" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/D/3/47KlYBsXBiU+kULei2WA" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/K/J/W8cn9-Js8IMBbDVVgSJk" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/K/J/W8cn9-Js8IMBbDVVgSJk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerDeprecations.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerDeprecations.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlGenerator.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerUrlMatcher.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" beforeDir="false" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_q8sn15ospovv4vadgvaj7ql59c" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -98,13 +100,14 @@
       <command value="s doctrine:generate:form" />
       <command value="s doctrine:generate:form ElitBundle:User" />
       <command value="s generate:controller " />
-      <command value="s doctrine:generate:entity" />
-      <command value="s doctrine:database:create" />
       <command value="s doctrine:schema:create" />
-      <command value="s generate:doctrine:crud" />
-      <command value="s doctrine:schema:update --force" />
       <command value="fos:user:create" />
       <command value="php bin/console fos:user:create" />
+      <command value="s doctrine:database:create" />
+      <command value="s doctrine:generate:entity" />
+      <command value="s server:run" />
+      <command value="s generate:doctrine:crud" />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
   <component name="RunDashboard">

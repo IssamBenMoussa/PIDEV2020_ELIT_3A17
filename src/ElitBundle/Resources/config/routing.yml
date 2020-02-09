@@ -1,3 +1,11 @@
+elit_module:
+    resource: "@ElitBundle/Resources/config/routing/module.yml"
+    prefix:   /module
+
+elit_lessons:
+    resource: "@ElitBundle/Resources/config/routing/lessons.yml"
+    prefix:   /lessons
+
 elit_rendez:
     resource: "@ElitBundle/Resources/config/routing/rendezvous.yml"
     prefix:   /rendez
@@ -30,3 +38,4 @@ elit_classrooms:
 elit_equipement:
     resource: "@ElitBundle/Resources/config/routing/equipement.yml"
     prefix:   /equipement
+

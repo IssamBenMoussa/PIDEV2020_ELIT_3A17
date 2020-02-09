@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Lesson</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lesson.id }}</td>
+            </tr>
+            <tr>
+                <th>Nomcours</th>
+                <td>{{ lesson.nomCours }}</td>
+            </tr>
+            <tr>
+                <th>Nombrefichiers</th>
+                <td>{{ lesson.nombreFichiers }}</td>
+            </tr>
+            <tr>
+                <th>Autressupports</th>
+                <td>{{ lesson.autresSupports }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lessons_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('lessons_edit', { 'id': lesson.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <h1>Lessons list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nomcours</th>
+                <th>Nombrefichiers</th>
+                <th>Autressupports</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for lesson in lessons %}
+            <tr>
+                <td><a href="{{ path('lessons_show', { 'id': lesson.id }) }}">{{ lesson.id }}</a></td>
+                <td>{{ lesson.nomCours }}</td>
+                <td>{{ lesson.nombreFichiers }}</td>
+                <td>{{ lesson.autresSupports }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('lessons_show', { 'id': lesson.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('lessons_edit', { 'id': lesson.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lessons_new') }}">Create a new lesson</a>
+        </li>
+    </ul>
+{% endblock %}

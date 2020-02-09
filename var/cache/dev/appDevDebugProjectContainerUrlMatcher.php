@@ -307,7 +307,149 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
         }
 
         elseif (0 === strpos($pathinfo, '/E')) {
-            if (0 === strpos($pathinfo, '/E/rendez')) {
+            if (0 === strpos($pathinfo, '/E/module')) {
+                // module_index
+                if ('/E/module' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\ModuleController::indexAction',  '_route' => 'module_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_module_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'module_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_module_index;
+                    }
+
+                    return $ret;
+                }
+                not_module_index:
+
+                // module_show
+                if (preg_match('#^/E/module/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'module_show']), array (  '_controller' => 'ElitBundle\\Controller\\ModuleController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_module_show;
+                    }
+
+                    return $ret;
+                }
+                not_module_show:
+
+                // module_new
+                if ('/E/module/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\ModuleController::newAction',  '_route' => 'module_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_module_new;
+                    }
+
+                    return $ret;
+                }
+                not_module_new:
+
+                // module_edit
+                if (preg_match('#^/E/module/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'module_edit']), array (  '_controller' => 'ElitBundle\\Controller\\ModuleController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_module_edit;
+                    }
+
+                    return $ret;
+                }
+                not_module_edit:
+
+                // module_delete
+                if (preg_match('#^/E/module/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'module_delete']), array (  '_controller' => 'ElitBundle\\Controller\\ModuleController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_module_delete;
+                    }
+
+                    return $ret;
+                }
+                not_module_delete:
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/E/lessons')) {
+                // lessons_index
+                if ('/E/lessons' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\LessonsController::indexAction',  '_route' => 'lessons_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_lessons_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'lessons_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_lessons_index;
+                    }
+
+                    return $ret;
+                }
+                not_lessons_index:
+
+                // lessons_show
+                if (preg_match('#^/E/lessons/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'lessons_show']), array (  '_controller' => 'ElitBundle\\Controller\\LessonsController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_lessons_show;
+                    }
+
+                    return $ret;
+                }
+                not_lessons_show:
+
+                // lessons_new
+                if ('/E/lessons/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\LessonsController::newAction',  '_route' => 'lessons_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_lessons_new;
+                    }
+
+                    return $ret;
+                }
+                not_lessons_new:
+
+                // lessons_edit
+                if (preg_match('#^/E/lessons/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'lessons_edit']), array (  '_controller' => 'ElitBundle\\Controller\\LessonsController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_lessons_edit;
+                    }
+
+                    return $ret;
+                }
+                not_lessons_edit:
+
+                // lessons_delete
+                if (preg_match('#^/E/lessons/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'lessons_delete']), array (  '_controller' => 'ElitBundle\\Controller\\LessonsController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_lessons_delete;
+                    }
+
+                    return $ret;
+                }
+                not_lessons_delete:
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/E/rendez')) {
                 // rendez_index
                 if ('/E/rendez' === $trimmedPathinfo) {
                     $ret = array (  '_controller' => 'ElitBundle\\Controller\\rendezvousController::indexAction',  '_route' => 'rendez_index',);
