@@ -19,3 +19,23 @@
         </li>
     </ul>
 {% endblock %}
+{% block javascripts %}
+    <script type="text/javascript">
+        function validateImage() {
+            var formData = new FormData();
+
+            var file = document.getElementsByClassName("img").item(0).value;
+            // alert(file);
+
+            var t = file.slice(file.indexOf('.')+1,file.length).toLowerCase();
+            //  alert(t);
+            if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                //  alert('Please select a valid image file');
+                document.getElementsByClassName("img").item(0).value = '';
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+{% endblock %}

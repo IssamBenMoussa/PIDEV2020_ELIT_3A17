@@ -1,10 +1,24 @@
 {% extends 'backAdmin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
+
 
 {% block content %}
     <h1>Club creation</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
+    {{ form_row(form.title) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.creationDate)}}
+    {{ form_row(form.president) }}
+
+
+    {{ form_row(form.logo, {'attr': {'class': 'img','onchange':'validateImage()'}}) }}
+<h6 style="color:red"  id="er">*Invalid image<h6>
+
         <input type="submit" value="Create" />
     {{ form_end(form) }}
 
@@ -13,4 +27,35 @@
             <a href="{{ path('club_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $(function()
+        {
+           
+            $("#er").hide();
+        });
+
+        function validateImage() {
+            var formData = new FormData();
+
+            var file = document.getElementsByClassName("img").item(0).value;
+            // alert(file);
+
+            var t = file.slice(file.indexOf('.')+1,file.length).toLowerCase();
+            //  alert(t);
+            if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                //  alert('Please select a valid image file');
+                document.getElementsByClassName("img").item(0).value = '';
+                $("#er").show();
+               // alert('Invalid logo !');
+                return false;
+            }
+
+            $("#er").hide();
+            return true;
+        }
+    </script>
 {% endblock %}

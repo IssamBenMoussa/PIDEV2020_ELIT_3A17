@@ -4,7 +4,10 @@ namespace ElitBundle\Controller;
 
 use ElitBundle\Entity\Club;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Filesystem\Filesystem;
+
 
 /**
  * Club controller.
@@ -37,8 +40,37 @@ class ClubController extends Controller
         $form = $this->createForm('ElitBundle\Form\ClubType', $club);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() ) {
             $em = $this->getDoctrine()->getManager();
+
+            $pictureFile = $form->get('logo')->getData();
+
+
+
+            if ($pictureFile) {
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$pictureFile->guessExtension();
+
+
+                try {
+                    $pictureFile->move(
+                        $this->getParameter('pictures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+                $club->setLogo($newFilename);
+            }
+            else {
+                $club->setLogo("u.png");
+            }
+
+
+
+
             $em->persist($club);
             $em->flush();
 
@@ -75,7 +107,40 @@ class ClubController extends Controller
         $editForm = $this->createForm('ElitBundle\Form\ClubType', $club);
         $editForm->handleRequest($request);
 
-        if ($editForm->isSubmitted() && $editForm->isValid()) {
+        if ($editForm->isSubmitted() ) {
+
+
+            $pictureFile = $editForm->get('logo')->getData();
+
+
+
+            if ($pictureFile) {
+
+                //delete old
+                $file=$club->getLogo();
+                $path=$this->getParameter('pictures_directory').'/'.$file;
+                $fs = new Filesystem();
+                $fs->remove(array($path));
+                //
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$pictureFile->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $pictureFile->move(
+                        $this->getParameter('pictures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                $club->setLogo($newFilename);
+            }
+
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('club_edit', array('id' => $club->getId()));
@@ -98,6 +163,14 @@ class ClubController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //delete old
+            $file=$club->getLogo();
+            $path=$this->getParameter('pictures_directory').'/'.$file;
+            $fs = new Filesystem();
+            $fs->remove(array($path));
+            //
+
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($club);
             $em->flush();

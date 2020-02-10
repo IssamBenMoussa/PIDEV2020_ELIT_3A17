@@ -2,7 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/event/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/event/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/backAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backAdmin.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/edit.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/ClubController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/ClubController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/ClubType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/ClubType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/c4/c43e4b3389ce8e12709d1530f1beff7c1409920445ca25cb84dade650f909dd3.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/c4/c43e4b3389ce8e12709d1530f1beff7c1409920445ca25cb84dade650f909dd3.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/logs/prod.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/prod.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -145,7 +160,7 @@
       <workItem from="1581326595134" duration="141000" />
       <workItem from="1581339670674" duration="603000" />
       <workItem from="1581340971873" duration="978000" />
-      <workItem from="1581362103666" duration="5636000" />
+      <workItem from="1581362103666" duration="10075000" />
     </task>
     <servers />
   </component>

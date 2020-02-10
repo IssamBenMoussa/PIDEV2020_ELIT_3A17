@@ -21,8 +21,10 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
         $this->parent = false;
 
         $this->blocks = [
+            'stylesheets' => [$this, 'block_stylesheets'],
             'aliBar' => [$this, 'block_aliBar'],
             'content' => [$this, 'block_content'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -50,8 +52,11 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("fontawesome-free-5.12.0-web/css/all.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
 
-
-    <!-- favicon
+    ";
+        // line 13
+        $this->displayBlock('stylesheets', $context, $blocks);
+        // line 14
+        echo "    <!-- favicon
 \t\t============================================ -->
     <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"";
         // line 16
@@ -1188,7 +1193,11 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
         // line 1145
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("kiaalap-master/kiaalap-master/js/tawk-chat.js"), "html", null, true);
         echo "\"></script>
-</body>
+    ";
+        // line 1146
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 1147
+        echo "</body>
 
 </html>
 ";
@@ -1197,6 +1206,23 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+    }
+
+    // line 13
+    public function block_stylesheets($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
     }
 
@@ -1507,6 +1533,23 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
     }
 
+    // line 1146
+    public function block_javascripts($context, array $blocks = [])
+    {
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->env->getExtension("Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension");
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->env->getExtension("Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension");
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
     public function getTemplateName()
     {
         return "backAdmin.html.twig";
@@ -1519,7 +1562,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 
     public function getDebugInfo()
     {
-        return array (  1490 => 1060,  1481 => 1059,  1460 => 223,  1456 => 222,  1452 => 221,  1443 => 215,  1434 => 209,  1430 => 208,  1419 => 200,  1407 => 191,  1403 => 190,  1394 => 184,  1387 => 180,  1383 => 179,  1374 => 173,  1367 => 169,  1363 => 168,  1354 => 162,  1345 => 156,  1338 => 152,  1331 => 148,  1324 => 144,  1318 => 141,  1312 => 138,  1304 => 133,  1300 => 132,  1291 => 126,  1283 => 121,  1279 => 120,  1270 => 114,  1263 => 110,  1259 => 109,  1250 => 103,  1243 => 99,  1239 => 98,  1235 => 97,  1231 => 96,  1227 => 95,  1218 => 89,  1213 => 86,  1204 => 85,  1189 => 1145,  1183 => 1142,  1177 => 1139,  1171 => 1136,  1167 => 1135,  1163 => 1134,  1157 => 1131,  1153 => 1130,  1149 => 1129,  1143 => 1126,  1139 => 1125,  1135 => 1124,  1129 => 1121,  1125 => 1120,  1119 => 1117,  1115 => 1116,  1109 => 1113,  1105 => 1112,  1101 => 1111,  1095 => 1108,  1089 => 1105,  1083 => 1102,  1077 => 1099,  1071 => 1096,  1065 => 1093,  1059 => 1090,  1053 => 1087,  1036 => 1072,  1034 => 1059,  383 => 411,  267 => 298,  201 => 234,  199 => 85,  193 => 82,  189 => 81,  185 => 80,  181 => 79,  167 => 68,  161 => 65,  155 => 62,  149 => 59,  145 => 58,  139 => 55,  135 => 54,  129 => 51,  123 => 48,  117 => 45,  111 => 42,  105 => 39,  99 => 36,  93 => 33,  87 => 30,  83 => 29,  79 => 28,  73 => 25,  67 => 22,  58 => 16,  50 => 11,  38 => 1,);
+        return array (  1537 => 1146,  1516 => 1060,  1507 => 1059,  1486 => 223,  1482 => 222,  1478 => 221,  1469 => 215,  1460 => 209,  1456 => 208,  1445 => 200,  1433 => 191,  1429 => 190,  1420 => 184,  1413 => 180,  1409 => 179,  1400 => 173,  1393 => 169,  1389 => 168,  1380 => 162,  1371 => 156,  1364 => 152,  1357 => 148,  1350 => 144,  1344 => 141,  1338 => 138,  1330 => 133,  1326 => 132,  1317 => 126,  1309 => 121,  1305 => 120,  1296 => 114,  1289 => 110,  1285 => 109,  1276 => 103,  1269 => 99,  1265 => 98,  1261 => 97,  1257 => 96,  1253 => 95,  1244 => 89,  1239 => 86,  1230 => 85,  1213 => 13,  1200 => 1147,  1198 => 1146,  1194 => 1145,  1188 => 1142,  1182 => 1139,  1176 => 1136,  1172 => 1135,  1168 => 1134,  1162 => 1131,  1158 => 1130,  1154 => 1129,  1148 => 1126,  1144 => 1125,  1140 => 1124,  1134 => 1121,  1130 => 1120,  1124 => 1117,  1120 => 1116,  1114 => 1113,  1110 => 1112,  1106 => 1111,  1100 => 1108,  1094 => 1105,  1088 => 1102,  1082 => 1099,  1076 => 1096,  1070 => 1093,  1064 => 1090,  1058 => 1087,  1041 => 1072,  1039 => 1059,  388 => 411,  272 => 298,  206 => 234,  204 => 85,  198 => 82,  194 => 81,  190 => 80,  186 => 79,  172 => 68,  166 => 65,  160 => 62,  154 => 59,  150 => 58,  144 => 55,  140 => 54,  134 => 51,  128 => 48,  122 => 45,  116 => 42,  110 => 39,  104 => 36,  98 => 33,  92 => 30,  88 => 29,  84 => 28,  78 => 25,  72 => 22,  63 => 16,  59 => 14,  57 => 13,  52 => 11,  40 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -1544,7 +1587,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
 <!-- icons fontawesome -->
     <link href=\"{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}\" rel=\"stylesheet\">
 
-
+    {% block stylesheets %}{% endblock %}
     <!-- favicon
 \t\t============================================ -->
     <link rel=\"shortcut icon\" type=\"image/x-icon\" href=\"{{ asset('img/favicon.ico') }}\">
@@ -2677,6 +2720,7 @@ class __TwigTemplate_473fb4be778660256307987f4ab539eb013e083a7a24d81018222b87016
     <!-- tawk chat JS
         ============================================ -->
     <script src=\"{{ asset('kiaalap-master/kiaalap-master/js/tawk-chat.js')}}\"></script>
+    {% block javascripts %}{% endblock %}
 </body>
 
 </html>

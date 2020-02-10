@@ -12,7 +12,7 @@
                 <th>Description</th>
                 <th>Category</th>
                 <th>Creationdate</th>
-                <th>Logo</th>
+
                 <th>Actions</th>
             </tr>
         </thead>
@@ -25,7 +25,7 @@
                 <td>{{ club.description }}</td>
                 <td>{{ club.category }}</td>
                 <td>{% if club.creationDate %}{{ club.creationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{{ club.logo }}</td>
+
                 <td>
                     <ul>
                         <li>
