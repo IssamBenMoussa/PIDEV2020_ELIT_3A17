@@ -36,6 +36,11 @@ class Student extends User {
         $this->idClass = $idClass;
     }
 
+    public function __toString()
+    {
+        return $this->getFirstname()." ".$this->getLastname();
+    }
+
 }
 
 

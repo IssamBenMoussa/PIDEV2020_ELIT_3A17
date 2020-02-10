@@ -1,13 +1,14 @@
-{% extends 'base.html.twig' %}
+{% extends 'backAdmin.html.twig' %}
 
 {% block content %}
     <h1>Clubs list</h1>
 
-    <table>
+    <table border="2px" class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Title</th>
+                <th>President</th>
                 <th>Description</th>
                 <th>Category</th>
                 <th>Creationdate</th>
@@ -20,6 +21,7 @@
             <tr>
                 <td><a href="{{ path('club_show', { 'id': club.id }) }}">{{ club.id }}</a></td>
                 <td>{{ club.title }}</td>
+                <td>{{ club.president }}</td>
                 <td>{{ club.description }}</td>
                 <td>{{ club.category }}</td>
                 <td>{% if club.creationDate %}{{ club.creationDate|date('Y-m-d H:i:s') }}{% endif %}</td>

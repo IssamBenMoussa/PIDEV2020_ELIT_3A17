@@ -16,11 +16,11 @@
             </tr>
             <tr>
                 <th>Startdate</th>
-                <td>{% if event.startDate %}{{ event.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if event.startDate %}{{ event.startDate|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Starthour</th>
-                <td>{% if event.startHour %}{{ event.startHour|date('H:i:s') }}{% endif %}</td>
+                <td>{% if event.startHour %}{{ event.startHour|date('H:i') }}{% endif %}</td>
             </tr>
             <tr>
                 <th>Description</th>

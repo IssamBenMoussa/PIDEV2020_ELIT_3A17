@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'backAdmin.html.twig' %}
 
 {% block content %}
     <h1>Club</h1>
@@ -12,6 +12,10 @@
             <tr>
                 <th>Title</th>
                 <td>{{ club.title }}</td>
+            </tr>
+            <tr>
+                <th>President</th>
+                <td>{{ club.president }}</td>
             </tr>
             <tr>
                 <th>Description</th>
