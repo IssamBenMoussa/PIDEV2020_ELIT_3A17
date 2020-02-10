@@ -3,6 +3,8 @@
 namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Equipement
@@ -48,6 +50,27 @@ class Equipement
      * @ORM\Column(name="qte_init", type="float")
      */
     private $qteInit;
+
+    /**
+     * @return mixed
+     */
+    public function getEvents()
+    {
+        return $this->events;
+    }
+
+    /**
+     * @param mixed $events
+     */
+    public function setEvents($events)
+    {
+        $this->events = $events;
+    }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ElitBundle\Entity\Event", mappedBy="equipements")
+     */
+    private $events;
 
 
     /**
@@ -155,5 +178,21 @@ class Equipement
     {
         return $this->qteInit;
     }
+
+    /**
+     * Equipement constructor.
+     *
+     */
+    public function __construct()
+    {
+        $this->events = new ArrayCollection();
+
+    }
+
+    public function addEvent(Event $e)
+    {
+        $this->events[] = $e;
+    }
+
 }
 

@@ -758,6 +758,77 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
             }
 
+            elseif (0 === strpos($pathinfo, '/E/club')) {
+                // club_index
+                if ('/E/club' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\ClubController::indexAction',  '_route' => 'club_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_club_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'club_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_club_index;
+                    }
+
+                    return $ret;
+                }
+                not_club_index:
+
+                // club_show
+                if (preg_match('#^/E/club/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'club_show']), array (  '_controller' => 'ElitBundle\\Controller\\ClubController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_club_show;
+                    }
+
+                    return $ret;
+                }
+                not_club_show:
+
+                // club_new
+                if ('/E/club/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\ClubController::newAction',  '_route' => 'club_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_club_new;
+                    }
+
+                    return $ret;
+                }
+                not_club_new:
+
+                // club_edit
+                if (preg_match('#^/E/club/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'club_edit']), array (  '_controller' => 'ElitBundle\\Controller\\ClubController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_club_edit;
+                    }
+
+                    return $ret;
+                }
+                not_club_edit:
+
+                // club_delete
+                if (preg_match('#^/E/club/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'club_delete']), array (  '_controller' => 'ElitBundle\\Controller\\ClubController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_club_delete;
+                    }
+
+                    return $ret;
+                }
+                not_club_delete:
+
+            }
+
             elseif (0 === strpos($pathinfo, '/E/equipement')) {
                 // equipement_index
                 if ('/E/equipement' === $trimmedPathinfo) {
@@ -826,6 +897,77 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $ret;
                 }
                 not_equipement_delete:
+
+            }
+
+            elseif (0 === strpos($pathinfo, '/E/event')) {
+                // event_index
+                if ('/E/event' === $trimmedPathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\EventController::indexAction',  '_route' => 'event_index',);
+                    if ('/' === substr($pathinfo, -1)) {
+                        // no-op
+                    } elseif ('GET' !== $canonicalMethod) {
+                        goto not_event_index;
+                    } else {
+                        return array_replace($ret, $this->redirect($rawPathinfo.'/', 'event_index'));
+                    }
+
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_event_index;
+                    }
+
+                    return $ret;
+                }
+                not_event_index:
+
+                // event_show
+                if (preg_match('#^/E/event/(?P<id>[^/]++)/show$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'event_show']), array (  '_controller' => 'ElitBundle\\Controller\\EventController::showAction',));
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_event_show;
+                    }
+
+                    return $ret;
+                }
+                not_event_show:
+
+                // event_new
+                if ('/E/event/new' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\EventController::newAction',  '_route' => 'event_new',);
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_event_new;
+                    }
+
+                    return $ret;
+                }
+                not_event_new:
+
+                // event_edit
+                if (preg_match('#^/E/event/(?P<id>[^/]++)/edit$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'event_edit']), array (  '_controller' => 'ElitBundle\\Controller\\EventController::editAction',));
+                    if (!in_array($canonicalMethod, ['GET', 'POST'])) {
+                        $allow = array_merge($allow, ['GET', 'POST']);
+                        goto not_event_edit;
+                    }
+
+                    return $ret;
+                }
+                not_event_edit:
+
+                // event_delete
+                if (preg_match('#^/E/event/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'event_delete']), array (  '_controller' => 'ElitBundle\\Controller\\EventController::deleteAction',));
+                    if (!in_array($requestMethod, ['DELETE'])) {
+                        $allow = array_merge($allow, ['DELETE']);
+                        goto not_event_delete;
+                    }
+
+                    return $ret;
+                }
+                not_event_delete:
 
             }
 

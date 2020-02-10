@@ -39,3 +39,12 @@ elit_equipement:
     resource: "@ElitBundle/Resources/config/routing/equipement.yml"
     prefix:   /equipement
 
+elit_club:
+    resource: "@ElitBundle/Resources/config/routing/club.yml"
+    prefix:   /club
+
+
+elit_event:
+    resource: "@ElitBundle/Resources/config/routing/event.yml"
+    prefix:   /event
+
