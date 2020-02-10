@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/event/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/event/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Student.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Student.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/ClubType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/ClubType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/EventType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/K/J/W8cn9-Js8IMBbDVVgSJk" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/pools/GfjtzXw3SD/K/J/W8cn9-Js8IMBbDVVgSJk" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +145,7 @@
       <workItem from="1581326595134" duration="141000" />
       <workItem from="1581339670674" duration="603000" />
       <workItem from="1581340971873" duration="978000" />
-      <workItem from="1581362103666" duration="5359000" />
+      <workItem from="1581362103666" duration="5636000" />
     </task>
     <servers />
   </component>

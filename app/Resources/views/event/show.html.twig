@@ -15,11 +15,11 @@
                 <td>{{ event.title }}</td>
             </tr>
             <tr>
-                <th>Startdate</th>
+                <th>Start Date</th>
                 <td>{% if event.startDate %}{{ event.startDate|date('d/m/Y') }}{% endif %}</td>
             </tr>
             <tr>
-                <th>Starthour</th>
+                <th>Start Hour</th>
                 <td>{% if event.startHour %}{{ event.startHour|date('H:i') }}{% endif %}</td>
             </tr>
             <tr>
