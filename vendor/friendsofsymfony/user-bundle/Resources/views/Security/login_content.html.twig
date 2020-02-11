@@ -19,7 +19,7 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/css/main.css') }}">
     <!--===============================================================================================-->
 </head>
-{% block content %}
+
 
 {% if error %}
     <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -76,7 +76,7 @@
     </div>
 
 </form>
-{% endblock %}
+
 <!--===============================================================================================-->
 <script src="{{ asset('Login_v1/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
 <!--===============================================================================================-->

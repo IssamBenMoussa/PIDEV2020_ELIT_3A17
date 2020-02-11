@@ -1,10 +1,18 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-    <br><br><h1>Rendezvouses list</h1>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <br></br>
+                <div class="box-header"><center>
 
-    <table class="table">
-        <thead>
+                        <h3 class="box-title"> appointment list </h3></center>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
             <tr>
                 <th>nom</th>
                 <th>prenom</th>
@@ -23,10 +31,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('rendez_show', { 'id': rendezvous.id }) }}">show</a>
+                            <a href="{{ path('rendez_show', { 'id': rendezvous.id }) }}"class="btn btn-danger">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('rendez_edit', { 'id': rendezvous.id }) }}">edit</a>
+                            <a href="{{ path('rendez_edit', { 'id': rendezvous.id }) }}"class="btn btn-success">edit</a>
                         </li>
                     </ul>
                 </td>
