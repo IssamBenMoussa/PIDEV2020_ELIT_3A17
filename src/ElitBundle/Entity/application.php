@@ -391,5 +391,11 @@ class application
     {
         return $this->etat;
     }
+    public function __toString()
+    {
+        return $this->nom;
+
+    }
+    
 }
 

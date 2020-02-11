@@ -14,8 +14,8 @@ class applicationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')
-
+        $builder  ->add('idrendezvous',EntityType::class,array('class'=>'ElitBundle:rendezvous','choice_label'=>'id'))
+            ->add('nom',EntityType::class,array('class'=>'ElitBundle:rendezvous','choice_label'=>'nom'))
             ->add('prenom')
             ->add('annee_Scolaire')
             ->add('niveau_Scolaire')
@@ -23,7 +23,9 @@ class applicationType extends AbstractType
             ->add('type_Payment')
             ->add('nombre_mois_payer')
             ->add('etat')
-            ->add('id',EntityType::class,array('class'=>'ElitBundle:rendezvous','choice_label'=>'ID')) ;;
+
+
+            ;;
 
     }/**
      * {@inheritdoc}
