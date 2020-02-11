@@ -179,8 +179,6 @@ class User extends BaseUser
     protected $profilePicture;
 
 
-
-
     /**
      * @return int
      */
