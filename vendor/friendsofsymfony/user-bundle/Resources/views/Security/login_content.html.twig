@@ -39,7 +39,7 @@
                     <img src="{{ asset('Login_v1/images/img-01.png') }}" alt="IMG">
                 </div>
 
-                <form class="login100-form validate-form">
+                <form1 class="login100-form validate-form">
 					<span class="login100-form-title">
 						Member Login
 					</span>
@@ -50,7 +50,7 @@
                             <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                         {% endif %}
 
-                        <form action="{{ path("fos_user_security_check") }}" method="post">
+                        <form2 action="{{ path("fos_user_security_check") }}" method="post">
                             {% if csrf_token %}
                                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
                             {% endif %}
@@ -68,9 +68,9 @@
 
                             <input class="btn btn-custon-four btn-primary" type="submit" value="{{ 'log in'|trans }}" />
                             <br><br/>
-                        </form>
+                        </form2>
 
-                </form>
+                </form1>
             </div>
         </div>
     </div>
