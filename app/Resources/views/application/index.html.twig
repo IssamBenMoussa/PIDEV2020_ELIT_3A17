@@ -1,11 +1,20 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-    <br><br> <h1>Applications list</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header"><center>
+                        <h3 class="box-title"> approved students </h3></center>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+
 
                 <th>Nom</th>
                 <th>Prenom</th>
@@ -33,10 +42,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('application_show', { 'id': application.id }) }}">show</a>
+                            <a href="{{ path('application_show', { 'id': application.id }) }}"class="btn btn-danger">show</a>
                         </li>
                         <li>
-                            <a href="{{ path('application_edit', { 'id': application.id }) }}">edit</a>
+                            <a href="{{ path('application_edit', { 'id': application.id }) }}"class="btn btn-success">edit</a>
                         </li>
                     </ul>
                 </td>
