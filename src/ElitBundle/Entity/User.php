@@ -142,11 +142,7 @@ class User extends BaseUser
      */
     protected $lastname;
 
-    /**
-     * @var \DateTime
-     * @ORM\Column(name="birthDate", type="date")
-     */
-    protected $birthDate;
+
 
     /**
      * @var int
