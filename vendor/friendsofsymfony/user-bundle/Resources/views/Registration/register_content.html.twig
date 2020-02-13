@@ -23,14 +23,16 @@
     <div class="container-login100">
 
         <div class="wrap-login100">
-            <h1>REGISTER</h1>
+            <div class="login100-pic js-tilt" data-tilt>
+                <img src="{{ asset('uploads/issam_pic/elit.png') }}" alt="IMG">
+            </div>
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
     {{ form_row(form.username,{'attr':{'class':'input100'}}) }}
             {{ form_row(form.email,{'attr':{'class':'input100'}}) }}
             {{ form_row(form.plainPassword,{'attr':{'class':'input100'}}) }}
             {{ form_row(form.roles) }}
     <div>
-        <input type="submit" value="{{ 'registration.submit'|trans }}" />
+        <input type="submit" value="{{ 'register'|trans }}" />
     </div>
 {{ form_end(form) }}
         </div>
