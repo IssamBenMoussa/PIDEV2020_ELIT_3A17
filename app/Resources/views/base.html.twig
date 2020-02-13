@@ -58,7 +58,7 @@
                                             <li><a href="#">elements</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">About</a></li>
+                                    <li><a href="{{ path('rendez_new') }}">APPLY AS A STUDENT</a></li>
                                     <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="#">blog</a></li>
@@ -74,13 +74,13 @@
                         <div class="log_chat_area d-flex align-items-center">
                             {% if not(is_granted('IS_AUTHENTICATED_FULLY')) %}
                             <a href="{{ path('fos_user_security_login') }}" >
-                                <i class="flaticon-user">   </i>
-                                <span style="margin-left: 20px">log in   </span>
+
+                                <span style="margin-left: 20px"class="boxed_btn">log in   </span>
                             </a>
 
                                 <a href="{{ path('fos_user_registration_register') }}" >
-                                    <i class="fas fa-plus-circle">  </i>
-                                    <span style="margin-left: 20px">register</span>
+
+                                    <span style="margin-left: 20px" class="boxed_btn">register</span>
                                 </a>
 
                             {% endif %}
@@ -118,10 +118,10 @@
                 </div>
                 <div class="col-xl-6 col-md-6">
                     <div class="slider_info">
-                        <h3>Learn your <br>
-                            Favorite Course <br>
-                            From Online</h3>
-                        <a href="#" class="boxed_btn">Browse Our Courses</a>
+                        <h3>WELCOME <br>
+                            TO OUR SCHOOL <br>
+                             WEBSITE</h3>
+                        <a href="{{ path('fos_user_registration_register') }}" class="boxed_btn"> GET STARTED </a>
                     </div>
                 </div>
             </div>
@@ -129,8 +129,9 @@
     </div>
 </div>
 <!-- slider_area_end -->
-
+{% block hey %}
 <!-- about_area_start -->
+{% block crud %}
 <div class="about_area">
     <div class="container">
         <div class="row">
@@ -177,6 +178,7 @@
         </div>
     </div>
 </div>
+{% endblock %}
 <!-- about_area_end -->
 
 <!-- popular_courses_start -->
@@ -2119,5 +2121,5 @@
 
 <script src="{{ asset('edumark/js/main.js') }}"></script>
 </body>
-
+{% endblock %}
 </html>

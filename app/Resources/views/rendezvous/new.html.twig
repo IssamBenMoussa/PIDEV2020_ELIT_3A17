@@ -1,9 +1,10 @@
-{% extends 'backAdmin.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block content %}
-    <br><br><h1>Rendezvous creation</h1>
-
+{% block hey %}
+    <br><br><h1> Schedule your date </h1>
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(form) }}
+
         {{ form_widget(form) }}
     <input class="btn btn-custon-four btn-primary" type="submit" value="Create" />
     {{ form_end(form) }}
