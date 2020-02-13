@@ -31,10 +31,12 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('rendez_show', { 'id': rendezvous.id }) }}"class="btn btn-danger">show</a>
+                            <a href="{{ path('rendez_edit', { 'id': rendezvous.id }) }}"class="btn btn-success">edit</a>
                         </li>
                         <li>
-                            <a href="{{ path('rendez_edit', { 'id': rendezvous.id }) }}"class="btn btn-success">edit</a>
+
+                            <a href="{{ path('rendez_delete', { 'id': rendezvous.id }) }}"class="btn btn-danger">delete</a>
+
                         </li>
                     </ul>
                 </td>
@@ -44,8 +46,6 @@
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('rendez_new') }}">Create a new rendezvous</a>
-        </li>
+
     </ul>
 {% endblock %}

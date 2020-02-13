@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('edumark/css/style.css') }}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
-
+{% block body %}
 <body>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -1919,7 +1919,7 @@
 </div>
 <!-- our_latest_blog_end -->
 
-
+{% endblock %}
 <!-- footer -->
 <footer class="footer footer_bg_1">
     <div class="footer_top">
@@ -2057,6 +2057,7 @@
     </div>
 </form>
 {% endblock %}
+
 <!-- form itself end -->
 
 <!-- form itself end-->
@@ -2121,5 +2122,6 @@
 
 <script src="{{ asset('edumark/js/main.js') }}"></script>
 </body>
+
 {% endblock %}
 </html>
