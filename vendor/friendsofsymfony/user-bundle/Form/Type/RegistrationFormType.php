@@ -40,8 +40,8 @@ class RegistrationFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email', EmailType::class, array('label' => 'form.email', 'translation_domain' => 'FOSUserBundle'))
-            ->add('username', null, array('label' => 'form.username', 'translation_domain' => 'FOSUserBundle'))
+            ->add('email', EmailType::class, array('label' => 'email', 'translation_domain' => 'FOSUserBundle'))
+            ->add('username', null, array('label' => 'username', 'translation_domain' => 'FOSUserBundle'))
             ->add('plainPassword', RepeatedType::class, array(
                 'type' => PasswordType::class,
                 'options' => array(
@@ -50,8 +50,8 @@ class RegistrationFormType extends AbstractType
                         'autocomplete' => 'new-password',
                     ),
                 ),
-                'first_options' => array('label' => 'form.password'),
-                'second_options' => array('label' => 'form.password_confirmation'),
+                'first_options' => array('label' => 'password'),
+                'second_options' => array('label' => 'confirm your password'),
                 'invalid_message' => 'fos_user.password.mismatch',
             ))->add('roles', ChoiceType::class, array('label' => 'Type ',
                 'choices' => array(' ADMIN' => 'ROLE_ADMIN',
