@@ -13,6 +13,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <link href="{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('edumark/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('edumark/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('edumark/css/magnific-popup.css') }}">
@@ -71,16 +72,28 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                         <div class="log_chat_area d-flex align-items-center">
-                            <a href="#test-form" class="login popup-with-form">
-                                <i class="flaticon-user"></i>
-                                <span>log in</span>
+                            {% if not(is_granted('IS_AUTHENTICATED_FULLY')) %}
+                            <a href="{{ path('fos_user_security_login') }}" >
+                                <i class="flaticon-user">   </i>
+                                <span style="margin-left: 20px">log in   </span>
                             </a>
-                            <div class="live_chat_btn">
-                                <a class="boxed_btn_orange" href="#">
-                                    <i class="fa fa-phone"></i>
-                                    <span>+10 378 467 3672</span>
+
+                                <a href="{{ path('fos_user_registration_register') }}" >
+                                    <i class="fas fa-plus-circle">  </i>
+                                    <span style="margin-left: 20px">register</span>
                                 </a>
-                            </div>
+
+                            {% endif %}
+                            {% if (is_granted('IS_AUTHENTICATED_FULLY')) %}
+                                <a href="{{ path('fos_user_security_logout') }}" >
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span style="margin-right: 20px">logout  </span>
+                                </a>
+                                <a href="{{ path('elit_homepage') }}" >
+                                    <i class="fas fa-users-cog"></i>
+                                    <span>Dashboard Admin </span>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-12">
@@ -2016,6 +2029,7 @@
 <form id="test-form" class="white-popup-block mfp-hide">
     <div class="popup_box ">
         <div class="popup_inner">
+
             <div class="logo text-center">
                 <a href="#">
                     <img src="{{ asset('edumark/img/form-logo.png')}}" alt="">
@@ -2047,6 +2061,7 @@
 <form id="test-form2" class="white-popup-block mfp-hide">
     <div class="popup_box ">
         <div class="popup_inner">
+
             <div class="logo text-center">
                 <a href="#">
                     <img src="{{ asset('edumark/img/form-logo.png')}}" alt="">

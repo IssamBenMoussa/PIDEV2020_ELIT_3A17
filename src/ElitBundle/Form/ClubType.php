@@ -19,14 +19,23 @@ class ClubType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title')->add('description')->add('category')
-            ->add('creationDate', DateType::class, ['widget' => 'single_text'])
+            ->add('creationDate', DateType::class, ['widget' => 'single_text',
+
+                                                                'attr' => ['class' => 'js-datepicker'],
+                                                                'html5'=>false,
+                                                                'format'=>'M/d/y']
+
+            )
+
+
+
             ->add('logo',FileType::class, [
                 'label' => 'Logo Picture',
                 'mapped' => false,
                 'required' => false
 
             ])
-           ->add('president',EntityType::class,array('class'=>'ElitBundle:Student','choice_label'=>'firstname'));
+           ->add('president');
     }/**
      * {@inheritdoc}
      */

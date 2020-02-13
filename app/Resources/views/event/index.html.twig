@@ -1,47 +1,100 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-    <h1>Events list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Startdate</th>
-                <th>Starthour</th>
-                <th>Description</th>
-                <th>Logo</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for event in events %}
-            <tr>
-                <td><a href="{{ path('event_show', { 'id': event.id }) }}">{{ event.id }}</a></td>
-                <td>{{ event.title }}</td>
-                <td>{% if event.startDate %}{{ event.startDate|date('Y-m-d H:i:s') }}{% endif %}</td>
-                <td>{% if event.startHour %}{{ event.startHour|date('H:i:s') }}{% endif %}</td>
-                <td>{{ event.description }}</td>
-                <td>{{ event.logo }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('event_show', { 'id': event.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('event_edit', { 'id': event.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+<br>
+
+    <br>
+    <BR>
+    <!-- Static Table Start -->
+    <div class="data-table-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <h1>Events List</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline13-graph">
+                            <div class="datatable-dashv1-list custom-datatable-overright">
+
+                                <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                    <thead>
+                                    <tr>
+
+                                        <th data-field="xx" data-editable="false">Title</th>
+                                        <th data-field="id">Start Date</th>
+                                        <th data-field="name" data-editable="false">Start Hour</th>
+                                        <th data-field="email" data-editable="fasle">Description</th>
+                                        <th data-field="phone" data-editable="false">Logo</th>
+                                        <th data-field="complete">Club</th>
+                                        <th data-field="task" data-editable="false">Classroom</th>
+                                        <th data-field="action">Action</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for e in events %}
+                                    <tr>
+
+                                        <td> {{e.title}}</td>
+                                        <td> {{e.startDate|date('d/m/Y')}}</td>
+                                        <td> {{e.startHour|date('H:m')}}</td>
+                                        <td> {{e.description}}</td>
+                                        <td> <img src="{{ asset('uploads/issam_pic/')~e.logo }}"  style="width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;"></td>
+
+                                        <td> {{e.idClub}}</td>
+                                        <td> {{ e.idClassroom }}</td>
+                                        <td> <a href="{{ path('event_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                                              <a href="{{ path('event_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+                                        </td>
+
+                                    </tr>
+{% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Static Table End -->
 
     <ul>
         <li>
-            <a href="{{ path('event_new') }}">Create a new event</a>
+            <a href="{{ path('event_new') }}"><button type="button" class="btn btn-warning">Create a new Event !</button></a>
         </li>
     </ul>
 {% endblock %}
+{% block javascripts %}
+<script>
+
+
+
+</script>
+    <!-- data table JS
+		============================================ -->
+
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
+
+
+{% endblock %}
+

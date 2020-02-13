@@ -3,47 +3,65 @@
 {% block content %}
     <h1>Clubs list</h1>
 
-    <table border="2px" class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>President</th>
-                <th>Description</th>
-                <th>Category</th>
-                <th>Creationdate</th>
-
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+ <div class="courses-area">
+     <div class="container-fluid">
+         <div class="row">
         {% for club in clubs %}
-            <tr>
-                <td><a href="{{ path('club_show', { 'id': club.id }) }}">{{ club.id }}</a></td>
-                <td>{{ club.title }}</td>
-                <td>{{ club.president }}</td>
-                <td>{{ club.description }}</td>
-                <td>{{ club.category }}</td>
-                <td>{% if club.creationDate %}{{ club.creationDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="courses-inner res-mg-b-30">
+                <a href="{{ path('club_show',{'id':club.id}) }}">
+                    <img src="{{ asset('uploads/issam_pic/')~ club.logo }}"  style="width: 200px; /* width of container */
+    height: 200px; /* height of container */
+    object-fit: cover;
+    object-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+">
+                    <h1 style="text-align: center;font-size: 42px">{{ club.title }}</h1>
+                </a>
+            <div class="courses-alaltic">
+                <span class="cr-ic-r">
+                    <span class="course-icon">
+                        <i class="fas fa-user-tie"></i>
+                        {{ club.president }}
+                    </span>
 
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('club_show', { 'id': club.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('club_edit', { 'id': club.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
+                </span>
+
+                <span class="cr-ic-r">
+                    <span class="course-icon">
+                        <i class="fas fa-grip-horizontal"></i>
+                        {{ club.category }}
+                    </span>
+
+                </span>
+                <div class="course-des">
+
+                    <p style="color:red;font-weight: bold ">Creation date :</p
+                    ><p> {% if club.creationDate %}{{ club.creationDate|date('d/m/Y') }}{% endif %}</p>
+                    <p style="color:red;font-weight: bold ">Description : </p>
+                    <p>{{ club.description }}</p>
+                </div>
+
+
+
+
+
+            </div>
+
+                </div>
+            </div>
         {% endfor %}
-        </tbody>
-    </table>
-
+         </div>
+     </div>
+ </div>
+    <br>
     <ul>
         <li>
-            <a href="{{ path('club_new') }}">Create a new club</a>
+            <a  class="" href="{{ path('club_new') }}"><button type="button" class="btn btn-warning">Create a new Club !</button>
+            </a>
         </li>
     </ul>
+    <br>
 {% endblock %}

@@ -84,8 +84,8 @@ class RegistrationController extends Controller
                 }
 
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_COMPLETED, new FilterUserResponseEvent($user, $request, $response));
-
-                return $response;
+return $this->redirectToRoute('homepage');
+              //  return $response; TO REDIRECT
             }
 
             $event = new FormEvent($form, $request);

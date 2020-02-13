@@ -35,7 +35,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="fistname", type="string", length=255)
+     * @ORM\Column(name="fistname", type="string", length=255,nullable=True)
      */
     protected $firstname;
 
@@ -138,20 +138,20 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="lastname", type="string", length=255)
+     * @ORM\Column(name="lastname", type="string", length=255,nullable=True)
      */
     protected $lastname;
 
     /**
      * @var \DateTime
-     * @ORM\Column(name="birthDate", type="date")
+     * @ORM\Column(name="birthDate", type="date",nullable=True)
      */
     protected $birthDate;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="phoneNumber", type="integer")
+     * @ORM\Column(name="phoneNumber", type="integer",nullable=True)
      */
     protected $phoneNumber;
 
@@ -174,7 +174,7 @@ class User extends BaseUser
      *          "application/x-pdf"
      *      }
      * )
-     * @ORM\Column(name="profilePicture",type="string")
+     * @ORM\Column(name="profilePicture",type="string",nullable=True)
      */
     protected $profilePicture;
 
