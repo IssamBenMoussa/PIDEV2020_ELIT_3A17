@@ -4,7 +4,9 @@ namespace ElitBundle\Controller;
 
 use ElitBundle\Entity\Event;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Filesystem\Filesystem;
 
 /**
  * Event controller.
@@ -39,6 +41,30 @@ class EventController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            $pictureFile = $form->get('logo')->getData();
+
+
+
+            if ($pictureFile) {
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$pictureFile->guessExtension();
+
+
+                try {
+                    $pictureFile->move(
+                        $this->getParameter('pictures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+                $event->setLogo($newFilename);
+            }
+            else {
+                $event->setLogo("u.png");
+            }
             $em->persist($event);
             $em->flush();
 
@@ -76,6 +102,38 @@ class EventController extends Controller
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $pictureFile = $editForm->get('logo')->getData();
+
+
+
+            if ($pictureFile) {
+
+                //delete old
+                $file=$event->getLogo();
+                if($file!="u.png") {
+                    $path = $this->getParameter('pictures_directory') . '/' . $file;
+                    $fs = new Filesystem();
+                    $fs->remove(array($path));
+                }
+                //
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$pictureFile->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $pictureFile->move(
+                        $this->getParameter('pictures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                $event->setLogo($newFilename);
+            }
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('event_edit', array('id' => $event->getId()));
@@ -99,6 +157,14 @@ class EventController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+            //delete old
+            $file=$event->getLogo();
+            if($file!="u.png") {
+                $path = $this->getParameter('pictures_directory') . '/' . $file;
+                $fs = new Filesystem();
+                $fs->remove(array($path));
+            }
+            //
             $em->remove($event);
             $em->flush();
         }

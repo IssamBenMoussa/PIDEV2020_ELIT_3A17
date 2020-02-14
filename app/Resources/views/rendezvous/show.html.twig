@@ -1,20 +1,20 @@
-{% extends 'backAdmin.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block content %}
-<section class="content">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="box">
+{% block hey %}
+&nbsp  <section class="content" >
+    &nbsp <div class="row" align="center">
+        &nbsp  <div class="col-xs-12">
+            &nbsp   <div class="box">
                 <br></br>
                 <div class="box-header"><center>
-                        <h3 class="box-title">appointement information </h3></center>
+                        <h3 class="box-title" > &nbsp &nbsp &nbsp  APPOINTEMENT INFORMATION </h3></center>
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive">
-                    <table id="example2" class="table table-bordered table-hover">
+                    &nbsp &nbsp &nbsp &nbsp    &nbsp  &nbsp <table id="example2"  class="table table-bordered table-hover"  >
                         <thead>
                         <tr>
 
-                        <tbody>
+                            &nbsp &nbsp &nbsp   &nbsp  <tbody align="center">
 
                         <tr>
                 <th>nom</th>
@@ -31,19 +31,4 @@
 
         </tbody>
                     </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('rendez_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('rendez_edit', { 'id': rendezvous.id }) }}"">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-            <input class="btn btn-custon-four btn-primary" type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-
 {% endblock %}

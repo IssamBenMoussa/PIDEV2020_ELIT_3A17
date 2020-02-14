@@ -1,11 +1,26 @@
 {% extends 'backAdmin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
+
 
 {% block content %}
     <h1>Club creation</h1>
-
+{% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+    {{ form_row(form.title) }}
+    {{ form_row(form.description) }}
+    {{ form_row(form.category) }}
+    {{ form_row(form.creationDate)}}
+<h6 style="color:red"  id="er2">*Invalid date (must be superior of today)<h6>
+    {{ form_row(form.president) }}
+
+
+    {{ form_row(form.logo, {'attr': {'class': 'image','onchange':'validateImage()'}}) }}
+<h6 style="color:red"  id="er">*Invalid image<h6>
+
+        <input type="submit" value="Create" class="btn btn-success" />
     {{ form_end(form) }}
 
     <ul>
@@ -13,4 +28,53 @@
             <a href="{{ path('club_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $(function()
+        {
+            $('.js-datepicker').datepicker();
+            $("#er").hide();
+            $("#er2").hide();
+        });
+
+        function validateImage() {
+            var formData = new FormData();
+
+            var file = document.getElementsByClassName("image").item(0).value;
+            // alert(file);
+
+            var t = file.slice(file.indexOf('.')+1,file.length).toLowerCase();
+            //  alert(t);
+            if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+                //  alert('Please select a valid image file');
+                document.getElementsByClassName("image").item(0).value = '';
+                $("#er").show();
+               // alert('Invalid logo !');
+                return false;
+            }
+
+            $("#er").hide();
+            return true;
+        }
+/*
+        $(".js-datepicker").on('change', function () {
+            var selectedDate =new Date( $(this).val());
+            var todaysDate = new Date();
+alert('x');
+            //alert(todaysDate+" "+selectedDate);
+            if (selectedDate < todaysDate) {
+              //  alert('Selected date must be greater than today date');
+                $(this).val('');
+                $("#er2").show();
+            }else
+            $("#er2").hide();
+        });
+*/
+
+
+
+    </script>
 {% endblock %}

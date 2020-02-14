@@ -118,70 +118,73 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
         echo "\" alt=\"IMG\">
                 </div>
 
-                <form1 class=\"login100-form validate-form\">
+                <form class=\"login100-form validate-form\">
 \t\t\t\t\t<span class=\"login100-form-title\">
 \t\t\t\t\t\tMember Login
 \t\t\t\t\t</span>
 
 
 
-                    ";
+                        ";
         // line 49
         if (($context["error"] ?? $this->getContext($context, "error"))) {
             // line 50
-            echo "                        <div>";
+            echo "                            <div>";
             echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans($this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageKey", []), $this->getAttribute(($context["error"] ?? $this->getContext($context, "error")), "messageData", []), "security"), "html", null, true);
             echo "</div>
-                    ";
+                        ";
         }
         // line 52
         echo "
-                    <form2 action=\"";
+                        <form action=\"";
         // line 53
         echo $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
-                        ";
+                            ";
         // line 54
         if (($context["csrf_token"] ?? $this->getContext($context, "csrf_token"))) {
             // line 55
-            echo "                            <input type=\"hidden\" name=\"_csrf_token\" value=\"";
+            echo "                                <input type=\"hidden\" name=\"_csrf_token\" value=\"";
             echo twig_escape_filter($this->env, ($context["csrf_token"] ?? $this->getContext($context, "csrf_token")), "html", null, true);
             echo "\" />
-                        ";
+                            ";
         }
         // line 57
         echo "
-                        <br><br/>
-                        <label for=\"username\">";
+                            <br><br/>
+                            <label for=\"username\">";
         // line 59
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("username"), "html", null, true);
-        echo "</label>
-                        <input type=\"text\" id=\"username\" name=\"_username\" value=\"";
-        // line 60
+        echo " </label>
+
+                            <input type=\"text\" class=\"input100\" id=\"username\" name=\"_username\" value=\"";
+        // line 61
         echo twig_escape_filter($this->env, ($context["last_username"] ?? $this->getContext($context, "last_username")), "html", null, true);
         echo "\" required=\"required\" autocomplete=\"username\" />
 
-                        <br> <label for=\"password\">";
-        // line 62
+                            <br> <label for=\"password\">";
+        // line 63
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("password"), "html", null, true);
         echo "</label>
-                        <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
+                            <input type=\"password\"  class=\"input100\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
 
-
-                        <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-                        <label for=\"remember_me\">";
-        // line 67
+<br>
+                            <br>
+                            <br>
+                            <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" class=\"input100\" />
+                            <label for=\"remember_me\">";
+        // line 70
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("remember me "), "html", null, true);
         echo "</label>
-
-                        <input class=\"btn btn-custon-four btn-primary\" type=\"submit\" value=\"";
-        // line 69
+                            <br><br>
+                            <input class=\"btn btn-custon-four btn-primary\" type=\"submit\" value=\"";
+        // line 72
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("log in"), "html", null, true);
         echo "\" />
-                        <br><br/>
-                    </form2>
+                            <br>
+                        </form>
 
-                </form1>
+                </form>
             </div>
         </div>
     </div>
@@ -190,26 +193,26 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
 
 <!--===============================================================================================-->
 <script src=\"";
-        // line 81
+        // line 84
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Login_v1/vendor/jquery/jquery-3.2.1.min.js"), "html", null, true);
         echo "\"></script>
 <!--===============================================================================================-->
 <script src=\"";
-        // line 83
+        // line 86
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Login_v1/vendor/bootstrap/js/popper.js"), "html", null, true);
         echo "\"></script>
 <script src=\"";
-        // line 84
+        // line 87
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Login_v1/vendor/bootstrap/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 <!--===============================================================================================-->
 <script src=\"";
-        // line 86
+        // line 89
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Login_v1/vendor/select2/select2.min.js"), "html", null, true);
         echo "\"></script>
 <!--===============================================================================================-->
 <script src=\"";
-        // line 88
+        // line 91
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Login_v1/vendor/tilt/tilt.jquery.min.js"), "html", null, true);
         echo "\"></script>
 <script >
@@ -219,7 +222,7 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
 </script>
 <!--===============================================================================================-->
 <script src=\"";
-        // line 95
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("Login_v1/js/main.js"), "html", null, true);
         echo "\"></script>";
         
@@ -242,7 +245,7 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
 
     public function getDebugInfo()
     {
-        return array (  223 => 95,  213 => 88,  208 => 86,  203 => 84,  199 => 83,  194 => 81,  179 => 69,  174 => 67,  166 => 62,  161 => 60,  157 => 59,  153 => 57,  147 => 55,  145 => 54,  141 => 53,  138 => 52,  132 => 50,  130 => 49,  117 => 39,  108 => 32,  102 => 30,  100 => 29,  96 => 28,  93 => 27,  87 => 25,  85 => 24,  77 => 19,  73 => 18,  68 => 16,  63 => 14,  58 => 12,  53 => 10,  48 => 8,  43 => 6,  36 => 1,);
+        return array (  226 => 98,  216 => 91,  211 => 89,  206 => 87,  202 => 86,  197 => 84,  182 => 72,  177 => 70,  167 => 63,  162 => 61,  157 => 59,  153 => 57,  147 => 55,  145 => 54,  141 => 53,  138 => 52,  132 => 50,  130 => 49,  117 => 39,  108 => 32,  102 => 30,  100 => 29,  96 => 28,  93 => 27,  87 => 25,  85 => 24,  77 => 19,  73 => 18,  68 => 16,  63 => 14,  58 => 12,  53 => 10,  48 => 8,  43 => 6,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -296,38 +299,41 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
                     <img src=\"{{ asset('Login_v1/images/img-01.png') }}\" alt=\"IMG\">
                 </div>
 
-                <form1 class=\"login100-form validate-form\">
+                <form class=\"login100-form validate-form\">
 \t\t\t\t\t<span class=\"login100-form-title\">
 \t\t\t\t\t\tMember Login
 \t\t\t\t\t</span>
 
 
 
-                    {% if error %}
-                        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-
-                    <form2 action=\"{{ path(\"fos_user_security_check\") }}\" method=\"post\">
-                        {% if csrf_token %}
-                            <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token }}\" />
+                        {% if error %}
+                            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                         {% endif %}
 
-                        <br><br/>
-                        <label for=\"username\">{{ 'username'|trans }}</label>
-                        <input type=\"text\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" required=\"required\" autocomplete=\"username\" />
+                        <form action=\"{{ path(\"fos_user_security_check\") }}\" method=\"post\">
+                            {% if csrf_token %}
+                                <input type=\"hidden\" name=\"_csrf_token\" value=\"{{ csrf_token }}\" />
+                            {% endif %}
 
-                        <br> <label for=\"password\">{{ 'password'|trans }}</label>
-                        <input type=\"password\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
+                            <br><br/>
+                            <label for=\"username\">{{ 'username'|trans }} </label>
 
+                            <input type=\"text\" class=\"input100\" id=\"username\" name=\"_username\" value=\"{{ last_username }}\" required=\"required\" autocomplete=\"username\" />
 
-                        <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" />
-                        <label for=\"remember_me\">{{ 'remember me '|trans }}</label>
+                            <br> <label for=\"password\">{{ 'password'|trans }}</label>
+                            <input type=\"password\"  class=\"input100\" id=\"password\" name=\"_password\" required=\"required\" autocomplete=\"current-password\" />
 
-                        <input class=\"btn btn-custon-four btn-primary\" type=\"submit\" value=\"{{ 'log in'|trans }}\" />
-                        <br><br/>
-                    </form2>
+<br>
+                            <br>
+                            <br>
+                            <input type=\"checkbox\" id=\"remember_me\" name=\"_remember_me\" value=\"on\" class=\"input100\" />
+                            <label for=\"remember_me\">{{ 'remember me '|trans }}</label>
+                            <br><br>
+                            <input class=\"btn btn-custon-four btn-primary\" type=\"submit\" value=\"{{ 'log in'|trans }}\" />
+                            <br>
+                        </form>
 
-                </form1>
+                </form>
             </div>
         </div>
     </div>
@@ -349,6 +355,6 @@ class __TwigTemplate_8731caffc39c74254925395b4f351119690d71ff85aadcf9bee33daa7bd
     })
 </script>
 <!--===============================================================================================-->
-<script src=\"{{ asset('Login_v1/js/main.js') }}\"></script>", "@FOSUser/Security/login_content.html.twig", "C:\\wamp\\www\\PIDEV2020_ELIT_3A17\\vendor\\friendsofsymfony\\user-bundle\\Resources\\views\\Security\\login_content.html.twig");
+<script src=\"{{ asset('Login_v1/js/main.js') }}\"></script>", "@FOSUser/Security/login_content.html.twig", "D:\\wamp64\\www\\PIDEV2020_ELIT_3A17\\vendor\\friendsofsymfony\\user-bundle\\Resources\\views\\Security\\login_content.html.twig");
     }
 }

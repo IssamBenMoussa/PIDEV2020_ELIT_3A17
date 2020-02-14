@@ -13,6 +13,7 @@
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
+    <link href="{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('edumark/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('edumark/css/owl.carousel.min.css') }}">
     <link rel="stylesheet" href="{{ asset('edumark/css/magnific-popup.css') }}">
@@ -26,7 +27,7 @@
     <link rel="stylesheet" href="{{ asset('edumark/css/style.css') }}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
-
+{% block body %}
 <body>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -41,7 +42,7 @@
                     <div class="col-xl-2 col-lg-2">
                         <div class="logo-img">
                             <a href="#">
-                                <img src="{{ asset('edumark/img/logo.png') }}" alt="">
+                                <img class="main-logo" width="100px" height="100px" src="{{ asset('edumark/img/elit.png') }}" alt="">
                             </a>
                         </div>
                     </div>
@@ -57,7 +58,7 @@
                                             <li><a href="#">elements</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">About</a></li>
+                                    <li><a href="{{ path('rendez_new') }}">APPLY AS A STUDENT</a></li>
                                     <li><a href="#">blog <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="#">blog</a></li>
@@ -71,16 +72,28 @@
                     </div>
                     <div class="col-xl-3 col-lg-3 d-none d-lg-block">
                         <div class="log_chat_area d-flex align-items-center">
-                            <a href="#test-form" class="login popup-with-form">
-                                <i class="flaticon-user"></i>
-                                <span>log in</span>
+                            {% if not(is_granted('IS_AUTHENTICATED_FULLY')) %}
+                            <a href="{{ path('fos_user_security_login') }}" >
+
+                                <span style="margin-left: 20px"class="boxed_btn">log in   </span>
                             </a>
-                            <div class="live_chat_btn">
-                                <a class="boxed_btn_orange" href="#">
-                                    <i class="fa fa-phone"></i>
-                                    <span>+10 378 467 3672</span>
+
+                                <a href="{{ path('fos_user_registration_register') }}" >
+
+                                    <span style="margin-left: 20px" class="boxed_btn">register</span>
                                 </a>
-                            </div>
+
+                            {% endif %}
+                            {% if (is_granted('IS_AUTHENTICATED_FULLY')) %}
+                                <a href="{{ path('fos_user_security_logout') }}" >
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span style="margin-right: 20px">logout  </span>
+                                </a>
+                                <a href="{{ path('elit_homepage') }}" >
+                                    <i class="fas fa-users-cog"></i>
+                                    <span>Dashboard Admin </span>
+                                </a>
+                            {% endif %}
                         </div>
                     </div>
                     <div class="col-12">
@@ -100,15 +113,15 @@
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-6 col-md-6">
                     <div class="illastrator_png">
-                        <img src="{{ asset('edumark/img/banner/edu_ilastration.png') }}" alt="">
+                        <img src="{{ asset('edumark/img/elit.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-xl-6 col-md-6">
                     <div class="slider_info">
-                        <h3>Learn your <br>
-                            Favorite Course <br>
-                            From Online</h3>
-                        <a href="#" class="boxed_btn">Browse Our Courses</a>
+                        <h3>WELCOME <br>
+                            TO OUR SCHOOL <br>
+                             WEBSITE</h3>
+                        <a href="{{ path('fos_user_registration_register') }}" class="boxed_btn"> GET STARTED </a>
                     </div>
                 </div>
             </div>
@@ -116,8 +129,9 @@
     </div>
 </div>
 <!-- slider_area_end -->
-
+{% block hey %}
 <!-- about_area_start -->
+{% block crud %}
 <div class="about_area">
     <div class="container">
         <div class="row">
@@ -164,6 +178,7 @@
         </div>
     </div>
 </div>
+{% endblock %}
 <!-- about_area_end -->
 
 <!-- popular_courses_start -->
@@ -1904,7 +1919,7 @@
 </div>
 <!-- our_latest_blog_end -->
 
-
+{% endblock %}
 <!-- footer -->
 <footer class="footer footer_bg_1">
     <div class="footer_top">
@@ -2016,6 +2031,7 @@
 <form id="test-form" class="white-popup-block mfp-hide">
     <div class="popup_box ">
         <div class="popup_inner">
+
             <div class="logo text-center">
                 <a href="#">
                     <img src="{{ asset('edumark/img/form-logo.png')}}" alt="">
@@ -2041,12 +2057,14 @@
     </div>
 </form>
 {% endblock %}
+
 <!-- form itself end -->
 
 <!-- form itself end-->
 <form id="test-form2" class="white-popup-block mfp-hide">
     <div class="popup_box ">
         <div class="popup_inner">
+
             <div class="logo text-center">
                 <a href="#">
                     <img src="{{ asset('edumark/img/form-logo.png')}}" alt="">
@@ -2105,4 +2123,5 @@
 <script src="{{ asset('edumark/js/main.js') }}"></script>
 </body>
 
+{% endblock %}
 </html>
