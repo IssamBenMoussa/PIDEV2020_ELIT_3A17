@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Resources/views/Security/login_content.html.twig" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,6 +64,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1XO5zwFjvOT3Rk1r5vzCjjlXBoj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -83,7 +73,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Revision1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
@@ -99,26 +89,23 @@
       <command value="fos:user:create" />
       <command value="php bin/console fos:user:create" />
       <command value="s doctrine:database:create" />
+      <command value="s server:run" />
       <command value="s doctrine:generate:entity" />
       <command value="s generate:doctrine:crud" />
       <command value="s generate:doctrine:crud " />
       <command value="s generate:doctrine:crud  --overwrite" />
-      <command value="s fos:user:promote" />
-      <command value="s fos:user:promote ali ROLE_ADMIN" />
-      <command value="s server:run" />
       <command value="s doctrine:schema:update --force" />
-      <command value="c clear-cache" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -156,13 +143,12 @@
       <workItem from="1581326595134" duration="141000" />
       <workItem from="1581339670674" duration="603000" />
       <workItem from="1581340971873" duration="978000" />
-      <workItem from="1581362103666" duration="5636000" />
-      <workItem from="1581378191916" duration="2873000" />
-      <workItem from="1581421331541" duration="4627000" />
-      <workItem from="1581433231312" duration="1792000" />
-      <workItem from="1581445928954" duration="312000" />
-      <workItem from="1581446989253" duration="5356000" />
-      <workItem from="1581468460706" duration="607000" />
+      <workItem from="1581362103666" duration="10075000" />
+      <workItem from="1581462137024" duration="19676000" />
+      <workItem from="1581495049427" duration="2847000" />
+      <workItem from="1581622010069" duration="6146000" />
+      <workItem from="1581716491940" duration="106000" />
+      <workItem from="1581716951135" duration="8000" />
     </task>
     <servers />
   </component>
@@ -185,35 +171,37 @@
   <component name="WindowStateProjectService">
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1581178855772" />
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581178855772" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581633600709">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581633600709" />
     <state x="684" y="398" key="ComposerCompositePathDialog" timestamp="1581178855772" />
     <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
     <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1581178855772" />
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state width="1303" height="281" key="GridCell.Tab.0.bottom" timestamp="1581434349749">
+    <state width="1860" height="278" key="GridCell.Tab.0.bottom" timestamp="1581623108324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1303" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581434349749" />
-    <state width="1303" height="281" key="GridCell.Tab.0.center" timestamp="1581434349749">
+    <state width="1860" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
+    <state width="1860" height="278" key="GridCell.Tab.0.center" timestamp="1581623108324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1303" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581434349749" />
-    <state width="1303" height="281" key="GridCell.Tab.0.left" timestamp="1581434349749">
+    <state width="1860" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
+    <state width="1860" height="278" key="GridCell.Tab.0.left" timestamp="1581623108324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1303" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581434349749" />
-    <state width="1303" height="281" key="GridCell.Tab.0.right" timestamp="1581434349749">
+    <state width="1860" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
+    <state width="1860" height="278" key="GridCell.Tab.0.right" timestamp="1581623108324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1303" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581434349749" />
+    <state width="1860" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1581178855772" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581446347956">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581622375639">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581446347956" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581622375639" />
   </component>
 </project>
