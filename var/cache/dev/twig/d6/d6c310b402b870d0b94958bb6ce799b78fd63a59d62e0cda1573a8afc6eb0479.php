@@ -82,35 +82,40 @@ class __TwigTemplate_73dedfe95dea80c2d7cf9a9c5b66c91fc1a6b673da6ce3f8b441a050876
     <div class=\"container-login100\">
 
         <div class=\"wrap-login100\">
-            <h1>REGISTER</h1>
-";
+            <div class=\"login100-pic js-tilt\" data-tilt>
+                <img src=\"";
         // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("uploads/issam_pic/elit.png"), "html", null, true);
+        echo "\" alt=\"IMG\">
+            </div>
+";
+        // line 29
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_start', ["method" => "post", "action" => $this->env->getExtension('Symfony\Bridge\Twig\Extension\RoutingExtension')->getPath("fos_user_registration_register"), "attr" => ["class" => "fos_user_registration_register"]]);
         echo "
     ";
-        // line 28
+        // line 30
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "username", []), 'row', ["attr" => ["class" => "input100"]]);
         echo "
             ";
-        // line 29
+        // line 31
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "email", []), 'row', ["attr" => ["class" => "input100"]]);
         echo "
             ";
-        // line 30
+        // line 32
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "plainPassword", []), 'row', ["attr" => ["class" => "input100"]]);
         echo "
             ";
-        // line 31
+        // line 33
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock($this->getAttribute(($context["form"] ?? $this->getContext($context, "form")), "roles", []), 'row');
         echo "
     <div>
         <input type=\"submit\" value=\"";
-        // line 33
-        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("registration.submit"), "html", null, true);
+        // line 35
+        echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\TranslationExtension')->trans("register"), "html", null, true);
         echo "\" />
     </div>
 ";
-        // line 35
+        // line 37
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock(($context["form"] ?? $this->getContext($context, "form")), 'form_end');
         echo "
         </div>
@@ -137,7 +142,7 @@ class __TwigTemplate_73dedfe95dea80c2d7cf9a9c5b66c91fc1a6b673da6ce3f8b441a050876
 
     public function getDebugInfo()
     {
-        return array (  114 => 35,  109 => 33,  104 => 31,  100 => 30,  96 => 29,  92 => 28,  88 => 27,  77 => 19,  73 => 18,  68 => 16,  63 => 14,  58 => 12,  53 => 10,  48 => 8,  43 => 6,  36 => 1,);
+        return array (  119 => 37,  114 => 35,  109 => 33,  105 => 32,  101 => 31,  97 => 30,  93 => 29,  88 => 27,  77 => 19,  73 => 18,  68 => 16,  63 => 14,  58 => 12,  53 => 10,  48 => 8,  43 => 6,  36 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -175,19 +180,21 @@ class __TwigTemplate_73dedfe95dea80c2d7cf9a9c5b66c91fc1a6b673da6ce3f8b441a050876
     <div class=\"container-login100\">
 
         <div class=\"wrap-login100\">
-            <h1>REGISTER</h1>
+            <div class=\"login100-pic js-tilt\" data-tilt>
+                <img src=\"{{ asset('uploads/issam_pic/elit.png') }}\" alt=\"IMG\">
+            </div>
 {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
     {{ form_row(form.username,{'attr':{'class':'input100'}}) }}
             {{ form_row(form.email,{'attr':{'class':'input100'}}) }}
             {{ form_row(form.plainPassword,{'attr':{'class':'input100'}}) }}
             {{ form_row(form.roles) }}
     <div>
-        <input type=\"submit\" value=\"{{ 'registration.submit'|trans }}\" />
+        <input type=\"submit\" value=\"{{ 'register'|trans }}\" />
     </div>
 {{ form_end(form) }}
         </div>
     </div>
 </div>
-", "@FOSUser/Registration/register_content.html.twig", "D:\\wamp64\\www\\PIDEV2020_ELIT_3A17\\vendor\\friendsofsymfony\\user-bundle\\Resources\\views\\Registration\\register_content.html.twig");
+", "@FOSUser/Registration/register_content.html.twig", "C:\\wamp\\www\\PIDEV2020_ELIT_3A17\\vendor\\friendsofsymfony\\user-bundle\\Resources\\views\\Registration\\register_content.html.twig");
     }
 }

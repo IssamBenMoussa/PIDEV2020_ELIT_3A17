@@ -24,23 +24,55 @@ class Module
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $nom;
+    private $title;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="nombre_cours", type="integer")
-     */
-    private $nombreCours;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="disponibilite_module", type="string", length=255)
+     * @ORM\Column(name="description", type="string", length=255)
      */
-    private $disponibiliteModule;
+    private $description;
+
+    /**
+     * @return mixed
+     */
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+
+    /**
+     * @param mixed $admin
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+    }
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="creationDate", type="datetime")
+     */
+    private $creationDate;
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="logo", type="string", length=255)
+     */
+    private $logo;
+
+
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
 
 
     /**
@@ -54,80 +86,87 @@ class Module
     }
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Module
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-    
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
      * @return string
      */
-    public function getNom()
+    public function getTitle()
     {
-        return $this->nom;
+        return $this->title;
     }
 
     /**
-     * Set nombreCours
-     *
-     * @param integer $nombreCours
-     *
-     * @return Module
+     * @param string $title
      */
-    public function setNombreCours($nombreCours)
+    public function setTitle($title)
     {
-        $this->nombreCours = $nombreCours;
-    
-        return $this;
+        $this->title = $title;
     }
 
     /**
-     * Get nombreCours
-     *
-     * @return integer
-     */
-    public function getNombreCours()
-    {
-        return $this->nombreCours;
-    }
-
-    /**
-     * Set disponibiliteModule
-     *
-     * @param string $disponibiliteModule
-     *
-     * @return Module
-     */
-    public function setDisponibiliteModule($disponibiliteModule)
-    {
-        $this->disponibiliteModule = $disponibiliteModule;
-    
-        return $this;
-    }
-
-    /**
-     * Get disponibiliteModule
-     *
      * @return string
      */
-    public function getDisponibiliteModule()
+    public function getDescription()
     {
-        return $this->disponibiliteModule;
+        return $this->description;
     }
 
-    public function __toString(){
-
-        return $this->nom;
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
+
+    /**
+     * Set creationDate
+     *
+     * @param \DateTime $creationDate
+     *
+     * @return Module
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get creationDate
+     *
+     * @return \DateTime
+     */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+
+
+
+    /**
+     * @return string
+     */
+    public function getLogo()
+    {
+        return $this->logo;
+    }
+
+    /**
+     * @param string $logo
+     */
+    public function setLogo($logo)
+    {
+        $this->logo = $logo;
+    }
+
+
+
+
+
+
+
+
+
 }
 
