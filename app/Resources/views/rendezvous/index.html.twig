@@ -24,9 +24,9 @@
                                        data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                     <thead>
                                     <tr>
-
+                                        <th data-field="cin" >cin</th>
                                         <th data-field="xx">nom</th>
-                                        <th data-field="id">prenom</th>
+                                        <th data-field="id" data-editable="false">prenom</th>
                                         <th data-field="date" data-editable="false">date</th>
                                         <th data-field="action">Action</th>
 
@@ -35,7 +35,7 @@
                                     <tbody>
                                     {% for r in rendezvouses %}
                                         <tr>
-
+                                            <td> {{r.cin}}</td>
                                             <td> {{r.nom}}</td>
                                             <td> {{r.prenom}}</td>
                                             <td> {{r.date|date('d/m/Y')}}</td>
@@ -57,9 +57,7 @@
     <!-- Static Table End -->
 
     <ul>
-        <li>
-            <a href="{{ path('rendez_new') }}"><button type="button" class="btn btn-warning">Create a new Event !</button></a>
-        </li>
+
     </ul>
 {% endblock %}
 {% block javascripts %}

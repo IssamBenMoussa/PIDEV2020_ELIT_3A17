@@ -2,6 +2,7 @@
 
 namespace ElitBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use ElitBundle\Entity\application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -121,4 +122,37 @@ class applicationController extends Controller
             ->getForm()
         ;
     }
-}
+
+    public function statAction()
+    {
+
+
+        $applications = $this->getDoctrine()->getRepository(application::class)->findAll();
+        $frais = 0;
+        $nombremois = 0;
+
+        foreach ($applications as $application) {
+            $frais = $application->getfrais();
+            $nombremois = $application->getnombremoispayer()*291;
+            $pieChart = new PieChart();
+
+            $pieChart->getData()->setArrayToDataTable(array(
+                ['Task', 'payement'],
+                ['frais a payer', $frais],
+                ['montant payer', $nombremois],
+            ));
+
+            $pieChart->getOptions()->setTitle('payment per student');
+            $pieChart->getOptions()->setHeight(400);
+            $pieChart->getOptions()->setWidth(400);
+            $pieChart->getOptions()->getTitleTextStyle()->setColor('#07600');
+            $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
+
+
+            return $this->render('application/stat.html.twig', array(
+                    'piechart' => $pieChart,
+                )
+
+            );
+        }
+    }}

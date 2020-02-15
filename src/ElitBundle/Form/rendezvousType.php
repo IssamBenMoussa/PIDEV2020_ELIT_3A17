@@ -15,7 +15,8 @@ class rendezvousType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder ->add('id')
+        $builder
+            ->add('cin')
             ->add('nom')
             ->add('prenom')
            ->add('date', DateTimeType::class, [

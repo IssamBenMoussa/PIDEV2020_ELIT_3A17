@@ -1,57 +1,16 @@
-{% extends 'backAdmin.html.twig' %}
-{% block stylesheets %}
-    {{ parent() }}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
-{% endblock %}
+{% extends 'base.html.twig' %}
+
 {% block content %}
-    <h1>Event creation</h1>
-    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+    <h1>Module creation</h1>
+
     {{ form_start(form) }}
-
-    {{ form_row(form.title) }}
-    {{ form_row(form.description) }}
-        {{ form_row(form.creationDate)}}
-<h6 style="color:red"  id="er2">*Invalid date (must be superior of today)<h6>
-
-{{ form_row(form.admin) }}
-
-
-        <input type="submit" value="Create" class="btn btn-success" />
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
     {{ form_end(form) }}
-<br>
-<br>
+
     <ul>
         <li>
             <a href="{{ path('module_index') }}">Back to the list</a>
         </li>
     </ul>
-{% endblock %}
-{% block javascripts %}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
-
-    <script type="text/javascript">
-        $(function()
-        {
-            $('.js-datepicker').datepicker();
-            $("#er").hide();
-            $("#er2").hide();
-        });
-
-                $(".js-datepicker").on('change', function () {
-                    var selectedDate =new Date( $(this).val());
-                    var todaysDate = new Date();
-
-                    //alert(todaysDate+" "+selectedDate);
-                    if (selectedDate < todaysDate) {
-                      //  alert('Selected date must be greater than today date');
-                        $(this).val('');
-                        $("#er2").show();
-                    }else
-                    $("#er2").hide();
-                });
-
-
-
-
-    </script>
 {% endblock %}
