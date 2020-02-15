@@ -196,7 +196,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../SYMFONY" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
   </component>
   <component name="RunAnythingCache">
     <option name="myCommands">
@@ -215,6 +215,7 @@
       <command value="s generate:doctrine:crud " />
       <command value="s generate:doctrine:crud  --overwrite" />
       <command value="s doctrine:schema:update --force" />
+      <command value="c require cmen/google-charts-bundle" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -267,6 +268,7 @@
       <workItem from="1581462137024" duration="19676000" />
       <workItem from="1581495049427" duration="2847000" />
       <workItem from="1581622010069" duration="6146000" />
+      <workItem from="1581767051214" duration="460000" />
     </task>
     <servers />
   </component>
@@ -293,10 +295,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581633600709" />
-    <state x="684" y="398" key="ComposerCompositePathDialog" timestamp="1581178855772" />
-    <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1581178855772" />
-    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
+    <state x="684" y="398" key="ComposerCompositePathDialog" timestamp="1581767303539">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581767303539" />
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1581767492780">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581767492780" />
     <state width="1860" height="278" key="GridCell.Tab.0.bottom" timestamp="1581623108324">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -313,13 +319,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1860" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1581178855772" />
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581178855772" />
-    <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581622375639">
+    <state x="461" y="162" key="SettingsEditor" timestamp="1581767510429">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581622375639" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581767510429" />
+    <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581767495682">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581767495682" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581767515113">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581767515113" />
   </component>
 </project>

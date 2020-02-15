@@ -1724,6 +1724,14 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
+        <argument>console.command</argument>
+        <argument type="collection">
+          <argument type="service" id="debug.debug_handlers_listener"/>
+          <argument>configure</argument>
+        </argument>
+        <argument>2048</argument>
+      </call>
+      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -2462,6 +2470,20 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.dorwqck"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.xagqdbz"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
       <tag name="monolog.logger" channel="security"/>
@@ -2963,6 +2985,12 @@
     </service>
     <service id="security.request_matcher.mj8tiva" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/E/event</argument>
+    </service>
+    <service id="security.request_matcher.dorwqck" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/classes</argument>
+    </service>
+    <service id="security.request_matcher.xagqdbz" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/module</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
