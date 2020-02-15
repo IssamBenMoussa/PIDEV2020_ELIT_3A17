@@ -13,35 +13,14 @@ use Doctrine\ORM\Mapping as ORM;
 class rendezvous
 {
     /**
-     * @return int
-     */
-    public function getCin()
-    {
-        return $this->cin;
-    }
-
-    /**
-     * @param int $cin
-     */
-    public function setCin($cin)
-    {
-        $this->cin = $cin;
-    }
-    /**
      * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
+
      */
     private $id;
 
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="cin", type="integer")
-     */
-    private $cin;
     /**
      * @var \DateTime
      *

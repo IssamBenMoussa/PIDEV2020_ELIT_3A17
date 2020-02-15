@@ -2,9 +2,14 @@
 
 namespace ElitBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\File;
 
 class ModuleType extends AbstractType
 {
@@ -13,10 +18,19 @@ class ModuleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nom')->add('nombreCours')->add('disponibiliteModule');
+        $builder->add('title')->add('description')
+            ->add('creationDate', DateType::class, ['widget' => 'single_text',
+
+                    'attr' => ['class' => 'js-datepicker'],
+                    'html5'=>false,
+                    'format'=>'M/d/y']
+
+            )
+
+            ->add('admin');
     }/**
-     * {@inheritdoc}
-     */
+ * {@inheritdoc}
+ */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(

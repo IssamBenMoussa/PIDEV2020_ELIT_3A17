@@ -22,7 +22,3 @@ application_delete:
     path:     /{id}/delete
     defaults: { _controller: "ElitBundle:application:delete" }
     methods:  DELETE
-application_stat:
-    path:     /stat
-    defaults: { _controller: "ElitBundle:application:stat" }
-    methods:  GET
