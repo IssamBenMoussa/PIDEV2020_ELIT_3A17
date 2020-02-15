@@ -16394,3 +16394,16 @@ e60a94,127.0.0.1,GET,http://127.0.0.1:8001/E/application/img/logo/logo.png,15817
 58626d,127.0.0.1,GET,http://127.0.0.1:8001/E/application/img/contact/3.jpg,1581774589,,404
 f96fc6,127.0.0.1,GET,http://127.0.0.1:8001/E/application/img/contact/1.jpg,1581774590,5a51d5,200
 5a51d5,127.0.0.1,GET,http://127.0.0.1:8001/E/application/img/contact/1.jpg,1581774590,,404
+ed0b79,127.0.0.1,GET,http://127.0.0.1:8000/,1581777049,,200
+752ae0,127.0.0.1,GET,http://127.0.0.1:8000/E/application/,1581777055,,200
+46b320,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/logo/logo.png,1581777055,73f166,200
+73f166,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/logo/logo.png,1581777055,,404
+38ba00,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/4.jpg,1581777056,30ccec,200
+30ccec,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/4.jpg,1581777056,,404
+bfcdf4,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/3.jpg,1581777056,e69efc,200
+e69efc,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/3.jpg,1581777056,,404
+3733b2,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/2.jpg,1581777056,6d3f0b,200
+6d3f0b,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/2.jpg,1581777056,,404
+36534d,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/1.jpg,1581777056,9e5e12,200
+9e5e12,127.0.0.1,GET,http://127.0.0.1:8000/E/application/img/contact/1.jpg,1581777056,,404
+35b2a7,127.0.0.1,GET,http://127.0.0.1:8000/E/application/stat,1581777059,,200

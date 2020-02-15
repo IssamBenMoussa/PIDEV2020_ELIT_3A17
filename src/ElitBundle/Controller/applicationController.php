@@ -2,6 +2,7 @@
 
 namespace ElitBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use ElitBundle\Entity\application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -120,5 +121,31 @@ class applicationController extends Controller
             ->setMethod('DELETE')
             ->getForm()
         ;
+    }
+
+    public function statAction()
+    {
+        $pieChart = new PieChart();
+
+
+
+        $pieChart->getData()->setArrayToDataTable( array(
+            ['Task', 'Hours per Day'],
+            ['Work',     30],
+            ['temp libre',      70],
+        ));
+
+        $pieChart->getOptions()->setTitle('You still in work');
+        $pieChart->getOptions()->setHeight(400);
+        $pieChart->getOptions()->setWidth(400);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#07600');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
+
+
+        return $this->render('application/stat.html.twig', array(
+                'piechart' => $pieChart,
+            )
+
+        );
     }
 }
