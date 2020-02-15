@@ -8,14 +8,12 @@
         <input class="btn btn-custon-four btn-primary" type="submit" value="Edit" />
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('application_index') }}">Back to the list</a>
-        </li>
-        <li>
+
+
+
             {{ form_start(delete_form) }}
-                <input class="btn btn-custon-four btn-primary" type="submit" value="Delete">
+                <input class="btn btn-info" type="submit" value="Delete">
             {{ form_end(delete_form) }}
-        </li>
-    </ul>
+
+
 {% endblock %}

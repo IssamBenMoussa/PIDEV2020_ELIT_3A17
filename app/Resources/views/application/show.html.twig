@@ -53,16 +53,18 @@
     </table>
 
     <ul>
+
         <li>
-            <a href="{{ path('application_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('application_edit', { 'id': application.id }) }}">Edit</a>
+            <a href="{{ path('application_stat') }}"class="btn btn-success">statistique</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
                 <input class="btn btn-custon-four btn-primary" type="submit" value="Delete">
             {{ form_end(delete_form) }}
         </li>
+        <li>
+            <a href="{{ path('application_index') }}">Back to the list</a>
+        </li>
+
     </ul>
 {% endblock %}

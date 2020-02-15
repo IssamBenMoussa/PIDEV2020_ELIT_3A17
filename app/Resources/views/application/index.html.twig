@@ -50,14 +50,11 @@
                 <td>{{ application.nombremoispayer }}</td>
                 <td>{{ application.etat }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('application_show', { 'id': application.id }) }}"class="btn btn-danger">show</a>
-                        </li>
-                        <li>
+
+                            <a href="{{ path('application_show', { 'id': application.id }) }}"class="btn btn-info">show</a>
+
                             <a href="{{ path('application_edit', { 'id': application.id }) }}"class="btn btn-success">edit</a>
-                        </li>
-                    </ul>
+
                 </td>
             </tr>
         {% endfor %}

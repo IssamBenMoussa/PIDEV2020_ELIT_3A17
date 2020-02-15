@@ -125,27 +125,34 @@ class applicationController extends Controller
 
     public function statAction()
     {
-        $pieChart = new PieChart();
 
 
+        $applications = $this->getDoctrine()->getRepository(application::class)->findAll();
+        $frais = 0;
+        $nombremois = 0;
 
-        $pieChart->getData()->setArrayToDataTable( array(
-            ['Task', 'Hours per Day'],
-            ['Work',     30],
-            ['temp libre',      70],
-        ));
+        foreach ($applications as $application) {
+            $frais = $application->getfrais();
+            $nombremois = $application->getnombremoispayer()*291;
+            $pieChart = new PieChart();
 
-        $pieChart->getOptions()->setTitle('You still in work');
-        $pieChart->getOptions()->setHeight(400);
-        $pieChart->getOptions()->setWidth(400);
-        $pieChart->getOptions()->getTitleTextStyle()->setColor('#07600');
-        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
+            $pieChart->getData()->setArrayToDataTable(array(
+                ['Task', 'payement'],
+                ['frais a payer', $frais],
+                ['montant payer', $nombremois],
+            ));
+
+            $pieChart->getOptions()->setTitle('payment per student');
+            $pieChart->getOptions()->setHeight(400);
+            $pieChart->getOptions()->setWidth(400);
+            $pieChart->getOptions()->getTitleTextStyle()->setColor('#07600');
+            $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
 
 
-        return $this->render('application/stat.html.twig', array(
-                'piechart' => $pieChart,
-            )
+            return $this->render('application/stat.html.twig', array(
+                    'piechart' => $pieChart,
+                )
 
-        );
-    }
-}
+            );
+        }
+    }}
