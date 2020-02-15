@@ -19,6 +19,7 @@
       <parameter key="AppBundle">AppBundle\AppBundle</parameter>
       <parameter key="ElitBundle">ElitBundle\ElitBundle</parameter>
       <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="CMENGoogleChartsBundle">CMEN\GoogleChartsBundle\CMENGoogleChartsBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -75,6 +76,11 @@
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\friendsofsymfony\user-bundle</parameter>
         <parameter key="namespace">FOS\UserBundle</parameter>
+      </parameter>
+      <parameter key="CMENGoogleChartsBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\cmen\google-charts-bundle</parameter>
+        <parameter key="namespace">CMEN\GoogleChartsBundle</parameter>
       </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
@@ -394,6 +400,8 @@
       <parameter>ResetPassword</parameter>
       <parameter>Default</parameter>
     </parameter>
+    <parameter key="cmen_google_charts.version">current</parameter>
+    <parameter key="cmen_google_charts.language"></parameter>
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -3057,6 +3065,9 @@
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="twig.extension.webprofiler"/>
       </call>
       <call method="addGlobal">
@@ -4158,6 +4169,25 @@
       <call method="setContainer">
         <argument type="service" id="service_container"/>
       </call>
+    </service>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput" public="false"/>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\OptionsOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\OptionsOutput" public="false">
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput"/>
+    </service>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\DataOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\DataOutput" public="false">
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\DateOutput"/>
+    </service>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\EventsOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\EventsOutput" public="false"/>
+    <service id="CMEN\GoogleChartsBundle\Output\Javascript\ChartOutput" class="CMEN\GoogleChartsBundle\Output\Javascript\ChartOutput" public="false">
+      <argument>current</argument>
+      <argument></argument>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\OptionsOutput"/>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\DataOutput"/>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\EventsOutput"/>
+    </service>
+    <service id="CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension" class="CMEN\GoogleChartsBundle\Twig\GoogleChartsExtension" public="false">
+      <tag name="twig.extension"/>
+      <argument type="service" id="CMEN\GoogleChartsBundle\Output\Javascript\ChartOutput"/>
     </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>

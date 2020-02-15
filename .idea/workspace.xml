@@ -17,7 +17,6 @@
       <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/f5/f55cc0fc57c23cbf7884d927ba6c3fe2092c67d0f3fc3a82a6c596e90a0c9473.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/f5/f55cc0fc57c23cbf7884d927ba6c3fe2092c67d0f3fc3a82a6c596e90a0c9473.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -108,19 +107,19 @@
       <command value="s generate:doctrine:crud" />
       <command value="s generate:doctrine:crud " />
       <command value="s generate:doctrine:crud  --overwrite" />
-      <command value="s doctrine:schema:update --force" />
       <command value="s server:run" />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -185,39 +184,45 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1581178855772" />
-    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581633600709">
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581773766722">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581633600709" />
+    <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581773766722" />
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1581774212193">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581774212193" />
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581774005987">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581774005987" />
     <state x="684" y="398" key="ComposerCompositePathDialog" timestamp="1581178855772" />
     <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
     <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1581178855772" />
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state width="1860" height="278" key="GridCell.Tab.0.bottom" timestamp="1581623108324">
+    <state width="1192" height="280" key="GridCell.Tab.0.bottom" timestamp="1581774534653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="278" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
-    <state width="1860" height="278" key="GridCell.Tab.0.center" timestamp="1581623108324">
+    <state width="1192" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581774534653" />
+    <state width="1192" height="280" key="GridCell.Tab.0.center" timestamp="1581774534653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="278" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
-    <state width="1860" height="278" key="GridCell.Tab.0.left" timestamp="1581623108324">
+    <state width="1192" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581774534653" />
+    <state width="1192" height="280" key="GridCell.Tab.0.left" timestamp="1581774534653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="278" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
-    <state width="1860" height="278" key="GridCell.Tab.0.right" timestamp="1581623108324">
+    <state width="1192" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581774534653" />
+    <state width="1192" height="280" key="GridCell.Tab.0.right" timestamp="1581774534653">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1860" height="278" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581623108324" />
+    <state width="1192" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581774534653" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1581178855772" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581622375639">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581774534665">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581622375639" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581774534665" />
   </component>
 </project>
