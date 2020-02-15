@@ -1,0 +1,83 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+    <h1>Complaints list</h1>
+
+
+<hr>
+<h1>Complaint list</h1>
+
+<div class="row">
+    <div class="col-md-3 col-md-3 col-sm-3 col-xs-12">
+        <div class="hpanel responsive-mg-b-30">
+            <div class="panel-body">
+
+                <ul class="mailbox-list">
+                    <li class="active">
+                        <a href="#">
+                            <span class="pull-right"></span>
+                            <i class="fa fa-envelope"></i> Inbox
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('complaints_new')}}"><i class="fa fa-pencil"></i>Create complaint</a>
+                    </li>
+                </ul>
+            </div>
+        </div> </div>
+    <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">
+        <div class="panel">
+            <div class="panel-heading built mailbox-hd">
+                <div class="text-center p-xs font-normal">
+                    <div class="input-group">
+                        <input type="text" class="form-control input-sm" placeholder="Search email in your inbox..."> <span class="input-group-btn active-hook"> <button type="button" class="btn btn-sm btn-default">Search
+											</button> </span></div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-md-6 col-sm-6 col-xs-8">
+                        <div class="btn-group ib-btn-gp active-hook mail-btn-sd mg-b-15">
+
+                            <a href="{{ path('complaints_index')}}"><i class="fa fa-refresh"></i>Refresh</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="table-responsive ib-tb">
+                    <table class="table table-hover table-mailbox">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>From</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for complaint in complaints %}
+                            <tr class="unread">
+                                <td><a href="{{ path('complaints_show', { 'id': complaint.id }) }}">{{ complaint.id }}</a></td>
+                                <td>{{ complaint.title }}</td>
+                                <td>{{ complaint.email }}</td>
+                                <td class="text-left mail-date"> {{ complaint.date|date('Y-m-d H:i:s') }} </td>
+
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('complaints_show', { 'id': complaint.id }) }}">show</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+{% endblock %}

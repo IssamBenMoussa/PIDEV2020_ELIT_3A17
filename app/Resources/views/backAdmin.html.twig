@@ -9,7 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- icons fontawesome -->
     <link href="{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}" rel="stylesheet">
-
+    <script src="{{ asset ('kiaalap-master/kiaalap-master/js/summernote/summernote.min.js')}}"> </script>
+    <script src="{{ asset ('kiaalap-master/kiaalap-master/js/summernote/summernote-active.js')}}"> </script>
 
     <!-- favicon
 		============================================ -->
@@ -92,7 +93,7 @@
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
 
-                            <li><a title="Dashboard v.1" href="{{ asset('kiaalap-master/kiaalap-master/index.html')}}"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
+                            <li><a title="Dashboard v.1" href="{{ path('homepage') }}"> <span class="mini-sub-pro">Returnhome</span></a></li>
                             <li><a title="Dashboard v.2" href="{{ asset('kiaalap-master/kiaalap-master/index-1.html')}}"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
                             <li><a title="Dashboard v.3" href="{{ asset('kiaalap-master/kiaalap-master/index-2.html')}}"><span class="mini-sub-pro">Dashboard v.3</span></a></li>
                             <li><a title="Analytics" href="{{ asset('kiaalap-master/kiaalap-master/analytics.html')}}"><span class="mini-sub-pro">Analytics</span></a></li>
@@ -1073,9 +1074,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>Copyright © 2018. All rights reserved. Template by <a href="https://colorlib.com/wp/templates/">Colorlib</a></p>
-                        </div>
+
                     </div>
                 </div>
             </div>

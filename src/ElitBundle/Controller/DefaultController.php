@@ -10,4 +10,12 @@ class DefaultController extends Controller
     {
         return $this->render('@Elit/Default/index.html.twig');
     }
+//    public function signinAction()
+//    {
+//        return $this->render('login.html.twig') ;
+//    }
+//    public function signupAction()
+//    {
+//        return $this->render('register.html.twig') ;
+//    }
 }

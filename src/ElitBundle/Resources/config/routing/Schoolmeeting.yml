@@ -1,0 +1,24 @@
+schoolmeeting_index:
+    path:     /
+    defaults: { _controller: "ElitBundle:Schoolmeeting:index" }
+    methods:  GET
+
+schoolmeeting_show:
+    path:     /{id}/show
+    defaults: { _controller: "ElitBundle:Schoolmeeting:show" }
+    methods:  GET
+
+schoolmeeting_new:
+    path:     /new
+    defaults: { _controller: "ElitBundle:Schoolmeeting:new" }
+    methods:  [GET, POST]
+
+schoolmeeting_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ElitBundle:Schoolmeeting:edit" }
+    methods:  [GET, POST]
+
+schoolmeeting_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ElitBundle:Equipement:delete" }
+    methods:  DELETE

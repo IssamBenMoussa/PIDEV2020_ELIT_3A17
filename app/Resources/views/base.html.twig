@@ -74,6 +74,12 @@
                             <a href="#test-form" class="login popup-with-form">
                                 <i class="flaticon-user"></i>
                                 <span>log in</span>
+                                {% if not (is_granted('IS_AUTHENTICATED_FULLY'))  %} {% endif %}
+                                <a href="{{ path('fos_user_security_login') }}" >
+                                    <i class="flaticon-user"></i>
+
+                                </a>
+
                             </a>
                             <div class="live_chat_btn">
                                 <a class="boxed_btn_orange" href="#">

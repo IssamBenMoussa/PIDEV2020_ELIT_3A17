@@ -1,91 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>Login V1</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--===============================================================================================-->
-    <link rel="icon" type="image/png" href="{{ asset('Login_v1/images/icons/favicon.ico') }}"/>
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/vendor/bootstrap/css/bootstrap.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/vendor/animate/animate.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/vendor/css-hamburgers/hamburgers.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/vendor/select2/select2.min.css') }}">
-    <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/css/util.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v1/css/main.css') }}">
-    <!--===============================================================================================-->
-</head>
-<body>
 
-<div class="limiter">
-    <div class="container-login100">
-        <div class="wrap-login100">
-            <div class="login100-pic js-tilt" data-tilt>
-                <img src="{{ asset('Login_v1/images/img-01.png') }}" alt="IMG">
-            </div>
-
-            <form class="login100-form validate-form">
-					<span class="login100-form-title">
-						Member Login
-					</span>
-                {% block content %}
+Member Login
+</span>
+{% block content %}
+    {% block fos_user_content %}{% endblock %}
 
 
-                        {% if error %}
-                            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                        {% endif %}
-
-                        <form action="{{ path("fos_user_security_check") }}" method="post">
-                            {% if csrf_token %}
-                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                            {% endif %}
-
-                            <br><br/>
-                            <label for="username">{{ 'username'|trans }}</label>
-                            <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
-
-                            <br> <label for="password">{{ 'password'|trans }}</label>
-                            <input type="password" id="password" name="_password" required="required" autocomplete="current-password" /></br>
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
 
 
-                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                            <label for="remember_me">{{ 'remember me '|trans }}</label>
+    <form action="{{ path("fos_user_security_check") }}" method="post">
+        {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+        {% endif %}
 
-                            <input class="btn btn-custon-four btn-primary" type="submit" value="{{ 'log in'|trans }}" />
-                            <br><br/>
-                        </form>
+        <br><br/>
+        <label for="username">{{ 'username'|trans }}</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
 
-                {% endblock %}
-            </form>
-        </div>
-    </div>
+        <br> <label for="password">{{ 'password'|trans }}</label>
+        <input type="password" id="password" name="_password" required="required" autocomplete="current-password" /></br>
+
+
+        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+        <label for="remember_me">{{ 'remember me '|trans }}</label>
+
+        <input class="btn btn-custon-four btn-primary" type="submit" value="{{ 'log in'|trans }}" />
+        <br><br/>
+    </form>
+
+{% endblock %}
+</form>
 </div>
-
-
-
-
-<!--===============================================================================================-->
-<script src="{{ asset('Login_v1/vendor/jquery/jquery-3.2.1.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('Login_v1/vendor/bootstrap/js/popper.js') }}"></script>
-<script src="{{ asset('Login_v1/vendor/bootstrap/js/bootstrap.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('Login_v1/vendor/select2/select2.min.js') }}"></script>
-<!--===============================================================================================-->
-<script src="{{ asset('Login_v1/vendor/tilt/tilt.jquery.min.js') }}"></script>
-<script >
-    $('.js-tilt').tilt({
-        scale: 1.1
-    })
-</script>
-<!--===============================================================================================-->
-<script src="{{ asset('Login_v1/js/main.js') }}"></script>
-
-</body>
-</html>

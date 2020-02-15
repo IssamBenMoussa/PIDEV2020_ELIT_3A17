@@ -48,3 +48,13 @@ elit_event:
     resource: "@ElitBundle/Resources/config/routing/event.yml"
     prefix:   /event
 
+elit_complaints:
+    resource: "@ElitBundle/Resources/config/routing/complaints.yml"
+    prefix:   /complaints
+
+
+
+elit_schoolmeeting:
+    resource: "@ElitBundle/Resources/config/routing/Schoolmeeting.yml"
+    prefix:     /schoolmeeting
+
