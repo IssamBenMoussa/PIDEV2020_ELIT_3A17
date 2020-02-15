@@ -69,10 +69,10 @@ class application
         $this->idrendezvous = $idrendezvous;
     }
     /**
+
      * @ORM\ManyToOne(targetEntity="ElitBundle\Entity\rendezvous")
      * @ORM\JoinColumn(name="id_rendezvous",referencedColumnName="id")
      *
-
      */
     private $idrendezvous;
     /**
@@ -111,24 +111,6 @@ class application
      * @ORM\Column(name="frais", type="integer")
      */
     private $frais;
-
-    /**
-     * @return int
-     */
-    public function getCin()
-    {
-        return $this->cin;
-    }
-
-    /**
-     * @param int $cin
-     */
-    public function setCin($cin)
-    {
-        $this->cin = $cin;
-    }
-
-
 
     /**
      * @return string

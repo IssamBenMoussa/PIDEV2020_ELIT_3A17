@@ -29,6 +29,15 @@ class Module
     private $title;
 
 
+
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="admin", type="string", length=255)
+     */
+    private $admin;
+
     /**
      * @var string
      *
@@ -59,13 +68,6 @@ class Module
      */
     private $creationDate;
 
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="logo", type="string", length=255)
-     */
-    private $logo;
 
 
     public function __toString()
@@ -135,7 +137,7 @@ class Module
      * Get creationDate
      *
      * @return \DateTime
-     */
+      */
     public function getCreationDate()
     {
         return $this->creationDate;
@@ -143,22 +145,6 @@ class Module
 
 
 
-
-    /**
-     * @return string
-     */
-    public function getLogo()
-    {
-        return $this->logo;
-    }
-
-    /**
-     * @param string $logo
-     */
-    public function setLogo($logo)
-    {
-        $this->logo = $logo;
-    }
 
 
 

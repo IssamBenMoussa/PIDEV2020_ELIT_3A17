@@ -14,7 +14,7 @@
                     <div class="sparkline13-list">
                         <div class="sparkline13-hd">
                             <div class="main-sparkline13-hd">
-                                <h1>Events List</h1>
+                                <h1>Modules List</h1>
                             </div>
                         </div>
                         <div class="sparkline13-graph">
@@ -26,26 +26,23 @@
                                     <tr>
 
                                         <th data-field="xx" data-editable="false">Title</th>
-                                        <th data-field="id">Start Date</th>
-                                        <th data-field="name" data-editable="false">Start Hour</th>
-                                        <th data-field="email" data-editable="fasle">Description</th>
-                                        <th data-field="phone" data-editable="false">Logo</th>
-                                        <th data-field="complete">Club</th>
-                                        <th data-field="task" data-editable="false">Classroom</th>
+                                        <th data-field="id">description</th>
+                                        <th data-field="name" data-editable="false">creation date</th>
+                                        <th data-field="email" data-editable="fasle">admin</th>
                                         <th data-field="action">Action</th>
 
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {% for module in modules %}
+                                    {% for e in modules %}
                                         <tr>
 
-                                            <td> {{module.nom}}</td>
-
-
-
-                                            <td> <a href="{{ path('module_edit', { 'id': module.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
-                                                <a href="{{ path('module_show', { 'id': module.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+                                            <td> {{e.title}}</td>
+                                            <td> {{e.description}}</td>
+                                            <td> {{e.CreationDate|date('d/m/Y')}}</td>
+                                            <td> {{e.admin}}</td>
+                                            <td> <a href="{{ path('module_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                                                <a href="{{ path('module_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
                                             </td>
 
                                         </tr>
@@ -63,7 +60,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('module_new') }}"><button type="button" class="btn btn-warning">Create a new Module !</button></a>
+            <a href="{{ path('module_new') }}"><button type="button" class="btn btn-warning">Create a new Event !</button></a>
         </li>
     </ul>
 {% endblock %}
