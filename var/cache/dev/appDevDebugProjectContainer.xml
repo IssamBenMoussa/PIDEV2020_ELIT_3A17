@@ -2408,7 +2408,7 @@
         <argument>null</argument>
       </call>
       <call method="add">
-        <argument type="service" id="security.request_matcher.aacjb1y"/>
+        <argument type="service" id="security.request_matcher.3vova4s"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
         </argument>
@@ -2425,6 +2425,62 @@
         <argument type="service" id="security.request_matcher.f12i61p"/>
         <argument type="collection">
           <argument>ROLE_TEACHER</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.25ywujk"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.kpy8bfw"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.oscreid"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.abmduur"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.shgv5l6"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.mj8tiva"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.dorwqck"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.xagqdbz"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -2903,14 +2959,38 @@
     <service id="security.request_matcher.x0_yxqh" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/admin/</argument>
     </service>
-    <service id="security.request_matcher.aacjb1y" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-      <argument>^/E/*</argument>
+    <service id="security.request_matcher.3vova4s" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/application</argument>
     </service>
     <service id="security.request_matcher.glzalvl" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/S/</argument>
     </service>
     <service id="security.request_matcher.f12i61p" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/T/</argument>
+    </service>
+    <service id="security.request_matcher.25ywujk" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/rendez</argument>
+    </service>
+    <service id="security.request_matcher.kpy8bfw" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/lessons</argument>
+    </service>
+    <service id="security.request_matcher.oscreid" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/classrooms</argument>
+    </service>
+    <service id="security.request_matcher.abmduur" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/equipement</argument>
+    </service>
+    <service id="security.request_matcher.shgv5l6" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/club</argument>
+    </service>
+    <service id="security.request_matcher.mj8tiva" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/event</argument>
+    </service>
+    <service id="security.request_matcher.dorwqck" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/classes</argument>
+    </service>
+    <service id="security.request_matcher.xagqdbz" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/module</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>
