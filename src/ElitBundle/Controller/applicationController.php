@@ -125,22 +125,30 @@ class applicationController extends Controller
 
     public function statAction()
     {
+        $pieChart = new PieChart();
+        $em= $this->getDoctrine();
+        $classes = $em->getRepository(application::class)->findAll();
+        $totalEtudiant=0;
+        foreach($classes as $classe) {
+            $totalEtudiant=$totalEtudiant+$classe->getfrais();
+        }
 
+        $data= array();
+        $stat=['classe', 'nbEtudiant'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach($classes as $classe) {
+            $stat=array();
+            array_push($stat,$classe->getNom(),(($classe->getfrais()) *100)/$totalEtudiant);
+            $nb=($classe->getfrais() *100)/$totalEtudiant;
+            $stat=[$classe->getNom(),$nb];
+            array_push($data,$stat);
 
-        $applications = $this->getDoctrine()->getRepository(application::class)->findAll();
-        $frais = 0;
-        $nombremois = 0;
+        }
 
-        foreach ($applications as $application) {
-            $frais = $application->getfrais();
-            $nombremois = $application->getnombremoispayer()*291;
-            $pieChart = new PieChart();
-
-            $pieChart->getData()->setArrayToDataTable(array(
-                ['Task', 'payement'],
-                ['frais a payer', $frais],
-                ['montant payer', $nombremois],
-            ));
+        $pieChart->getData()->setArrayToDataTable(
+            $data
+);
 
             $pieChart->getOptions()->setTitle('payment per student');
             $pieChart->getOptions()->setHeight(400);
@@ -155,4 +163,4 @@ class applicationController extends Controller
 
             );
         }
-    }}
+    }

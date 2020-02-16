@@ -67,6 +67,7 @@ class ComposerStaticInita2133872cdca057339e484de1bc9293c
         array (
             'Fig\\Link\\' => 9,
             'FOS\\UserBundle\\' => 15,
+            'FOS\\MessageBundle\\' => 18,
         ),
         'D' => 
         array (
@@ -205,6 +206,10 @@ class ComposerStaticInita2133872cdca057339e484de1bc9293c
         'FOS\\UserBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
+        ),
+        'FOS\\MessageBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/message-bundle',
         ),
         'Doctrine\\Instantiator\\' => 
         array (
