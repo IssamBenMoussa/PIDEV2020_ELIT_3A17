@@ -2,21 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PIDEV2020.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PIDEV2020.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/application/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/application/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/module/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/edit.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/module/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/rendezvous/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/rendezvous/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/module/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/module/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/rendezvousType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/rendezvousType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/ModuleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/ModuleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/annotations.map" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/annotations.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/55/55b34786235d219566857b808d6a07f7df21ad1d4390496813c73b7311f37eee.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/55/55b34786235d219566857b808d6a07f7df21ad1d4390496813c73b7311f37eee.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/d6/d6c310b402b870d0b94958bb6ce799b78fd63a59d62e0cda1573a8afc6eb0479.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/d6/d6c310b402b870d0b94958bb6ce799b78fd63a59d62e0cda1573a8afc6eb0479.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/twig/f5/f55cc0fc57c23cbf7884d927ba6c3fe2092c67d0f3fc3a82a6c596e90a0c9473.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/twig/f5/f55cc0fc57c23cbf7884d927ba6c3fe2092c67d0f3fc3a82a6c596e90a0c9473.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -112,15 +115,15 @@
       <command value="s server:run" />
     </option>
   </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
+  <component name="RunDashboard">
+    <option name="ruleStates">
       <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
       </list>
     </option>
   </component>
@@ -169,6 +172,7 @@
       <workItem from="1581780923443" duration="430000" />
       <workItem from="1581804619148" duration="710000" />
       <workItem from="1581805789415" duration="780000" />
+      <workItem from="1581880415918" duration="709000" />
     </task>
     <servers />
   </component>
