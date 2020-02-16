@@ -19,7 +19,6 @@
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -80,6 +79,9 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/doctrine-cache-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
+      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
+      <path value="$PROJECT_DIR$/vendor/jms/metadata" />
+      <path value="$PROJECT_DIR$/vendor/vich/uploader-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XO5zwFjvOT3Rk1r5vzCjjlXBoj" />
@@ -111,19 +113,19 @@
       <command value="s generate:doctrine:crud" />
       <command value="s generate:doctrine:crud " />
       <command value="s generate:doctrine:crud  --overwrite" />
-      <command value="s doctrine:schema:update --force" />
       <command value="s server:run" />
+      <command value="s doctrine:schema:update --force" />
     </option>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
+  <component name="ServiceViewManager">
+    <option name="viewStates">
       <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
       </list>
     </option>
   </component>
@@ -209,29 +211,29 @@
     <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
     <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1581178855772" />
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state width="1184" height="280" key="GridCell.Tab.0.bottom" timestamp="1581780718910">
+    <state width="1609" height="280" key="GridCell.Tab.0.bottom" timestamp="1581884265101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1184" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581780718910" />
-    <state width="1184" height="280" key="GridCell.Tab.0.center" timestamp="1581780718910">
+    <state width="1609" height="280" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581884265101" />
+    <state width="1609" height="280" key="GridCell.Tab.0.center" timestamp="1581884265101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1184" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581780718910" />
-    <state width="1184" height="280" key="GridCell.Tab.0.left" timestamp="1581780718910">
+    <state width="1609" height="280" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581884265101" />
+    <state width="1609" height="280" key="GridCell.Tab.0.left" timestamp="1581884265101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1184" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581780718910" />
-    <state width="1184" height="280" key="GridCell.Tab.0.right" timestamp="1581780718910">
+    <state width="1609" height="280" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581884265101" />
+    <state width="1609" height="280" key="GridCell.Tab.0.right" timestamp="1581884265101">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1184" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581780718910" />
+    <state width="1609" height="280" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581884265101" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1581178855772" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581806131351">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581884172499">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581806131351" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581884172499" />
   </component>
 </project>

@@ -3767,6 +3767,7 @@
     <service id="doctrine.orm.default_configuration" class="Doctrine\ORM\Configuration" public="false">
       <call method="setEntityNamespaces">
         <argument type="collection">
+          <argument key="AppBundle">AppBundle\Entity</argument>
           <argument key="ElitBundle">ElitBundle\Entity</argument>
         </argument>
       </call>
@@ -3813,10 +3814,15 @@
     <service id="doctrine.orm.default_annotation_metadata_driver" class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
       <argument type="service" id="annotations.cached_reader"/>
       <argument type="collection">
+        <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\src\AppBundle\Entity</argument>
         <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\src\ElitBundle\Entity</argument>
       </argument>
     </service>
     <service id="doctrine.orm.default_metadata_driver" class="Doctrine\Common\Persistence\Mapping\Driver\MappingDriverChain" public="false">
+      <call method="addDriver">
+        <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
+        <argument>AppBundle\Entity</argument>
+      </call>
       <call method="addDriver">
         <argument type="service" id="doctrine.orm.default_annotation_metadata_driver"/>
         <argument>ElitBundle\Entity</argument>
