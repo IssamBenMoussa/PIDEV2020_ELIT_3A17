@@ -137,4 +137,25 @@ class complaintsController extends Controller
             ->getForm()
             ;
     }
+
+ public function searchAction(Request $request) {
+    $em = $this->getDoctrine()->getManager();
+    $requestString = $request->get('q');
+    $complaints =  $em->getRepository('ElitBundle:complaints')->findEntitiesByString($requestString);
+    if(!$complaints) {
+        $result['complaints']['error'] = "Complaint Not found :( ";
+    } else {
+        $result['complaints'] = $this->getRealEntities($complaints);
+    }
+    return new Response(json_encode($result)); }
+
+public function getRealEntities($complaints){
+    foreach ($complaints as $complaints){
+        $realEntities[$complaints->getId()] = [$complaints->getDate(),$complaints->getTitle()];
+
+    }
+    return $realEntities;
+}
+
+
 }

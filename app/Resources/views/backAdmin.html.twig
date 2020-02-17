@@ -1080,7 +1080,16 @@
             </div>
         </div>
     </div>
+    <!-- include libraries(jQuery, bootstrap) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src={{ asset( 'https://code.jquery.com/jquery-3.4.1.min.js')}}></script>
+    <script src={{ asset( 'https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}></script>
+    <script src={{ asset( 'https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js')}}></script>
 
+
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
+    
     <!-- jquery
         ============================================ -->
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/vendor/jquery-1.12.4.min.js')}}"></script>
@@ -1138,10 +1147,12 @@
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/plugins.js')}}"></script>
     <!-- main JS
         ============================================ -->
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/main.js')}}"></script>
-    <!-- tawk chat JS
-        ============================================ -->
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/tawk-chat.js')}}"></script>
+{#    <script src="{{ asset('kiaalap-master/kiaalap-master/js/main.js')}}"></script>#}
+{#    <!-- tawk chat JS#}
+{#        ============================================ -->#}
+{#    <script src="{{ asset('kiaalap-master/kiaalap-master/js/tawk-chat.js')}}"></script>#}
 </body>
+
+
 
 </html>

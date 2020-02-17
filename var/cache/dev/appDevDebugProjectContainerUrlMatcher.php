@@ -899,6 +899,16 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     }
                     not_complaints_delete:
 
+                    // ajax_search
+                    if ('/E/complaints/search' === $pathinfo) {
+                        return array (  '_controller' => 'ElitBundle\\Controller\\complaintsController::searchAction',  '_route' => 'ajax_search',);
+                    }
+
+                    // complaints_mail
+                    if (0 === strpos($pathinfo, '/E/complaints/mail') && preg_match('#^/E/complaints/mail/(?P<complaints>[^/]++)$#sD', $pathinfo, $matches)) {
+                        return $this->mergeDefaults(array_replace($matches, ['_route' => 'complaints_mail']), array (  '_controller' => 'ElitBundle\\Controller\\complaintsController::mailAction',));
+                    }
+
                 }
 
             }

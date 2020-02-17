@@ -10,4 +10,15 @@ namespace ElitBundle\Repository;
  */
 class complaintsRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findEntitiesByString($str){
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p
+                FROM ElitBundle:complaints p
+                WHERE p.title LIKE :str'
+            )
+            ->setParameter('str', '%'.$str.'%')
+            ->getResult();
+    }
+
 }
