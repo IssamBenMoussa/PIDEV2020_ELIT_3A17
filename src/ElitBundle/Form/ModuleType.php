@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\File;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ModuleType extends AbstractType
 {
@@ -26,6 +27,7 @@ class ModuleType extends AbstractType
                     'format'=>'M/d/y']
 
             )
+            ->add('imageFile',VichImageType::class)
 
             ->add('admin');
     }/**

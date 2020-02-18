@@ -72,6 +72,18 @@ sensio_framework_extra:
    router:
         annotations: false
 
+
+vich_uploader:
+    db_driver: orm
+
+    mappings:
+        modules:
+            uri_prefix: /images/modules
+            upload_destination: '%kernel.project_dir%/images/module'
+
+
+
+
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
