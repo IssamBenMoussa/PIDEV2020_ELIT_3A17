@@ -23,17 +23,34 @@ class complaintsController extends Controller
      *
      * @Route("/", name="complaints_index")
      * @Method("GET")
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+//        $em = $this->getDoctrine()->getManager();
+//
+//        $complaints = $em->getRepository('ElitBundle:complaints')->findAll();
+//        $pagination = $paginator->paginate(
+//            $query, /* query NOT result */
+//            $request->query->getInt('page', 1), /*page number*/
+//            10 /*limit per page*/
+//        );
+//
+//        return $this->render('complaints/index.html.twig', array(
+//            'complaints' => $complaints,
+//        ));
+        $complaints = $this->getDoctrine()->getRepository('ElitBundle:complaints')->findAll();
 
-        $complaints = $em->getRepository('ElitBundle:complaints')->findAll();
-
+        $complaints = $this->get('knp_paginator')->paginate(
+            $complaints, $request->query->get('page',1)/*page number*/,
+            2 /*limit per page*/
+        );
         return $this->render('complaints/index.html.twig', array(
-            'complaints' => $complaints,
+            'complaints' => $complaints
         ));
     }
+
 
     /**
      * Finds and displays a complaint entity.

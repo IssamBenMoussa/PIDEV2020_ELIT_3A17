@@ -29,6 +29,16 @@ class Schoolmeeting
     private $date;
 
     /**
+     * @return \DateTime
+     */
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="startsDate", type="date")
+     */
+    private $startsDate;
+    /**
      * @var string
      *
      * @ORM\Column(name="subject", type="string", length=255)
@@ -48,26 +58,7 @@ class Schoolmeeting
      * @ORM\Column(name="type", type="string", length=255)
      */
     private $type;
-    /**
-     * @ORM\ManyToMany(targetEntity="ElitBundle\Entity\Student", mappedBy="students")
-     */
-    private $students;
 
-    /**
-     * @return mixed
-     */
-    public function getStudents()
-    {
-        return $this->students;
-    }
-
-    /**
-     * @param mixed $students
-     */
-    public function setStudents($students)
-    {
-        $this->students = $students;
-    }
 
 
 
@@ -175,6 +166,18 @@ class Schoolmeeting
     public function getType()
     {
         return $this->type;
+    }
+    public function getStartsDate()
+    {
+        return $this->startsDate;
+    }
+
+    /**
+     * @param \DateTime $startsDate
+     */
+    public function setStartsDate($startsDate)
+    {
+        $this->startsDate = $startsDate;
     }
 }
 

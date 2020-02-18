@@ -1,12 +1,10 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-    <h1>Complaints list</h1>
-
 
 <hr>
 <h1>Complaint list</h1>
-
+<br>
 <div class="row">
     <div class="col-md-3 col-md-3 col-sm-3 col-xs-12">
         <div class="hpanel responsive-mg-b-30">
@@ -26,74 +24,69 @@
                 </ul>
             </div>
         </div> </div>
-{#    <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">#}
-{#        <div class="panel">#}
-{#            <div class="panel-heading built mailbox-hd">#}
-{#                <div class="text-center p-xs font-normal">#}
-{#                    <div class="sidebar-search ">#}
-{#                        <input type="text" id="search" class="form-control input-sm" placeholder="Search complaints in your inbox...">#}
-{#											</div>         </div>#}
+    <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">
+        <div class="panel">
+
+
+{#           <h2> search</h2>#}
+{#            <div class="sidebar-search">#}
+{#                <div class="input-group custom-search-form">#}
+{#                    <input type="text" id="search" class="form-control" placeholder="search in complaints">#}
+{#                </div>#}
 {#            </div>#}
-
-           <h2> search</h2>
-            <div class="sidebar-search">
-                <div class="input-group custom-search-form">
-                    <input type="text" id="search" class="form-control" placeholder="search in complaints">
-                </div>
-            </div>
-            <ul class="nav" id="side-menu">
-            <li><a href="#">SEARCH RESULTS<span class="fa arrow"></span></a></li>
-            </ul>
+{#            <ul class="nav" id="side-menu">#}
+{#            <li><a href="#">SEARCH RESULTS<span class="fa arrow"></span></a></li>#}
+{#            </ul>#}
 
 
-            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-            <script type="text/javascript">
-            jQuery(document).ready(function () {
-                var searchRequest = null ;
-$("search").keyup(function () {
-var minlength=1 ;
-var that= this ;
-var value = $(this).val();
-var entitySelector= $("entitiesNav").html('');
-if (value.length>=minlength) {
-    if (searchRequest != null) {
-        searchRequest.abort() ;
-        searchRequest=$.ajax({
-            type: "GET" ,
-            url: "{{ path('ajax_search') }}",
-            data: {
-                'q':value
-            },
-            dataType: "text" ,
-            success: function (msg) {
-                if (value===$(that).val() ) {
-                    var result=JSON.parse(msg) ;
-                    $.each(result, function (key,arr) {
-                        $.each(arr, function(id, value){
-                            if (key==='complaints') {
-                                if (id!=='error') {
-                                    console.log(value[1]) ;
-                                    entitySelector.append('<li><b>'+value[1]+ '</b><a href="/'+id+'/show">'+'</a></li>' );
-                                } else
-                                {entitySelector.append('<li class"errorLi">'+value+'</li>') ;}
-                                                    }
-                                                        }
+{#            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>#}
+{#            <script type="text/javascript">#}
+{#            jQuery(document).ready(function () {#}
+{#                var searchRequest = null ;#}
+{#$("search").keyup(function () {#}
+{#var minlength=1 ;#}
+{#var that= this ;#}
+{#var value = $(this).val();#}
+{#var entitySelector= $("entitiesNav").html('');#}
+{#if (value.length>=minlength) {#}
+{#    if (searchRequest != null) {#}
+{#        searchRequest.abort() ;#}
+{#        searchRequest=$.ajax({#}
+{#            type: "GET" ,#}
+{#            url: "{{ path('ajax_search') }}",#}
+{#            data: {#}
+{#                'q':value#}
+{#            },#}
+{#            dataType: "text" ,#}
+{#            success: function (msg) {#}
+{#                if (value===$(that).val() ) {#}
+{#                    var result=JSON.parse(msg) ;#}
+{#                    $.each(result, function (key,arr) {#}
+{#                        $.each(arr, function(id, value){#}
+{#                            if (key==='complaints') {#}
+{#                                if (id!=='error') {#}
+{#                                    console.log(value[1]) ;#}
+{#                                    entitySelector.append('<li><b>'+value[1]+ '</b><a href="/'+id+'/show">'+'</a></li>' );#}
+{#                                } else#}
+{#                                {entitySelector.append('<li class"errorLi">'+value+'</li>') ;}#}
+{#                                                    }#}
+{#                                                        }#}
 
-                        )
+{#                        )#}
 
-                    })
-                }
+{#                    })#}
+{#                }#}
 
-            }
-        })
+{#            }#}
+{#        })#}
 
-    }
-}
-})
+{#    }#}
+{#}#}
+{#})#}
 
-            })
-            </script>
-    
+{#            })#}
+{#            </script>#}
+
 
             <div class="panel-body">
                 <div class="row">
@@ -106,7 +99,7 @@ if (value.length>=minlength) {
 
                 </div>
                 <div class="table-responsive ib-tb">
-                    <table class="table table-hover table-mailbox">
+                    <table class="table table-hover table-mailbox" >
                         <thead>
                         <tr>
                             <th>Id</th>
@@ -137,9 +130,10 @@ if (value.length>=minlength) {
 
                         {% endfor %}
 
-
+                        {{ knp_pagination_render(complaints) }}
                         </tbody>
                     </table>
                 </div>
             </div>
+
 {% endblock %}

@@ -117,6 +117,20 @@ class SchoolmeetingController extends Controller
 
         return $this->redirectToRoute('schoolmeeting_index');
     }
+    /**
+     * Lists all event entities.
+     *
+     */
+    public function calendarAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $schoolmeetings = $em->getRepository('ElitBundle:Schoolmeeting')->findAll();
+
+        return $this->render('schoolmeeting/calendrier.html.twig', array(
+            'schoolmeetings' => $schoolmeetings,
+        ));
+    }
 
     /**
      * Creates a form to delete a schoolmeeting entity.

@@ -13,7 +13,7 @@ class SchoolmeetingType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('subject')->add('concerned')->add('type')->add('students');
+        $builder->add('date')->add('subject')->add('concerned')->add('type')->add('startsDate');
     }/**
      * {@inheritdoc}
      */

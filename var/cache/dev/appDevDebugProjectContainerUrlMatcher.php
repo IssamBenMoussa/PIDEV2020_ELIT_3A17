@@ -1114,7 +1114,7 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
 
                 // schoolmeeting_delete
                 if (preg_match('#^/E/schoolmeeting/(?P<id>[^/]++)/delete$#sD', $pathinfo, $matches)) {
-                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'schoolmeeting_delete']), array (  '_controller' => 'ElitBundle\\Controller\\EquipementController::deleteAction',));
+                    $ret = $this->mergeDefaults(array_replace($matches, ['_route' => 'schoolmeeting_delete']), array (  '_controller' => 'ElitBundle\\Controller\\SchoolmeetingController::deleteAction',));
                     if (!in_array($requestMethod, ['DELETE'])) {
                         $allow = array_merge($allow, ['DELETE']);
                         goto not_schoolmeeting_delete;
@@ -1123,6 +1123,18 @@ class appDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                     return $ret;
                 }
                 not_schoolmeeting_delete:
+
+                // schoolmeeting_calendrier
+                if ('/E/schoolmeeting/calendrier' === $pathinfo) {
+                    $ret = array (  '_controller' => 'ElitBundle\\Controller\\SchoolmeetingController::calendarAction',  '_route' => 'schoolmeeting_calendrier',);
+                    if (!in_array($canonicalMethod, ['GET'])) {
+                        $allow = array_merge($allow, ['GET']);
+                        goto not_schoolmeeting_calendrier;
+                    }
+
+                    return $ret;
+                }
+                not_schoolmeeting_calendrier:
 
             }
 

@@ -20,5 +20,9 @@ schoolmeeting_edit:
 
 schoolmeeting_delete:
     path:     /{id}/delete
-    defaults: { _controller: "ElitBundle:Equipement:delete" }
+    defaults: { _controller: "ElitBundle:Schoolmeeting:delete" }
     methods:  DELETE
+schoolmeeting_calendrier:
+    path:     /calendrier
+    defaults: { _controller: "ElitBundle:Schoolmeeting:calendar" }
+    methods:  GET
