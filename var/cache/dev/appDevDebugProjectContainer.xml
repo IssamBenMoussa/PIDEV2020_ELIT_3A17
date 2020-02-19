@@ -128,6 +128,7 @@
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+    <parameter key="brochures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/public/uploads/brochures</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="pictures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/issam_pic</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
@@ -411,8 +412,8 @@
     <parameter key="vich_uploader.default_filename_attribute_suffix">_name</parameter>
     <parameter key="vich_uploader.mappings" type="collection">
       <parameter key="modules" type="collection">
-        <parameter key="uri_prefix">/images/modules</parameter>
-        <parameter key="upload_destination">C:\wamp\www\PIDEV2020_ELIT_3A17/images/module</parameter>
+        <parameter key="uri_prefix">/../images/modules</parameter>
+        <parameter key="upload_destination">C:\wamp\www\PIDEV2020_ELIT_3A17/../images/module</parameter>
         <parameter key="namer" type="collection">
           <parameter key="service">null</parameter>
           <parameter key="options">null</parameter>
@@ -1754,14 +1755,6 @@
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
-        <argument>console.command</argument>
         <argument type="collection">
           <argument type="service" id="debug.debug_handlers_listener"/>
           <argument>configure</argument>

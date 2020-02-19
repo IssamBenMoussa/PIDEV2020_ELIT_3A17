@@ -1,87 +1,59 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
+    <h1>modules list</h1>
 
-    <br>
-
-    <br>
-    <BR>
-    <!-- Static Table Start -->
-    <div class="data-table-area mg-b-15">
+    <div class="courses-area">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="sparkline13-list">
-                        <div class="sparkline13-hd">
-                            <div class="main-sparkline13-hd">
-                                <h1>Modules List</h1>
+                {% for module in modules %}
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="courses-inner res-mg-b-30">
+                            <a href="{{ path('module_show',{'id':module.id}) }}">
+                                <img src="{{ asset('/../images/module/')~ module.imageName }}"  style="width: 200px; /* width of container */
+    height: 200px; /* height of container */
+    object-fit: cover;
+    object-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+">
+                                <h1 style="text-align: center;font-size: 42px">{{ module.title }}</h1>
+                            </a>
+                            <div class="courses-alaltic">
+                <span class="cr-ic-r">
+                    <span class="course-icon">
+                        <i class="fas fa-user-tie"></i>
+                        {{ module.admin }}
+                    </span>
+
+
+                                <div class="course-des">
+
+                                    <p style="color:red;font-weight: bold ">Creation date :</p
+                                    ><p> {% if module.creationDate %}{{ module.creationDate|date('d/m/Y') }}{% endif %}</p>
+                                    <p style="color:red;font-weight: bold ">Description : </p>
+                                    <p>{{ module.description }}</p>
+                                </div>
+
+
+
+
+
                             </div>
-                        </div>
-                        <div class="sparkline13-graph">
-                            <div class="datatable-dashv1-list custom-datatable-overright">
 
-                                <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
-                                    <thead>
-                                    <tr>
-
-                                        <th data-field="xx" data-editable="false">Title</th>
-                                        <th data-field="id">description</th>
-                                        <th data-field="name" data-editable="false">creation date</th>
-                                        <th data-field="email" data-editable="fasle">admin</th>
-                                        <th data-field="action">Action</th>
-
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {% for e in modules %}
-                                        <tr>
-
-                                            <td> {{e.title}}</td>
-                                            <td> {{e.description}}</td>
-                                            <td> {{e.CreationDate|date('d/m/Y')}}</td>
-                                            <td> {{e.admin}}</td>
-                                            <td> <a href="{{ path('module_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
-                                                <a href="{{ path('module_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
-                                            </td>
-
-                                        </tr>
-                                    {% endfor %}
-                                    </tbody>
-                                </table>
-                            </div>
                         </div>
                     </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </div>
-    <!-- Static Table End -->
-
+    <br>
     <ul>
         <li>
-            <a href="{{ path('module_new') }}"><button type="button" class="btn btn-warning">Create a new Module !</button></a>
+            <a  class="" href="{{ path('module_new') }}"><button type="button" class="btn btn-warning">Create a new Module !</button>
+            </a>
         </li>
     </ul>
+    <br>
 {% endblock %}
-{% block javascripts %}
-    <script>
-
-
-
-    </script>
-    <!-- data table JS
-		============================================ -->
-
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
-    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
-
-
-{% endblock %}
-

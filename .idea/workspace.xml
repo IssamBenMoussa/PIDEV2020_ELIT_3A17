@@ -3,17 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/lessons/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/lessons/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/lessons/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/lessons/new.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/lessons/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/lessons/show.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/module/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/module/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/LessonsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/LessonsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Lessons.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Lessons.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/ModuleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/ModuleType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Teacher.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/LessonsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/LessonsType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/applicationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/applicationType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/uploads/issam_pic/957240-5e47b49a1308b.jpeg" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +117,7 @@
       <command value="s generate:doctrine:crud" />
       <command value="s generate:doctrine:crud " />
       <command value="s generate:doctrine:crud  --overwrite" />
+      <command value="s doctrine:generate:entities TranslateBundle:Module" />
       <command value="s server:run" />
       <command value="s doctrine:schema:update --force" />
     </option>
@@ -174,7 +182,9 @@
       <workItem from="1581880415918" duration="709000" />
       <workItem from="1581885214499" duration="945000" />
       <workItem from="1582011133013" duration="720000" />
-      <workItem from="1582017820549" duration="5964000" />
+      <workItem from="1582017820549" duration="8525000" />
+      <workItem from="1582075927049" duration="18352000" />
+      <workItem from="1582141437045" duration="236000" />
     </task>
     <servers />
   </component>

@@ -1,16 +1,30 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'backAdmin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
 {% block content %}
-    <h1>Lesson creation</h1>
-
+    <h1>Event creation</h1>
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+
+    {{ form_row(form.nomCours) }}
+    {{ form_row(form.Module) }}
+    {{ form_row(form.admin) }}
+    {{ form_row(form.brochure) }}
+    <input type="submit" value="Create" class="btn btn-success" />
     {{ form_end(form) }}
 
+<br>
+<br>
     <ul>
         <li>
             <a href="{{ path('lessons_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+
+
 {% endblock %}

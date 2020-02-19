@@ -5,6 +5,7 @@ namespace ElitBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
 
 
 
@@ -36,6 +37,29 @@ class Module
      */
     private $title;
 
+    /**
+     * @return mixed
+     */
+    public function getLessons()
+    {
+        return $this->lessons;
+    }
+
+    /**
+     * @param mixed $lessons
+     */
+    public function setLessons($lessons)
+    {
+        $this->lessons = $lessons;
+    }
+
+
+    /**
+     *
+     *
+     * @ORM\OneToMany(targetEntity="Lessons",mappedBy="Module")
+     */
+    private $lessons;
 
 
     /**
@@ -216,6 +240,22 @@ class Module
     public function getImageName(): ?string
     {
         return $this->imageName;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
     }
 
 
