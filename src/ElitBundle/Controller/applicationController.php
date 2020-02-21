@@ -139,9 +139,9 @@ class applicationController extends Controller
         array_push($data,$stat);
         foreach($classes as $classe) {
             $stat=array();
-            array_push($stat,$classe->getNom(),(($classe->getfrais()) *100)/$totalEtudiant);
+            array_push($stat,$classe->getniveauscolaire(),(($classe->getfrais()) *100)/$totalEtudiant);
             $nb=($classe->getfrais() *100)/$totalEtudiant;
-            $stat=[$classe->getNom(),$nb];
+            $stat=[$classe->getniveauscolaire(),$nb];
             array_push($data,$stat);
 
         }
@@ -150,9 +150,9 @@ class applicationController extends Controller
             $data
 );
 
-            $pieChart->getOptions()->setTitle('payment per student');
-            $pieChart->getOptions()->setHeight(400);
-            $pieChart->getOptions()->setWidth(400);
+            $pieChart->getOptions()->setTitle('payment per grade');
+            $pieChart->getOptions()->setHeight(1000);
+            $pieChart->getOptions()->setWidth(1000);
             $pieChart->getOptions()->getTitleTextStyle()->setColor('#07600');
             $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
 
