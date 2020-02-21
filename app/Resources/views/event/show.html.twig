@@ -4,12 +4,9 @@
     <div id="container">
     <h1>Event</h1>
 
-    <table>
+    <table class="table">
         <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ event.id }}</td>
-            </tr>
+
             <tr>
                 <th>Title</th>
                 <td>{{ event.title }}</td>
@@ -28,8 +25,21 @@
             </tr>
             <tr>
                 <th>Logo</th>
-                <td>{{ event.logo }}</td>
+                <td><img src="{{ asset('uploads/issam_pic/')~ event.logo }}" width="200" height="200" style="display: block;
+  margin-left: auto;
+  margin-right: auto;"></td>
             </tr>
+
+            <tr>
+
+                <th>Equipements</th>
+                <td>
+                {% for q in event.equipements %}
+                {{ q }} |
+                {% endfor %}
+                </td>
+            </tr>
+
         </tbody>
     </table>
 

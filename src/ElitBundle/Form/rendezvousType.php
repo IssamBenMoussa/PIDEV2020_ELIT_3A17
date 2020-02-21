@@ -3,6 +3,8 @@
 namespace ElitBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -13,10 +15,17 @@ class rendezvousType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder ->add('id')
+        $builder
+            ->add('cin')
             ->add('nom')
             ->add('prenom')
-            ->add('date')
+           ->add('date', DateTimeType::class, [
+                   'placeholder' => [
+                       'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
+                       'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',
+                   ] ]
+
+            )
            ;
     }/**
      * {@inheritdoc}

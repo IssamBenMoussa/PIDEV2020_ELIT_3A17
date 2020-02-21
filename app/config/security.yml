@@ -21,6 +21,7 @@ security:
             form_login:
                 provider: fos_userbundle
                 csrf_token_generator: security.csrf.token_manager
+                login_path: fos_user_security_login
 
             logout:       true
             anonymous:    true
@@ -31,6 +32,14 @@ security:
         - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/admin/, role: ROLE_ADMIN }
 
-        - { path: ^/E/*, role: ROLE_ADMIN }
+        - { path: ^/E/application, role: ROLE_ADMIN }
         - { path: ^/S/, role: ROLE_STUDENT }
         - { path: ^/T/, role: ROLE_TEACHER }
+        - {path: ^/E/rendez, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/E/lessons, role: ROLE_ADMIN }
+        - { path: ^/E/classrooms, role: ROLE_ADMIN }
+        - { path: ^/E/equipement, role: ROLE_ADMIN }
+        - { path: ^/E/club, role: ROLE_ADMIN }
+        - { path: ^/E/event, role: ROLE_ADMIN }
+        - { path: ^/E/classes, role: ROLE_ADMIN }
+        - { path: ^/E/module, role: ROLE_ADMIN }

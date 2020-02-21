@@ -2,9 +2,14 @@
 
 namespace ElitBundle\Controller;
 
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use ElitBundle\Entity\Club;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Form\FormError;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Filesystem\Filesystem;
+
 
 /**
  * Club controller.
@@ -36,15 +41,47 @@ class ClubController extends Controller
         $club = new Club();
         $form = $this->createForm('ElitBundle\Form\ClubType', $club);
         $form->handleRequest($request);
-
+try{
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $pictureFile = $form->get('logo')->getData();
+
+
+
+            if ($pictureFile) {
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME);
+
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$pictureFile->guessExtension();
+
+
+                try {
+                    $pictureFile->move(
+                        $this->getParameter('pictures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+                $club->setLogo($newFilename);
+            }
+            else {
+                $club->setLogo("u.png");
+            }
+
+
+
+
             $em->persist($club);
             $em->flush();
 
             return $this->redirectToRoute('club_show', array('id' => $club->getId()));
         }
-
+}catch (UniqueConstraintViolationException $e)
+{
+    $form->get('president')->addError(new FormError('Duplicated value !'));
+}
         return $this->render('club/new.html.twig', array(
             'club' => $club,
             'form' => $form->createView(),
@@ -74,12 +111,51 @@ class ClubController extends Controller
         $deleteForm = $this->createDeleteForm($club);
         $editForm = $this->createForm('ElitBundle\Form\ClubType', $club);
         $editForm->handleRequest($request);
-
+try{
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
+
+            $pictureFile = $editForm->get('logo')->getData();
+
+
+
+            if ($pictureFile) {
+
+                //delete old
+                $file=$club->getLogo();
+                if($file!="u.png") {
+                    $path = $this->getParameter('pictures_directory') . '/' . $file;
+                    $fs = new Filesystem();
+                    $fs->remove(array($path));
+                }
+                //
+                $originalFilename = pathinfo($pictureFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // this is needed to safely include the file name as part of the URL
+                $safeFilename = transliterator_transliterate('Any-Latin; Latin-ASCII; [^A-Za-z0-9_] remove; Lower()', $originalFilename);
+                $newFilename = $safeFilename.'-'.uniqid().'.'.$pictureFile->guessExtension();
+
+                // Move the file to the directory where brochures are stored
+                try {
+                    $pictureFile->move(
+                        $this->getParameter('pictures_directory'),
+                        $newFilename
+                    );
+                } catch (FileException $e) {
+                    // ... handle exception if something happens during file upload
+                }
+
+                $club->setLogo($newFilename);
+            }
+
+
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('club_edit', array('id' => $club->getId()));
         }
+}catch (UniqueConstraintViolationException $e)
+{
+    $editForm->get('president')->addError(new FormError('Duplicated value !'));
+}
 
         return $this->render('club/edit.html.twig', array(
             'club' => $club,
@@ -98,6 +174,16 @@ class ClubController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            //delete old
+            $file=$club->getLogo();
+            if($file!="u.png"){
+            $path=$this->getParameter('pictures_directory').'/'.$file;
+            $fs = new Filesystem();
+            $fs->remove(array($path));
+            }
+            //
+
+
             $em = $this->getDoctrine()->getManager();
             $em->remove($club);
             $em->flush();

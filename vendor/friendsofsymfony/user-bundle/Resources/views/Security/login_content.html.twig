@@ -36,41 +36,44 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="login100-pic js-tilt" data-tilt>
-                    <img src="{{ asset('Login_v1/images/img-01.png') }}" alt="IMG">
+                    <img src="{{ asset('uploads/issam_pic/elit.png') }}" alt="IMG">
                 </div>
 
-                <form1 class="login100-form validate-form">
+                <form class="login100-form validate-form">
 					<span class="login100-form-title">
 						Member Login
 					</span>
 
 
 
-                    {% if error %}
-                        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-                    {% endif %}
-
-                    <form2 action="{{ path("fos_user_security_check") }}" method="post">
-                        {% if csrf_token %}
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        {% if error %}
+                            <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                         {% endif %}
 
-                        <br><br/>
-                        <label for="username">{{ 'username'|trans }}</label>
-                        <input type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+                        <form action="{{ path("fos_user_security_check") }}" method="post">
+                            {% if csrf_token %}
+                                <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                            {% endif %}
 
-                        <br> <label for="password">{{ 'password'|trans }}</label>
-                        <input type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+                            <br><br/>
+                            <label for="username">{{ 'username'|trans }} </label>
 
+                            <input type="text" class="input100" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
 
-                        <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-                        <label for="remember_me">{{ 'remember me '|trans }}</label>
+                            <br> <label for="password">{{ 'password'|trans }}</label>
+                            <input type="password"  class="input100" id="password" name="_password" required="required" autocomplete="current-password" />
 
-                        <input class="btn btn-custon-four btn-primary" type="submit" value="{{ 'log in'|trans }}" />
-                        <br><br/>
-                    </form2>
+<br>
+                            <br>
+                            <br>
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on" class="input100" />
+                            <label for="remember_me">{{ 'remember me '|trans }}</label>
+                            <br><br>
+                            <input class="btn btn-custon-four btn-primary" type="submit" value="{{ 'log in'|trans }}" />
+                            <br>
+                        </form>
 
-                </form1>
+                </form>
             </div>
         </div>
     </div>

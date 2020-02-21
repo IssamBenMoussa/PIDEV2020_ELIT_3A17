@@ -3,13 +3,22 @@
 namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
+
+
 
 /**
  * Module
  *
  * @ORM\Table(name="module")
  * @ORM\Entity(repositoryClass="ElitBundle\Repository\ModuleRepository")
+ * @Vich\Uploadable
  */
+
+
+
 class Module
 {
     /**
@@ -24,23 +33,109 @@ class Module
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
-    private $nom;
+    private $title;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="nombre_cours", type="integer")
+     * @return mixed
      */
-    private $nombreCours;
+    public function getLessons()
+    {
+        return $this->lessons;
+    }
+
+    /**
+     * @param mixed $lessons
+     */
+    public function setLessons($lessons)
+    {
+        $this->lessons = $lessons;
+    }
+
+
+    /**
+     *
+     *
+     * @ORM\OneToMany(targetEntity="Lessons",mappedBy="Module")
+     */
+    private $lessons;
+
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     *
+     * @Vich\UploadableField(mapping="modules", fileNameProperty="imageName")
+     *
+     * @var File|null
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @var string|null
+     */
+    private $imageName;
+
+
+
+    /**
+     * @ORM\Column(type="datetime")
+     *
+     * @var \DateTimeInterface|null
+     */
+    private $updatedAt;
+
+
+
+
+
 
     /**
      * @var string
      *
-     * @ORM\Column(name="disponibilite_module", type="string", length=255)
+     * @ORM\Column(name="admin", type="string", length=255)
      */
-    private $disponibiliteModule;
+    private $admin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=255)
+     */
+    private $description;
+
+    /**
+     * @return mixed
+     */
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+
+    /**
+     * @param mixed $admin
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+    }
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="creationDate", type="datetime")
+     */
+    private $creationDate;
+
+
+
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
 
 
     /**
@@ -54,80 +149,126 @@ class Module
     }
 
     /**
-     * Set nom
-     *
-     * @param string $nom
-     *
-     * @return Module
-     */
-    public function setNom($nom)
-    {
-        $this->nom = $nom;
-    
-        return $this;
-    }
-
-    /**
-     * Get nom
-     *
      * @return string
      */
-    public function getNom()
+    public function getTitle()
     {
-        return $this->nom;
+        return $this->title;
     }
 
     /**
-     * Set nombreCours
-     *
-     * @param integer $nombreCours
-     *
-     * @return Module
+     * @param string $title
      */
-    public function setNombreCours($nombreCours)
+    public function setTitle($title)
     {
-        $this->nombreCours = $nombreCours;
-    
-        return $this;
+        $this->title = $title;
     }
 
     /**
-     * Get nombreCours
-     *
-     * @return integer
-     */
-    public function getNombreCours()
-    {
-        return $this->nombreCours;
-    }
-
-    /**
-     * Set disponibiliteModule
-     *
-     * @param string $disponibiliteModule
-     *
-     * @return Module
-     */
-    public function setDisponibiliteModule($disponibiliteModule)
-    {
-        $this->disponibiliteModule = $disponibiliteModule;
-    
-        return $this;
-    }
-
-    /**
-     * Get disponibiliteModule
-     *
      * @return string
      */
-    public function getDisponibiliteModule()
+    public function getDescription()
     {
-        return $this->disponibiliteModule;
+        return $this->description;
     }
 
-    public function __toString(){
-
-        return $this->nom;
+    /**
+     * @param string $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
+
+    /**
+     * Set creationDate
+     *
+     * @param \DateTime $creationDate
+     *
+     * @return Module
+     */
+    public function setCreationDate($creationDate)
+    {
+        $this->creationDate = $creationDate;
+
+        return $this;
+    }
+
+    /**
+     * Get creationDate
+     *
+     * @return \DateTime
+      */
+    public function getCreationDate()
+    {
+        return $this->creationDate;
+    }
+
+
+
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
+     */
+    public function setImageFile(?File $imageFile = null): void
+    {
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageName(?string $imageName): void
+    {
+        $this->imageName = $imageName;
+    }
+
+    public function getImageName(): ?string
+    {
+        return $this->imageName;
+    }
+
+    /**
+     * @return \DateTimeInterface|null
+     */
+    public function getUpdatedAt()
+    {
+        return $this->updatedAt;
+    }
+
+    /**
+     * @param \DateTimeInterface|null $updatedAt
+     */
+    public function setUpdatedAt($updatedAt)
+    {
+        $this->updatedAt = $updatedAt;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 

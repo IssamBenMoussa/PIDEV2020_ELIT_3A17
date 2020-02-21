@@ -1,43 +1,59 @@
-{% extends 'base.html.twig' %}
+{% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-    <h1>Modules list</h1>
+    <h1>modules list</h1>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Nombrecours</th>
-                <th>Disponibilitemodule</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for module in modules %}
-            <tr>
-                <td><a href="{{ path('module_show', { 'id': module.id }) }}">{{ module.id }}</a></td>
-                <td>{{ module.nom }}</td>
-                <td>{{ module.nombreCours }}</td>
-                <td>{{ module.disponibiliteModule }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('module_show', { 'id': module.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('module_edit', { 'id': module.id }) }}">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="courses-area">
+        <div class="container-fluid">
+            <div class="row">
+                {% for module in modules %}
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="courses-inner res-mg-b-30">
+                            <a href="{{ path('module_show',{'id':module.id}) }}">
+                                <img src="{{ asset('/../images/module/')~ module.imageName }}"  style="width: 200px; /* width of container */
+    height: 200px; /* height of container */
+    object-fit: cover;
+    object-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+">
+                                <h1 style="text-align: center;font-size: 42px">{{ module.title }}</h1>
+                            </a>
+                            <div class="courses-alaltic">
+                <span class="cr-ic-r">
+                    <span class="course-icon">
+                        <i class="fas fa-user-tie"></i>
+                        {{ module.admin }}
+                    </span>
 
+
+                                <div class="course-des">
+
+                                    <p style="color:red;font-weight: bold ">Creation date :</p
+                                    ><p> {% if module.creationDate %}{{ module.creationDate|date('d/m/Y') }}{% endif %}</p>
+                                    <p style="color:red;font-weight: bold ">Description : </p>
+                                    <p>{{ module.description }}</p>
+                                </div>
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <br>
     <ul>
         <li>
-            <a href="{{ path('module_new') }}">Create a new module</a>
+            <a  class="" href="{{ path('module_new') }}"><button type="button" class="btn btn-warning">Create a new Module !</button>
+            </a>
         </li>
     </ul>
+    <br>
 {% endblock %}

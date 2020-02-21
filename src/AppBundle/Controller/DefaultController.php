@@ -15,7 +15,7 @@ class DefaultController extends Controller
     public function backAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('backAdmin.html.twig');
+        return $this->render('base.html.twig');
 
     }
 }

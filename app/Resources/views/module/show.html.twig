@@ -1,40 +1,53 @@
-{% extends 'base.html.twig' %}
+{% extends 'backAdmin.html.twig' %}
 
 {% block content %}
     <h1>Module</h1>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ module.id }}</td>
-            </tr>
-            <tr>
-                <th>Nom</th>
-                <td>{{ module.nom }}</td>
-            </tr>
-            <tr>
-                <th>Nombrecours</th>
-                <td>{{ module.nombreCours }}</td>
-            </tr>
-            <tr>
-                <th>Disponibilitemodule</th>
-                <td>{{ module.disponibiliteModule }}</td>
-            </tr>
-        </tbody>
+    <table class="table table-sm">
+
+
+        <tr class=" bg-info">
+            <th>Title</th>
+            <td>{{ module.title }}</td>
+        </tr>
+        <tr class="bg-primary">
+            <th>Admin</th>
+            <td >{{ module.admin }}</td>
+        </tr>
+        <tr class="bg-success">
+            <th>Description</th>
+            <td>{{ module.description }}</td>
+        </tr>
+        <tr class="bg-warning">
+            <th>Creation date</th>
+            <td>{% if module.creationDate %}{{ module.creationDate|date('d/m/Y') }}{% endif %}</td>
+        </tr>
+        <tr>
+
+
+            <img src="{{ asset('/../images/module/')~ module.imageName }}"  style="width: 200px; /* width of container */
+    height: 200px; /* height of container */
+    object-fit: cover;
+    object-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+">
+        </tr>
+
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('module_index') }}">Back to the list</a>
+            <a href="{{ path('module_index') }}"><button type="button" class="btn btn-info">Back to the list</button></a>
+            <a href="{{ path('module_edit', { 'id': module.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
         </li>
-        <li>
-            <a href="{{ path('module_edit', { 'id': module.id }) }}">Edit</a>
-        </li>
+        <br>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+            <input type="submit" value="Delete" class="btn btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+    <br>
 {% endblock %}

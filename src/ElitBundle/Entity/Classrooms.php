@@ -124,5 +124,10 @@ class Classrooms
     {
         return $this->bloc;
     }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
 }
 

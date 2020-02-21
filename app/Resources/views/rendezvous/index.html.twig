@@ -1,51 +1,83 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-<section class="content">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="box">
-                <br></br>
-                <div class="box-header"><center>
 
-                        <h3 class="box-title"> appointment list </h3></center>
-                </div><!-- /.box-header -->
-                <div class="box-body table-responsive">
-                    <table id="example2" class="table table-bordered table-hover">
-                        <thead>
-            <tr>
-                <th>nom</th>
-                <th>prenom</th>
-                <th>Date</th>
+    <br>
 
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for rendezvous in rendezvouses %}
-            <tr>
-                <td>{{ rendezvous.nom }}</td>
-                <td>{{ rendezvous.prenom }}</td>
-                <td>{% if rendezvous.date %}{{ rendezvous.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+    <br>
+    <BR>
+    <!-- Static Table Start -->
+    <div class="data-table-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <h1>appointment List</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline13-graph">
+                            <div class="datatable-dashv1-list custom-datatable-overright">
 
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('rendez_show', { 'id': rendezvous.id }) }}"class="btn btn-danger">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('rendez_edit', { 'id': rendezvous.id }) }}"class="btn btn-success">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+                                <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                    <thead>
+                                    <tr>
+                                        <th data-field="cin" >cin</th>
+                                        <th data-field="xx">nom</th>
+                                        <th data-field="id" data-editable="false">prenom</th>
+                                        <th data-field="date" data-editable="false">date</th>
+                                        <th data-field="action">Action</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for r in rendezvouses %}
+                                        <tr>
+                                            <td> {{r.cin}}</td>
+                                            <td> {{r.nom}}</td>
+                                            <td> {{r.prenom}}</td>
+                                            <td> {{r.date|date('d/m/Y')}}</td>
+                                            <td> <a href="{{ path('rendez_edit', { 'id': r.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                                                <a href="{{ path('rendez_show', { 'id': r.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+                                            </td>
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Static Table End -->
 
     <ul>
-        <li>
-            <a href="{{ path('rendez_new') }}">Create a new rendezvous</a>
-        </li>
+
     </ul>
 {% endblock %}
+{% block javascripts %}
+    <script>
+
+
+
+    </script>
+    <!-- data table JS
+		============================================ -->
+
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
+
+
+{% endblock %}
+

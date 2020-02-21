@@ -22,6 +22,22 @@ class Lessons
     private $id;
 
     /**
+     * @return string
+     */
+    public function getNomCours()
+    {
+        return $this->nomCours;
+    }
+
+    /**
+     * @param string $nomCours
+     */
+    public function setNomCours($nomCours)
+    {
+        $this->nomCours = $nomCours;
+    }
+
+    /**
      * @var string
      *
      * @ORM\Column(name="nom_cours", type="string", length=255)
@@ -29,36 +45,75 @@ class Lessons
     private $nomCours;
 
     /**
-     * @var int
+     * @var string
      *
-     * @ORM\Column(name="nombre_fichiers", type="integer")
+     * @ORM\Column(name="admin", type="string", length=255)
      */
-    private $nombreFichiers;
-
+    private $admin;
 
     /**
-
-     * @ORM\ManyToOne(targetEntity="ElitBundle\Entity\Module")
-     * @ORM\JoinColumn(name="id_Module",referencedColumnName="id")
-     *
+     * @return string
      */
-    private $idModule;
+    public function getAdmin()
+    {
+        return $this->admin;
+    }
+
+    /**
+     * @param string $admin
+     */
+    public function setAdmin($admin)
+    {
+        $this->admin = $admin;
+    }
 
     /**
      * @return mixed
      */
-    public function getIdModule()
+    public function getModule()
     {
-        return $this->idModule;
+        return $this->Module;
     }
 
+
+
+
     /**
-     * @param mixed $idModule
+     * @param mixed $Module
      */
-    public function setIdModule($idModule)
+    public function setModule($Module)
     {
-        $this->idModule = $idModule;
+        $this->Module = $Module;
     }
+
+
+    /**
+
+     * @ORM\ManyToOne(targetEntity="Module",inversedBy="Lessons")
+     * @ORM\JoinColumn(name="id_Module",referencedColumnName="id")
+     *
+     */
+    private $Module;
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $brochureFilename;
+
+    public function getBrochureFilename()
+    {
+        return $this->brochureFilename;
+    }
+
+    public function setBrochureFilename($brochureFilename)
+    {
+        $this->brochureFilename = $brochureFilename;
+
+        return $this;
+    }
+
+
 
     /**
      * @return mixed
@@ -84,12 +139,6 @@ class Lessons
      */
     private $idTeacher;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="autres_supports", type="string", length=255)
-     */
-    private $autresSupports;
 
 
     /**
@@ -100,78 +149,6 @@ class Lessons
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set nomCours
-     *
-     * @param string $nomCours
-     *
-     * @return Lessons
-     */
-    public function setNomCours($nomCours)
-    {
-        $this->nomCours = $nomCours;
-    
-        return $this;
-    }
-
-    /**
-     * Get nomCours
-     *
-     * @return string
-     */
-    public function getNomCours()
-    {
-        return $this->nomCours;
-    }
-
-    /**
-     * Set nombreFichiers
-     *
-     * @param integer $nombreFichiers
-     *
-     * @return Lessons
-     */
-    public function setNombreFichiers($nombreFichiers)
-    {
-        $this->nombreFichiers = $nombreFichiers;
-    
-        return $this;
-    }
-
-    /**
-     * Get nombreFichiers
-     *
-     * @return integer
-     */
-    public function getNombreFichiers()
-    {
-        return $this->nombreFichiers;
-    }
-
-    /**
-     * Set autresSupports
-     *
-     * @param string $autresSupports
-     *
-     * @return Lessons
-     */
-    public function setAutresSupports($autresSupports)
-    {
-        $this->autresSupports = $autresSupports;
-    
-        return $this;
-    }
-
-    /**
-     * Get autresSupports
-     *
-     * @return string
-     */
-    public function getAutresSupports()
-    {
-        return $this->autresSupports;
     }
 }
 

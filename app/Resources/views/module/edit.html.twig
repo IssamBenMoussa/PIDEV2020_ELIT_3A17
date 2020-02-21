@@ -1,21 +1,63 @@
-{% extends 'base.html.twig' %}
-
+{% extends 'backAdmin.html.twig' %}
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+{% endblock %}
 {% block content %}
     <h1>Module edit</h1>
 
+{% form_theme edit_form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
+  {{ form_row(edit_form.title) }}
+    {{ form_row(edit_form.description) }}
+        {{ form_row(edit_form.creationDate)}}
+<h6 style="color:red"  id="er2">*Invalid date (must be superior of today)<h6>
 
+{{ form_row(edit_form.admin) }}
+
+                <input type="submit" value="Edit" class="btn btn-info" />
+                {{ form_end(edit_form) }}
+<br>
+<br>
     <ul>
         <li>
             <a href="{{ path('module_index') }}">Back to the list</a>
         </li>
+        <br>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="btn btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>
+{% endblock %}
+{% block javascripts %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+
+    <script type="text/javascript">
+        $(function()
+        {
+            $('.js-datepicker').datepicker();
+            $("#er").hide();
+            $("#er2").hide();
+        });
+
+
+                $(".js-datepicker").on('change', function () {
+                    var selectedDate =new Date( $(this).val());
+                    var todaysDate = new Date();
+
+                    //alert(todaysDate+" "+selectedDate);
+                    if (selectedDate < todaysDate) {
+                      //  alert('Selected date must be greater than today date');
+                        $(this).val('');
+                        $("#er2").show();
+                    }else
+                    $("#er2").hide();
+                });
+
+
+
+
+    </script>
 {% endblock %}

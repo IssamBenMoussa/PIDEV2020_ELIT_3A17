@@ -194,5 +194,9 @@ class Equipement
         $this->events[] = $e;
     }
 
+    public function __toString()
+    {
+        return $this->getLabel();
+    }
 }
 
