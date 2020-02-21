@@ -29,3 +29,4 @@
 .idea/commandlinetools/Symfony_2_15_20__1_20_AM_s.xml
 .idea/workspace.xml
 app\config\parameters.yml
+app/config/parameters.yml
