@@ -1,12 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block hey %}
+    <script src="{{ asset('notify.js') }}"></script>
+
     <br><br><h1> Schedule your date </h1>
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
     {{ form_start(form) }}
 
         {{ form_widget(form) }}
-    <input class="btn btn-success" type="submit" value="Create" />
+
+
+
+    <input class="btn btn-success" type="submit"  value="Create"     />
     {{ form_end(form) }}
 
 

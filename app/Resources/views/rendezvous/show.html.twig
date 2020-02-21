@@ -1,6 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block hey %}
+
+<head>
+    <script language="javascript" type="text/javascript">
+        alert("proceed to printing your appointement")
+    </script>
+</head>
+
+
 &nbsp  <section class="content" >
     &nbsp <div class="row" align="center">
         &nbsp  <div class="col-xs-12">
@@ -38,6 +46,7 @@
 
         </tbody>
                     </table>
-                        <a title="Print Screen" alt="Print Screen" onclick="window.print();" target="_blank" style="cursor:pointer;"  class="btn btn-success"> print your appointement  </a>
+                        <a title="Print Screen" alt="Print Screen" onclick="window.print();" target="_blank" style="cursor:pointer;"  class="genric-btn primary circle"> print your appointement  </a>
+
 
 {% endblock %}

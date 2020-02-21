@@ -78,6 +78,8 @@
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle" />
       <path value="$PROJECT_DIR$/vendor/cmen/google-charts-bundle" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/message-bundle" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy" />
+      <path value="$PROJECT_DIR$/vendor/knplabs/knp-snappy-bundle" />
     </include_path>
   </component>
   <component name="ProjectId" id="1XO5zwFjvOT3Rk1r5vzCjjlXBoj" />
@@ -115,8 +117,8 @@
       <command value="s generate:doctrine:crud " />
       <command value="composer require fricomposer require friendsofsymfony/message-bundleendsofsymfony/message-bundle" />
       <command value="s generate:doctrine:crud  --overwrite" />
-      <command value="s server:run" />
       <command value="s doctrine:schema:update --force" />
+      <command value="s server:run" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -179,6 +181,7 @@
       <workItem from="1581863098707" duration="214000" />
       <workItem from="1581863529323" duration="1550000" />
       <workItem from="1581865148557" duration="5859000" />
+      <workItem from="1582316139557" duration="680000" />
     </task>
     <servers />
   </component>
@@ -235,9 +238,9 @@
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581178855772" />
     <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1581866548675">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1582316164113">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581866548675" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582316164113" />
   </component>
 </project>

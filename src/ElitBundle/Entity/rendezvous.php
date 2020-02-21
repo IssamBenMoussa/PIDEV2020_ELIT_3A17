@@ -3,7 +3,7 @@
 namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * rendezvous
  *
@@ -33,6 +33,7 @@ class rendezvous
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
+     *
      */
     private $id;
 
@@ -40,6 +41,12 @@ class rendezvous
      * @var int
      *
      * @ORM\Column(name="cin", type="integer")
+     * @Assert\Length(
+     *      min = 8,
+     *      max = 8,
+     *      minMessage = "Your CIN must be at least {{ limit }} characters long",
+     *      maxMessage = "Your CIN cannot be longer than {{ limit }} characters"
+     * )
      */
     private $cin;
     /**
@@ -54,6 +61,12 @@ class rendezvous
      * @var string
      *
      * @ORM\Column(name="prenom", type="string", length=255)
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 8,
+     *      minMessage = "Your first name must be at least {{ limit }} characters long",
+     *      maxMessage = "Your first name cannot be longer than {{ limit }} characters"
+     * )
      */
     private $prenom;
 

@@ -4,6 +4,8 @@ namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * application
  *
@@ -108,8 +110,10 @@ class application
     /**
      * @var int
      *
-     * @ORM\Column(name="frais", type="integer")
+     * @ORM\Column(name="frais", type="integer" )
+
      */
+
     private $frais;
 
     /**

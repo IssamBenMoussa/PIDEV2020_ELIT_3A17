@@ -20,6 +20,7 @@ class rendezvousType extends AbstractType
             ->add('nom')
             ->add('prenom')
            ->add('date', DateTimeType::class, [
+
                    'placeholder' => [
                        'year' => 'Year', 'month' => 'Month', 'day' => 'Day',
                        'hour' => 'Hour', 'minute' => 'Minute', 'second' => 'Second',

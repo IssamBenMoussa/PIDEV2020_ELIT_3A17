@@ -6,7 +6,7 @@ parameters:
     database_user: root
     database_password: null
     mailer_transport: smtp
-    mailer_host: 127.0.0.1
-    mailer_user: null
-    mailer_password: null
+    mailer_host: mohamedhabib.dridi@esprit.tn
+    mailer_user: mohameddridi42@gmail.com
+    mailer_password: 25850529MH
     secret: ThisTokenIsNotSoSecretChangeIt

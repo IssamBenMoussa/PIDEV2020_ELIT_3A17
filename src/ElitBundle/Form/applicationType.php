@@ -17,7 +17,7 @@ class applicationType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('idrendezvous',EntityType::class,array('class'=>'ElitBundle:rendezvous','choice_label'=>'id'))
+        $builder
             ->add('nom',EntityType::class,array('class'=>'ElitBundle:rendezvous','choice_label'=>'nom'))
             ->add('prenom')
             ->add('annee_Scolaire', ChoiceType::class, array('choices' => array(
