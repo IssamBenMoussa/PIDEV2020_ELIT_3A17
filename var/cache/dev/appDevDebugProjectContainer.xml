@@ -120,7 +120,7 @@
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">pidevElit2</parameter>
+    <parameter key="database_name">pidevElit</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -3664,7 +3664,7 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">null</argument>
-        <argument key="dbname">pidevElit2</argument>
+        <argument key="dbname">pidevElit</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
