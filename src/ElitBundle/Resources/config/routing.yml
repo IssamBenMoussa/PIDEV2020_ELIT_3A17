@@ -21,7 +21,11 @@ elit_book:
 elit_categorybook:
     resource: "@ElitBundle/Resources/config/routing/CategoryBook.yml"
     prefix:   /categorybook
-    
+
+elit_reservation:
+    resource: "@ElitBundle/Resources/config/routing/reservation.yml"
+    prefix:   /reservation
+
 elit_classes:
     resource: "@ElitBundle/Resources/config/routing/classes.yml"
     prefix:   /classes

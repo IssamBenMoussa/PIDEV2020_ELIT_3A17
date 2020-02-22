@@ -1,0 +1,18 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+    <h1>Reservation edit</h1>
+    {% form_theme edit_form 'bootstrap_4_layout.html.twig' %}
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input type="submit" value="Accepter" class="btn btn-primary" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('reservation_indexback') }}" class="btn btn-info">Back to the list</a>
+        </li>
+
+    </ul>
+{% endblock %}

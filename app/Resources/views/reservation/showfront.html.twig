@@ -1,0 +1,89 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+<h1>Reservation</h1>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <br></br
+                <div class="box-header"><center>
+                        <h3 class="box-title">Reservation info</h3></center>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+
+                        <tbody>
+                        <tr>
+                            <th>Id</th>
+                            <td>{{ reservation.id }}</td>
+                        </tr>
+                        <tr>
+                            <th>Name</th>
+                            <td>{{ reservation.name }}</td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td>{{ reservation.email }}</td>
+                        </tr>
+                        <tr>
+                            <th>Booktitle</th>
+                            <td>{{ reservation.booktitle }}</td>
+                        </tr>
+                        <tr>
+                            <th>Datereservation</th>
+                            <td>{% if reservation.datereservation %}{{ reservation.datereservation|date('Y-m-d') }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>Datereturn</th>
+                            <td>{% if reservation.datereturn %}{{ reservation.datereturn|date('Y-m-d') }}{% endif %}</td>
+                        </tr>
+                        <tr>
+                            <th>State</th>
+                            <td>{{ reservation.state }}</td>
+                        </tr>
+                        <tr>
+                            <th>Message</th>
+                            <td>{{ reservation.message }}</td>
+                        </tr>
+                        <tr>
+                            <th>Studentkey</th>
+                            <td>{{ reservation.studentkey }}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    <ul>
+                        <li>
+                            <a href="{{ path('reservation_indexback') }}" class="btn btn-info" >Back to the list</a>
+                        </li>
+
+                        <li>
+                            {{ form_start(delete_form) }}
+                            <input type="submit" class="btn btn-danger" value="Delete">
+                            {{ form_end(delete_form) }}
+                        </li>
+                    </ul>
+                    {% endblock %}
+{% block javascripts %}
+    <script>
+
+
+
+    </script>
+    <!-- data table JS
+		============================================ -->
+
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
+
+
+{% endblock %}

@@ -1,0 +1,36 @@
+reservation_index:
+    path:     /
+    defaults: { _controller: "ElitBundle:reservation:index" }
+    methods:  GET
+
+reservation_show:
+    path:     /{id}/show
+    defaults: { _controller: "ElitBundle:reservation:show" }
+    methods:  GET
+reservation_showback:
+    path:     /{id}/showb
+    defaults: { _controller: "ElitBundle:reservation:showback" }
+    methods:  GET
+reservation_new:
+    path:     /new
+    defaults: { _controller: "ElitBundle:reservation:new" }
+    methods:  [GET, POST]
+
+reservation_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ElitBundle:reservation:edit" }
+    methods:  [GET, POST]
+
+reservation_refuse:
+    path:     /{id}/refusereservation
+    defaults: { _controller: "ElitBundle:reservation:refuse" }
+    methods:  [GET, POST]
+
+reservation_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ElitBundle:reservation:delete" }
+    methods:  DELETE
+reservation_indexback:
+    path:     /showb
+    defaults: { _controller: "ElitBundle:reservation:backshow" }
+    methods:  GET
