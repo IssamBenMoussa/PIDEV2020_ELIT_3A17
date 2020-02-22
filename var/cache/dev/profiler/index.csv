@@ -5226,3 +5226,7 @@ caa15e,::1,GET,http://localhost/PIDEV2020_ELIT_3A17/web/app_dev.php/E/img/logo/l
 32a497,::1,GET,http://localhost/PIDEV2020_ELIT_3A17/web/app_dev.php/E/img/contact/2.jpg,1582384474,,404
 f8d9b0,::1,GET,http://localhost/PIDEV2020_ELIT_3A17/web/app_dev.php/E/img/logo/logo.png,1582384474,,404
 >>>>>>> cff10b0a110410d05cdcf002c9800bb3f4affe55
+e4098b,::1,GET,http://localhost/PIDEV2020_ELIT_3A17/web/app_dev.php/login,1582395751,,200
+777943,::1,POST,http://localhost/PIDEV2020_ELIT_3A17/web/app_dev.php/login_check,1582395761,,302
+99537d,::1,GET,http://localhost/PIDEV2020_ELIT_3A17/web/app_dev.php/,1582395761,,200
+2e07dd,::1,GET,http://localhost/PIDEV2020_ELIT_3A17/web/app_dev.php/E/reservation/,1582395765,,200
