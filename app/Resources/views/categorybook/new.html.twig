@@ -1,0 +1,21 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+    <br><br>   <h1>Categorybook creation</h1>
+    {% form_theme form 'bootstrap_4_layout.html.twig' %}
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+    <input class="btn btn-success" type="submit" value="Create" />
+
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+
+            <a class="btn btn-primary" href="{{ path('categorybook_index') }}" role="button">Back to the list</a>
+
+
+        </li>
+    </ul>
+{% endblock %}

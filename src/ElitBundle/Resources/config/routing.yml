@@ -14,7 +14,14 @@ elit_application:
     resource: "@ElitBundle/Resources/config/routing/application.yml"
     prefix:   /application
 
-
+elit_book:
+    resource: "@ElitBundle/Resources/config/routing/book.yml"
+    prefix:   /book
+    
+elit_categorybook:
+    resource: "@ElitBundle/Resources/config/routing/CategoryBook.yml"
+    prefix:   /categorybook
+    
 elit_classes:
     resource: "@ElitBundle/Resources/config/routing/classes.yml"
     prefix:   /classes

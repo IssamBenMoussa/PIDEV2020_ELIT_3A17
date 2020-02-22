@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block hey %}
+    <h1>Books list</h1>
+
+    <table>
+
+        <tbody>
+        {% for book in books %}
+            <br><br>
+        <div class="courses-area">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <div class="courses-inner res-mg-b-30">
+                            <div class="courses-title">
+                                <a> <img src="{{ asset('uploads/imageheni/')~ book.imagebook }}" width="200" height="200" style="display: block;
+  margin-left: auto;
+  margin-right: auto;"></a>
+                                <h2>{{ book.title }}</h2>
+                            </div>
+                            <div class="courses-alaltic">
+                                <span class="cr-ic-r"><span class="course-icon"><i class="fa fa-book"></i></span> <b> number of available books :</b> {{ book.nbrbooks }}</span>
+                            </div>
+                            <div class="course-des">
+                                <p><span><i class="fa fa-book"></i></span> <b> Author : </b>  {{ book.author }}</p>
+                                <p><span><i class="fa fa-book"></i></span> <b>category :</b> {{ book.category }}</p>
+                            </div>
+                            <div class="product-buttons">
+                                <a href="{{ path('book_showbookfront', { 'id': book.id }) }}" class="btn btn-primary">show more</a>
+
+                            </div>
+                        </div>
+
+            </div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+        </li>
+    </ul>
+                    {% endblock %}

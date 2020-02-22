@@ -1,0 +1,66 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+    <h1>Book</h1>
+
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <br></br
+                <div class="box-header"><center>
+                        <h3 class="box-title">book info</h3></center>
+                </div><!-- /.box-header -->
+                <div class="box-body table-responsive">
+                    <table id="example2" class="table table-bordered table-hover">
+                        <thead>
+                        <tr>
+
+                        <tbody>
+                        <tr>
+                <th>Id</th>
+                <td>{{ book.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ book.title }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ book.author }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ book.description }}</td>
+            </tr>
+            <tr>
+                <th>Imagebook</th>
+                <td><img src="{{ asset('uploads/imageheni/')~ book.imagebook }}" width="200" height="200" style="display: block;
+  margin-left: auto;
+  margin-right: auto;"></td>
+            </tr>
+            <tr>
+                <th>Isbn</th>
+                <td>{{ book.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Nbrbooks</th>
+                <td>{{ book.nbrbooks }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('book_index') }}" class="btn btn-info">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('book_edit', { 'id': book.id }) }}" class="btn btn-warning">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input class="btn btn-warning" type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

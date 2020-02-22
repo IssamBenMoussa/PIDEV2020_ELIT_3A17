@@ -1,0 +1,71 @@
+{% extends 'backAdmin.html.twig' %}
+{% block content %}
+<!-- Static Table Start -->
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-16 col-md-16 col-sm-16 col-xs-16">
+                <div class="sparkline13-list">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+                            <h1>reservations List</h1>
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+
+                            <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                   data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for categoryBook in categoryBooks %}
+            <tr>
+                <td><a href="{{ path('categorybook_show', { 'id': categoryBook.id }) }}" class="btn btn-info">{{ categoryBook.id }}</a></td>
+                <td>{{ categoryBook.name }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('categorybook_show', { 'id': categoryBook.id }) }}" class="btn btn-primary">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('categorybook_edit', { 'id': categoryBook.id }) }}" class="btn btn-warning">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('categorybook_new') }}" class="btn btn-secondary">Create a new categoryBook</a>
+        </li>
+    </ul>
+{% endblock %}
+{% block javascripts %}
+    <script>
+
+
+
+    </script>
+    <!-- data table JS
+		============================================ -->
+
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
+
+
+{% endblock %}

@@ -9,6 +9,7 @@ imports:
 parameters:
     locale: en
     pictures_directory: '%kernel.project_dir%/web/uploads/issam_pic'
+    images_directory: '%kernel.project_dir%/web/uploads/imageheni'
 
 framework:
     #esi: ~
@@ -96,3 +97,4 @@ fos_user:
     registration:
         form:
             type: ElitBundle\Form\UserType
+gregwar_captcha: ~
