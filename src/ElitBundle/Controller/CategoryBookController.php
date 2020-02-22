@@ -20,7 +20,7 @@ class CategoryBookController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $categoryBooks = $em->getRepository('ElitBundle:CategoryBook')->findAll();
+        $categoryBooks = $em->getRepository('ElitBundle:Categorybook')->findAll();
 
         return $this->render('categorybook/index.html.twig', array(
             'categoryBooks' => $categoryBooks,
