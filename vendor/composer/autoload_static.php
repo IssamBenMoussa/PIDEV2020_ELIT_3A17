@@ -63,6 +63,10 @@ class ComposerStaticInita2133872cdca057339e484de1bc9293c
         array (
             'Knp\\Bundle\\PaginatorBundle\\' => 27,
         ),
+        'J' => 
+        array (
+            'Joli\\GifExceptionBundle\\' => 24,
+        ),
         'I' => 
         array (
             'Incenteev\\ParameterHandler\\' => 27,
@@ -200,6 +204,10 @@ class ComposerStaticInita2133872cdca057339e484de1bc9293c
         'Knp\\Bundle\\PaginatorBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle',
+        ),
+        'Joli\\GifExceptionBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/jolicode/gif-exception-bundle',
         ),
         'Incenteev\\ParameterHandler\\' => 
         array (

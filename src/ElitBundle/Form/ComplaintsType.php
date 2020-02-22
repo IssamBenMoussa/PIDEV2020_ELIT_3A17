@@ -19,7 +19,7 @@ class ComplaintsType extends AbstractType
         $builder->add('title')
             ->add('content')
             ->add ('email')
-            ->add('file') ;
+            ;
     }/**
      * {@inheritdoc}
      */

@@ -7,12 +7,40 @@
 {#    {{ form_widget(form) }}#}
 {#    <input class="btn btn-custon-four btn-primary" type="submit" value="Create" />#}
 {#    {{ form_end(form) }}#}
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/vendor/jquery-1.12.4.min.js')}}"></script>
+    <link href="{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}" rel="stylesheet">
+    <script src="{{ asset ('kiaalap-master/kiaalap-master/js/summernote/summernote.min.js')}}"> </script>
+    <script src="{{ asset ('kiaalap-master/kiaalap-master/js/summernote/summernote-active.js')}}"> </script>
 
 
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/bootstrap.min.js')}}"></script>
 
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css" rel="stylesheet">
+    <link href="{{ asset('https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src={{ asset( 'https://code.jquery.com/jquery-3.4.1.min.js')}}></script>
+    <script src={{ asset( 'https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')}}></script>
+    <script src={{ asset( 'https://cdn.jsdelivr.net/npm/summernote@0.8.15/dist/summernote.min.js')}}></script>
+  <script>$(document).ready(function() {
+          $('#summernote').summernote();
+      });</script>
 {#         DEBUT#}
 
 <br>
+    <div class="panel-body no-padding">
+        <div class="summernote6">
+            <h5>Hello Jonathan! </h5>
+            <p>Dummy text of the printing and typesetting industry. <strong>Lorem Ipsum has been the dustrys</strong> standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make
+                a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more
+                <br/>
+                <br/>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+                a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. recently with.</p>
+            <p>Mark Smith
+            </p>
+        </div>
+    </div>
 
     <div class="col-md-3"></div>
     <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">
@@ -44,6 +72,8 @@
     </ul>
     <!doctype html>
     <html class="no-js" lang="en">
+
+
 
 
 {% endblock %}
