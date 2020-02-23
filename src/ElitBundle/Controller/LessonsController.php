@@ -38,7 +38,7 @@ class LessonsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            
+            $em = $this->getDoctrine()->getManager();
 			            /** @var UploadedFile $brochureFile */
             $brochureFile = $form->get('brochure')->getData();
 
