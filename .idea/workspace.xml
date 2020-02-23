@@ -112,8 +112,8 @@
       <command value="s fos:user:promote" />
       <command value="s fos:user:promote ali:student" />
       <command value="s fos:user:promote ali" />
-      <command value="s server:run" />
       <command value="s doctrine:schema:update --force" />
+      <command value="s server:run" />
     </option>
   </component>
   <component name="ServiceViewManager">
@@ -184,6 +184,8 @@
       <workItem from="1582409080505" duration="6313000" />
       <workItem from="1582418908316" duration="3339000" />
       <workItem from="1582422604349" duration="3730000" />
+      <workItem from="1582474809322" duration="666000" />
+      <workItem from="1582488514276" duration="4046000" />
     </task>
     <servers />
   </component>
@@ -212,37 +214,45 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581774212193" />
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581774005987">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582491207469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581774005987" />
-    <state x="684" y="398" key="ComposerCompositePathDialog" timestamp="1581178855772" />
-    <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1581178855772" />
-    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state width="1395" height="279" key="GridCell.Tab.0.bottom" timestamp="1582460954479">
+    <state x="690" y="274" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582491207469" />
+    <state x="684" y="398" key="ComposerCompositePathDialog" timestamp="1582474926979">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1395" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582460954479" />
-    <state width="1395" height="279" key="GridCell.Tab.0.center" timestamp="1582460954479">
+    <state x="684" y="398" key="ComposerCompositePathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582474926979" />
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1582474940228">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1395" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582460954479" />
-    <state width="1395" height="279" key="GridCell.Tab.0.left" timestamp="1582460954479">
+    <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582474940228" />
+    <state width="1412" height="279" key="GridCell.Tab.0.bottom" timestamp="1582464050425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1395" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582460954479" />
-    <state width="1395" height="279" key="GridCell.Tab.0.right" timestamp="1582460954479">
+    <state width="1412" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582464050425" />
+    <state width="1412" height="279" key="GridCell.Tab.0.center" timestamp="1582464050425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1395" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582460954479" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1581178855772" />
-    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="727" y="422" key="SymfonyPathDialog" timestamp="1581178855772" />
-    <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581178855772" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1582460954515">
+    <state width="1412" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582464050425" />
+    <state width="1412" height="279" key="GridCell.Tab.0.left" timestamp="1582464050425">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582460954515" />
+    <state width="1412" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582464050425" />
+    <state width="1412" height="279" key="GridCell.Tab.0.right" timestamp="1582464050425">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1412" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582464050425" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1582474945482">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1582474945482" />
+    <state x="727" y="422" key="SymfonyPathDialog" timestamp="1582474942674">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="727" y="422" key="SymfonyPathDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582474942674" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1582488739921">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582488739921" />
   </component>
 </project>

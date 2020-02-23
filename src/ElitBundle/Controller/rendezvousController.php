@@ -121,4 +121,13 @@ class rendezvousController extends Controller
             ->getForm()
         ;
     }
+
+    public function mapAction()
+    {
+
+        return $this->render('rendezvous/map.html.twig', array(
+
+        ));
+    }
+
 }
