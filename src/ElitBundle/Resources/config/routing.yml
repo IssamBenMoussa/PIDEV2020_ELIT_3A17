@@ -59,3 +59,7 @@ elit_event:
     resource: "@ElitBundle/Resources/config/routing/event.yml"
     prefix:   /event
 
+elit_Notification:
+    path: /not
+    defaults: { _controller: ElitBundle:Notification:ajax }
+

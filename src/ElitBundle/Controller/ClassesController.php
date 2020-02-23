@@ -3,7 +3,9 @@
 namespace ElitBundle\Controller;
 
 use ElitBundle\Entity\Classes;
+use ElitBundle\Entity\Notification;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -21,9 +23,10 @@ class ClassesController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $classes = $em->getRepository('ElitBundle:Classes')->findAll();
-
+        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
         return $this->render('classes/index.html.twig', array(
             'classes' => $classes,
+            'notifications' => $notif,
         ));
     }
 
@@ -42,12 +45,13 @@ class ClassesController extends Controller
             $em->persist($class);
             $em->flush();
 
-            return $this->redirectToRoute('classes_show', array('id' => $class->getId()));
+            return $this->redirectToRoute('classes_index', array('id' => $class->getId()));
         }
-
+        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
         return $this->render('classes/new.html.twig', array(
             'class' => $class,
             'form' => $form->createView(),
+            'notifications' => $notif
         ));
     }
 
@@ -58,10 +62,11 @@ class ClassesController extends Controller
     public function showAction(Classes $class)
     {
         $deleteForm = $this->createDeleteForm($class);
-
+        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
         return $this->render('classes/show.html.twig', array(
             'class' => $class,
             'delete_form' => $deleteForm->createView(),
+            'notifications' => $notif,
         ));
     }
 
@@ -80,11 +85,12 @@ class ClassesController extends Controller
 
             return $this->redirectToRoute('classes_edit', array('id' => $class->getId()));
         }
-
+        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
         return $this->render('classes/edit.html.twig', array(
             'class' => $class,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
+            'notifications' => $notif
         ));
     }
 
@@ -104,6 +110,28 @@ class ClassesController extends Controller
         }
 
         return $this->redirectToRoute('classes_index');
+    }
+    /**
+     * Deletes a class entity by id.
+     *
+     */
+    Public function altDeleteAction($id)
+
+    {
+        $em = $this->getDoctrine()->getManager();
+        $class = $em->getRepository(Classes::class)->find($id);
+        $em->remove($class);
+        $em->flush();
+        $response['success'] = true;
+        $response['message'] = 'Deleted Successfully!';
+        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+        return $render = $this->render('Classes/index.html.twig', array(
+            'classes' => $class,
+            'notifications' => $notif,
+        ));
+
+
+
     }
 
     /**
