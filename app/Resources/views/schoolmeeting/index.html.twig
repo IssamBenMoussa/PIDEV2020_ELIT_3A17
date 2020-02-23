@@ -1,0 +1,73 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+<hr>
+<br>
+<h1>Schoolmeetings list</h1>
+<div class="data-table-area mg-b-15">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="sparkline13-list">
+                    <div class="sparkline13-hd">
+                        <div class="main-sparkline13-hd">
+
+                        </div>
+                    </div>
+                    <div class="sparkline13-graph">
+                        <div class="datatable-dashv1-list custom-datatable-overright">
+                            <table id="table" class="table table-bordered table-hover" data-search="true">
+
+
+                                <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Date</th>
+                                    <th>Subject</th>
+                                    <th>Concerned</th>
+                                    <th>Type</th>
+
+
+                                    <th data-field="action">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for schoolmeeting in schoolmeetings %}
+                                    <tr>
+                                        <td><a href="{{ path('schoolmeeting_show', { 'id': schoolmeeting.id }) }}">{{ schoolmeeting.id }}</a></td>
+                                        <td>{% if schoolmeeting.date %}{{ schoolmeeting.date|date('Y-m-d H:i:s') }}{% endif %}</td>
+                                        <td>{{ schoolmeeting.subject }}</td>
+                                        <td>{{ schoolmeeting.concerned }}</td>
+                                        <td>{{ schoolmeeting.type }}</td>
+                                        <td>
+                                            <ul>
+                                                <li>
+                                                    <a href="{{ path('schoolmeeting_show', { 'id': schoolmeeting.id }) }}">show</a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ path('schoolmeeting_edit', { 'id': schoolmeeting.id }) }}">edit</a>
+                                                </li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <ul>
+                                <li>
+                                    <a href="{{ path('schoolmeeting_new') }}">Create a new schoolmeeting</a>
+                                </li>
+                            </ul>
+                            {% block javascripts %}
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
+                                <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
+                            {% endblock %}
+                            {% endblock %}
+
