@@ -40,7 +40,9 @@
 
                                             <td> {{l.nomCours}}</td>
                                             <td> {{l.Module}}</td>
-                                            <td><a href="{{ asset('/../public/uploads/brochures/' ~ l.brochureFilename) }}">{{l.brochureFilename}}</a></td>
+
+                                            <td><a download href="{{ asset('/../uploads/brochures/'~ l.brochureFilename) }}">{{l.brochureFilename}}</a></td>
+
                                             <td> {{l.admin}}</td>
                                         </tr>
                                     {% endfor %}
