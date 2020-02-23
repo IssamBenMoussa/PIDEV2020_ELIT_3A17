@@ -2,6 +2,7 @@
 
 namespace ElitBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use ElitBundle\Entity\application;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -118,7 +119,48 @@ class applicationController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('application_delete', array('id' => $application->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
+
+        public function statAction()
+    {
+        $pieChart = new PieChart();
+        $em= $this->getDoctrine();
+        $classes = $em->getRepository(application::class)->findAll();
+        $totalEtudiant=0;
+        foreach($classes as $classe) {
+            $totalEtudiant=$totalEtudiant+$classe->getfrais();
+        }
+
+        $data= array();
+        $stat=['classe', 'nbEtudiant'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach($classes as $classe) {
+            $stat=array();
+            array_push($stat,$classe->getniveauscolaire(),(($classe->getfrais()) *100)/$totalEtudiant);
+            $nb=($classe->getfrais() *100)/$totalEtudiant;
+            $stat=[$classe->getniveauscolaire(),$nb];
+            array_push($data,$stat);
+
+        }
+
+
+        $pieChart->getData()->setArrayToDataTable(
+                $data
+            );
+
+            $pieChart->getOptions()->setTitle('   PAYMENT PER GRADE');
+            $pieChart->getOptions()->setHeight(1000);
+            $pieChart->getOptions()->setWidth(1000);
+            $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+            $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
+
+
+            return $this->render('application/stat.html.twig', array(
+                    'piechart' => $pieChart,
+                )
+
+            );
+        }
 }
