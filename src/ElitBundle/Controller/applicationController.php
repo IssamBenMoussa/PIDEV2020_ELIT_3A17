@@ -154,7 +154,7 @@ class applicationController extends Controller
             $pieChart->getOptions()->setHeight(1000);
             $pieChart->getOptions()->setWidth(1000);
             $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
-            $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
+            $pieChart->getOptions()->getTitleTextStyle()->setFontSize(30);
 
 
             return $this->render('application/stat.html.twig', array(
