@@ -2,73 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/AppKernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/AppKernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/backAdmin.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/backAdmin.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/classes/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/classes/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/classes/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/classes/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/classes/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/classes/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/classes/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/classes/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/classrooms/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/classrooms/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/classrooms/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/classrooms/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/classrooms/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/classrooms/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/club/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/club/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/event/edit.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/event/edit.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/event/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/event/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/event/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/event/new.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/event/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/event/show.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/parameters.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/ClassesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/ClassesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/ClassroomsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/ClassroomsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/ClubController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/ClubController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/DefaultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/DefaultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/EquipementController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/EquipementController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/EventController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/EventController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/LessonsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/LessonsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/applicationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/applicationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Classes.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Classes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Classrooms.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Classrooms.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Club.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Club.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Event.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Event.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/EventType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/EventType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing/classes.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing/classes.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing/event.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Resources/config/routing/event.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainerCompiler.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/backAdmin.html.twig.bak" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/logs/dev.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/dev.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/var/logs/prod.log" beforeDir="false" afterPath="$PROJECT_DIR$/var/logs/prod.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey.asc" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/dist/random_compat.phar.pubkey.asc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/byte_safe_strings.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/byte_safe_strings.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/cast_to_int.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/cast_to_int.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/error_polyfill.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/error_polyfill.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_com_dotnet.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_com_dotnet.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_dev_urandom.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_dev_urandom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_libsodium_legacy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_bytes_mcrypt.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_int.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/paragonie/random_compat/lib/random_int.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/friendsofsymfony/user-bundle/Controller/RegistrationController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -154,7 +92,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../bin/php/php7.2.18/php.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SYMFONY" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php.zend.framework.tool" />
@@ -248,7 +186,8 @@
       <workItem from="1582323925044" duration="1224000" />
       <workItem from="1582407635363" duration="679000" />
       <workItem from="1582409080505" duration="6313000" />
-      <workItem from="1582418908316" duration="2900000" />
+      <workItem from="1582418908316" duration="3339000" />
+      <workItem from="1582422604349" duration="3730000" />
     </task>
     <servers />
   </component>
