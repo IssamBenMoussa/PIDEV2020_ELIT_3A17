@@ -5,6 +5,7 @@ namespace ElitBundle\Controller;
 use ElitBundle\Entity\Module;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use DateTime;
 
 /**
  * Module controller.
@@ -34,6 +35,7 @@ class ModuleController extends Controller
     public function newAction(Request $request)
     {
         $module = new Module();
+        $module->setDate(new DateTime());
         $form = $this->createForm('ElitBundle\Form\ModuleType', $module);
         $form->handleRequest($request);
 

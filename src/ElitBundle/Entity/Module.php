@@ -129,9 +129,9 @@ class Module
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="creationDate", type="datetime")
+     * @ORM\Column(name="date", type="datetime")
      */
-    private $creationDate;
+    private $date;
 
 
 
@@ -185,28 +185,21 @@ class Module
     }
 
     /**
-     * Set creationDate
-     *
-     * @param \DateTime $creationDate
-     *
-     * @return Module
+     * @return \DateTime
      */
-    public function setCreationDate($creationDate)
+    public function getDate()
     {
-        $this->creationDate = $creationDate;
-
-        return $this;
+        return $this->date;
     }
 
     /**
-     * Get creationDate
-     *
-     * @return \DateTime
-      */
-    public function getCreationDate()
+     * @param \DateTime $date
+     */
+    public function setDate($date)
     {
-        return $this->creationDate;
+        $this->date = $date;
     }
+
 
 
 

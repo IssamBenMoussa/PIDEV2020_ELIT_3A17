@@ -19,15 +19,7 @@ class ModuleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('title')->add('description')
-            ->add('creationDate', DateType::class, ['widget' => 'single_text',
-
-                    'attr' => ['class' => 'js-datepicker'],
-                    'html5'=>false,
-                    'format'=>'M/d/y']
-
-            )
             ->add('imageFile',VichImageType::class)
-
             ->add('admin');
     }/**
  * {@inheritdoc}
