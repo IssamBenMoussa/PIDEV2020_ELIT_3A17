@@ -61,17 +61,3 @@ var/cache/dev/annotations.map
 .idea/commandlinetools/Composer_2_24_20__8_29_PM_c.xml
 .idea/commandlinetools/Composer_23_02_2020_17_22_c.xml
 .idea/workspace.xml
-.idea/commandlinetools/Composer_23_02_2020_17_15_c.xml
-.idea/commandlinetools/Composer_23_02_2020_17_22_c.xml
-.idea/commandlinetools/Composer_2_25_20__7_28_PM_c.xml
-.idea/commandlinetools/Symfony_23_02_2020_17_16_s.xml
-.idea/commandlinetools/Symfony_23_02_2020_17_22_s.xml
-.idea/commandlinetools/Symfony_2_25_20__7_28_PM_s.xml
-.idea/workspace.xml
-var/cache/dev/appDevDebugProjectContainer.php
-var/cache/dev/appDevDebugProjectContainer.php.meta
-var/cache/dev/appDevDebugProjectContainer.xml
-var/cache/dev/appDevDebugProjectContainer.xml.meta
-var/cache/dev/appDevDebugProjectContainerCompiler.log
-var/cache/dev/appDevDebugProjectContainerDeprecations.log
-var/logs/dev.log
