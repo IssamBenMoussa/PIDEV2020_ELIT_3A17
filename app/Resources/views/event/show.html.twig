@@ -1,36 +1,44 @@
 {% extends 'backAdmin.html.twig' %}
+{% block javascripts %}
 
+    <script src="{{ asset('issam_scripts/wiki.js') }}"></script>
+{% endblock %}
 {% block content %}
     <div id="container">
     <h1>Event</h1>
 
-    <table class="table">
+    <table class="table table-sm">
         <tbody>
 
-            <tr>
+            <tr class=" bg-info">
                 <th>Title</th>
                 <td>{{ event.title }}</td>
             </tr>
-            <tr>
+            <tr class="bg-primary">
                 <th>Start Date</th>
                 <td>{% if event.startDate %}{{ event.startDate|date('d/m/Y') }}{% endif %}</td>
             </tr>
-            <tr>
+            <tr class="bg-success">
                 <th>Start Hour</th>
                 <td>{% if event.startHour %}{{ event.startHour|date('H:i') }}{% endif %}</td>
             </tr>
-            <tr>
+            <tr class="bg-danger">
                 <th>Description</th>
                 <td>{{ event.description }}</td>
             </tr>
-            <tr>
+            <tr class="bg-danger">
+                <th>Search key </th>
+                <td>{{ event.searchKey }}</td>
+
+            </tr>
+            <tr >
                 <th>Logo</th>
                 <td><img src="{{ asset('uploads/issam_pic/')~ event.logo }}" width="200" height="200" style="display: block;
   margin-left: auto;
   margin-right: auto;"></td>
             </tr>
 
-            <tr>
+            <tr class="bg-warning">
 
                 <th>Equipements</th>
                 <td>
@@ -40,19 +48,55 @@
                 </td>
             </tr>
 
+            <tr class="bg-info">
+                <th>Weather prediction</th>
+                <input id="dateEvent" hidden value="{{ event.startDate|date('Y-m-d') }}T{{ event.startHour|date('H:i') }}">
+                <td><div class="weather"></div>
+                    {%  if((event.startDate|date < ("Now"|date_modify("+5 day")|date))
+                        and (event.startDate|date>=("Now")|date)) %}
+
+                        <script src="{{ asset('issam_scripts/weatherApi.js') }}"></script>
+                    {% else %}
+                    <h4 style="color : steelblue">Date not close</h4>
+                    {% endif %}
+                </td>
+
+            </tr>
+
         </tbody>
     </table>
+<!--
+wiki search
+-->
+<br>
+        <div class="text-center">
+            <div class="d-flex justify-content-center">
+            <h1 style="color : gray">Wikipedia Search for the term : {{ event.searchKey }}</h1>
+            <input id="key" name="search" value="{{event.searchKey}}" hidden>
 
+
+            <div class="articles"></div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <!-- end wiki search -->
     <ul>
         <li>
-            <a href="{{ path('event_index') }}">Back to the list</a>
-        </li>
+            <a href="{{ path('event_index') }}"  class="btn btn-info">Back to the list</a>
+
+
+            <a href="{{ path('event_edit', { 'id': event.id }) }}"  class="btn btn-success">Edit</a>
+
+
         <li>
-            <a href="{{ path('event_edit', { 'id': event.id }) }}">Edit</a>
-        </li>
-        <li>
+            <br>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Delete" class="btn btn-danger">
             {{ form_end(delete_form) }}
         </li>
     </ul>

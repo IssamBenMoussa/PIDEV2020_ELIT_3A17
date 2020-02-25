@@ -6,14 +6,16 @@ use ElitBundle\Entity\Lessons;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-
 /**
  * Lesson controller.
  *
  */
 class LessonsController extends Controller
 {
-
+    /**
+     * Lists all lesson entities.
+     *
+     */
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -51,10 +53,8 @@ class LessonsController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-
-
-
-            /** @var UploadedFile $brochureFile */
+            $em = $this->getDoctrine()->getManager();
+			            /** @var UploadedFile $brochureFile */
             $brochureFile = $form->get('brochure')->getData();
 
             // this condition is needed because the 'brochure' field is not required
@@ -83,8 +83,9 @@ class LessonsController extends Controller
             // ... persist the $product variable or any other work
 
 
-
-            $em = $this->getDoctrine()->getManager();
+			
+			$em = $this->getDoctrine()->getManager();
+			
             $em->persist($lesson);
             $em->flush();
 

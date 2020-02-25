@@ -42,7 +42,7 @@
 
                                         <td> {{e.title}}</td>
                                         <td> {{e.startDate|date('d/m/Y')}}</td>
-                                        <td> {{e.startHour|date('H:m')}}</td>
+                                        <td> {{e.startHour|date('H:i')}}</td>
                                         <td> {{e.description}}</td>
                                         <td> <img src="{{ asset('uploads/issam_pic/')~e.logo }}"  style="width: 200px;
     height: 200px;
@@ -56,6 +56,8 @@
                                         <td> {{ e.idClassroom }}</td>
                                         <td> <a href="{{ path('event_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
                                               <a href="{{ path('event_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+                                            <a href="{{ path('event_del', { 'id': e.id }) }}"><button type="button" class="btn btn-danger" id="{{ e.id }}">Delete</button></a>
+
                                         </td>
 
                                     </tr>
@@ -70,19 +72,41 @@
         </div>
     </div>
     <!-- Static Table End -->
+<div class="container">
+    <div class="row justify-content-md-center">
 
+        <div class="navigation">
+            <div class="container">
     <ul>
         <li>
             <a href="{{ path('event_new') }}"><button type="button" class="btn btn-warning">Create a new Event !</button></a>
+
+            <a href="{{ path('event_calendar') }}"><button type="button" class="btn btn-danger">View Calendar</button></a>
+
+
+
+            <a href="{{ path('event_pdf') }}"><button type="button" class="btn btn-info">Print PDF</button></a>
         </li>
+        <br>
     </ul>
+            </div></div></div></div>
+
 {% endblock %}
 {% block javascripts %}
-<script>
-
+    <script language = "javascript"
+            src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                alert("The paragraph was clicked.");
+            });
+        });
 
 
 </script>
+
+
+
     <!-- data table JS
 		============================================ -->
 
