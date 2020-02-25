@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e96ae9c-66a6-4298-a0e5-3e89c015ba6c" name="Default Changelist" comment="">
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/lessons/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/lessons/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/lessons/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/lessons/new.html.twig" afterDir="false" />
@@ -10,12 +11,23 @@
       <change beforePath="$PROJECT_DIR$/app/Resources/views/module/show.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/show.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/config/services.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/services.yml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_22_02_2020_20_15_c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_22_02_2020_20_15_c.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_22_02_2020_20_15_s.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/module/new.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/module/new.html.twig" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/LessonsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/LessonsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Controller/ModuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Controller/ModuleController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Lessons.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Lessons.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Module.php" afterDir="false" />
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Entity/Teacher.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Entity/Teacher.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/LessonsType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/LessonsType.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/applicationType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/applicationType.php" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/ElitBundle/Form/ModuleType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/ElitBundle/Form/ModuleType.php" afterDir="false" />
+>>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/appDevDebugProjectContainer.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" beforeDir="false" afterPath="$PROJECT_DIR$/var/cache/dev/profiler/index.csv" afterDir="false" />
@@ -118,6 +130,12 @@
       <command value="s generate:doctrine:crud " />
       <command value="s generate:doctrine:crud  --overwrite" />
       <command value="s doctrine:generate:entities TranslateBundle:Module" />
+<<<<<<< Updated upstream
+=======
+      <command value="s fos:user:promote" />
+      <command value="s fos:user:promote ali:student" />
+      <command value="s fos:user:promote ali" />
+>>>>>>> Stashed changes
       <command value="s server:run" />
       <command value="s doctrine:schema:update --force" />
     </option>
@@ -184,7 +202,18 @@
       <workItem from="1582011133013" duration="720000" />
       <workItem from="1582017820549" duration="8525000" />
       <workItem from="1582075927049" duration="18352000" />
+<<<<<<< Updated upstream
       <workItem from="1582141437045" duration="236000" />
+=======
+      <workItem from="1582141437045" duration="510000" />
+      <workItem from="1582323925044" duration="1224000" />
+      <workItem from="1582407635363" duration="679000" />
+      <workItem from="1582409080505" duration="6567000" />
+      <workItem from="1582454098783" duration="4405000" />
+      <workItem from="1582530511947" duration="817000" />
+      <workItem from="1582566993172" duration="175000" />
+      <workItem from="1582622991598" duration="618000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>

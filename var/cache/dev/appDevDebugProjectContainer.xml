@@ -88,6 +88,14 @@
         <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\vich\uploader-bundle</parameter>
         <parameter key="namespace">Vich\UploaderBundle</parameter>
       </parameter>
+<<<<<<< Updated upstream
+=======
+      <parameter key="GregwarCaptchaBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\gregwar\captcha-bundle</parameter>
+        <parameter key="namespace">Gregwar\CaptchaBundle</parameter>
+      </parameter>
+>>>>>>> Stashed changes
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
@@ -128,9 +136,16 @@
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
+<<<<<<< Updated upstream
     <parameter key="brochures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/public/uploads/brochures</parameter>
     <parameter key="locale">en</parameter>
     <parameter key="pictures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/issam_pic</parameter>
+=======
+    <parameter key="brochures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/brochures</parameter>
+    <parameter key="locale">en</parameter>
+    <parameter key="pictures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/issam_pic</parameter>
+    <parameter key="images_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/imageheni</parameter>
+>>>>>>> Stashed changes
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
@@ -413,7 +428,11 @@
     <parameter key="vich_uploader.mappings" type="collection">
       <parameter key="modules" type="collection">
         <parameter key="uri_prefix">/../images/modules</parameter>
+<<<<<<< Updated upstream
         <parameter key="upload_destination">C:\wamp\www\PIDEV2020_ELIT_3A17/../images/module</parameter>
+=======
+        <parameter key="upload_destination">C:\wamp\www\PIDEV2020_ELIT_3A17/web/images/module</parameter>
+>>>>>>> Stashed changes
         <parameter key="namer" type="collection">
           <parameter key="service">null</parameter>
           <parameter key="options">null</parameter>
@@ -429,6 +448,49 @@
       </parameter>
     </parameter>
     <parameter key="vich_uploader.file_injector.class">Vich\UploaderBundle\Injector\FileInjector</parameter>
+<<<<<<< Updated upstream
+=======
+    <parameter key="gregwar_captcha.captcha_type.class">Gregwar\CaptchaBundle\Type\CaptchaType</parameter>
+    <parameter key="gregwar_captcha.captcha_generator.class">Gregwar\CaptchaBundle\Generator\CaptchaGenerator</parameter>
+    <parameter key="gregwar_captcha.image_file_handler.class">Gregwar\CaptchaBundle\Generator\ImageFileHandler</parameter>
+    <parameter key="gregwar_captcha.captcha_builder.class">Gregwar\Captcha\CaptchaBuilder</parameter>
+    <parameter key="gregwar_captcha.phrase_builder.class">Gregwar\Captcha\PhraseBuilder</parameter>
+    <parameter key="gregwar_captcha.config" type="collection">
+      <parameter key="length">5</parameter>
+      <parameter key="width">130</parameter>
+      <parameter key="height">50</parameter>
+      <parameter key="font">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\gregwar\captcha-bundle\DependencyInjection/../Generator/Font/captcha.ttf</parameter>
+      <parameter key="keep_value">false</parameter>
+      <parameter key="charset">abcdefhjkmnprstuvwxyz23456789</parameter>
+      <parameter key="as_file">false</parameter>
+      <parameter key="as_url">false</parameter>
+      <parameter key="reload">false</parameter>
+      <parameter key="image_folder">captcha</parameter>
+      <parameter key="web_path">C:\wamp\www\PIDEV2020_ELIT_3A17\app/../web</parameter>
+      <parameter key="gc_freq">100</parameter>
+      <parameter key="expiration">60</parameter>
+      <parameter key="quality">50</parameter>
+      <parameter key="invalid_message">Bad code value</parameter>
+      <parameter key="bypass_code">null</parameter>
+      <parameter key="whitelist_key">captcha_whitelist_key</parameter>
+      <parameter key="humanity">0</parameter>
+      <parameter key="distortion">true</parameter>
+      <parameter key="max_front_lines">null</parameter>
+      <parameter key="max_behind_lines">null</parameter>
+      <parameter key="interpolation">true</parameter>
+      <parameter key="text_color" type="collection"/>
+      <parameter key="background_color" type="collection"/>
+      <parameter key="background_images" type="collection"/>
+      <parameter key="disabled">false</parameter>
+      <parameter key="ignore_all_effects">false</parameter>
+      <parameter key="session_key">captcha</parameter>
+    </parameter>
+    <parameter key="gregwar_captcha.config.image_folder">captcha</parameter>
+    <parameter key="gregwar_captcha.config.web_path">C:\wamp\www\PIDEV2020_ELIT_3A17\app/../web</parameter>
+    <parameter key="gregwar_captcha.config.gc_freq">100</parameter>
+    <parameter key="gregwar_captcha.config.expiration">60</parameter>
+    <parameter key="gregwar_captcha.config.whitelist_key">captcha_whitelist_key</parameter>
+>>>>>>> Stashed changes
     <parameter key="web_profiler.debug_toolbar.position">bottom</parameter>
     <parameter key="web_profiler.debug_toolbar.intercept_redirects">false</parameter>
     <parameter key="web_profiler.debug_toolbar.mode">2</parameter>
@@ -3210,6 +3272,17 @@
         <argument>!VichUploader</argument>
       </call>
       <call method="addPath">
+<<<<<<< Updated upstream
+=======
+        <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\gregwar\captcha-bundle/Resources/views</argument>
+        <argument>GregwarCaptcha</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\gregwar\captcha-bundle/Resources/views</argument>
+        <argument>!GregwarCaptcha</argument>
+      </call>
+      <call method="addPath">
+>>>>>>> Stashed changes
         <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle/Resources/views</argument>
         <argument>Debug</argument>
       </call>
@@ -4444,6 +4517,30 @@
       <argument type="service" id="vich_uploader.metadata_reader"/>
       <argument type="service" id="vich_uploader.upload_handler"/>
     </service>
+<<<<<<< Updated upstream
+=======
+    <service id="captcha.type" class="Gregwar\CaptchaBundle\Type\CaptchaType" public="true">
+      <tag name="form.type" alias="captcha"/>
+      <argument type="service" id="session"/>
+      <argument type="service" id="gregwar_captcha.generator"/>
+      <argument type="service" id="translator"/>
+      <argument>%gregwar_captcha.config%</argument>
+    </service>
+    <service id="gregwar_captcha.generator" class="Gregwar\CaptchaBundle\Generator\CaptchaGenerator" public="true">
+      <argument type="service" id="router.default"/>
+      <argument type="service" id="gregwar_captcha.captcha_builder"/>
+      <argument type="service" id="gregwar_captcha.phrase_builder"/>
+      <argument type="service" id="gregwar_captcha.image_file_handler"/>
+    </service>
+    <service id="gregwar_captcha.image_file_handler" class="Gregwar\CaptchaBundle\Generator\ImageFileHandler" public="true">
+      <argument>captcha</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app/../web</argument>
+      <argument>100</argument>
+      <argument>60</argument>
+    </service>
+    <service id="gregwar_captcha.captcha_builder" class="Gregwar\Captcha\CaptchaBuilder" public="true"/>
+    <service id="gregwar_captcha.phrase_builder" class="Gregwar\Captcha\PhraseBuilder" public="true"/>
+>>>>>>> Stashed changes
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="var_dumper.cloner"/>
