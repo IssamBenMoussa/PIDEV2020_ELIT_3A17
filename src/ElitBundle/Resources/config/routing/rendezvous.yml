@@ -26,7 +26,4 @@ rendez_map:
     path:     /map
     defaults: { _controller: "ElitBundle:rendezvous:map" }
     methods:  GET
-rendez_weather:
-    path:     /weather
-    defaults: { _controller: "ElitBundle:rendezvous:weather" }
-    methods:  GET
+

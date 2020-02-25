@@ -129,12 +129,5 @@ class rendezvousController extends Controller
 
         ));
     }
-    public function weatherAction()
-    {
-
-        return $this->render('rendezvous/weather.html.twig', array(
-
-        ));
-    }
 
 }

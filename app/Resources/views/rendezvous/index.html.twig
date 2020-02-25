@@ -21,7 +21,7 @@
                             <div class="datatable-dashv1-list custom-datatable-overright">
 
                                 <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" class="sortable">
+                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                     <thead>
                                     <tr>
                                         <th data-field="cin" >cin</th>
@@ -39,7 +39,7 @@
                                             <td> {{r.nom}}</td>
                                             <td> {{r.prenom}}</td>
                                             <td> {{r.date|date('d/m/Y')}}</td>
-                                            <td> 
+                                            <td> <a href="{{ path('rendez_edit', { 'id': r.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
                                                 <a href="{{ path('rendez_show', { 'id': r.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
                                             </td>
 
@@ -77,7 +77,7 @@
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
-    <script src="{{ asset('m.js') }}"></script>
+
 
 {% endblock %}
 

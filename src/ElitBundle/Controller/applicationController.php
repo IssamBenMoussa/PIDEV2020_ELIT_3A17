@@ -150,9 +150,9 @@ class applicationController extends Controller
                 $data
             );
 
-            $pieChart->getOptions()->setTitle('         PAYMENT PER GRADE' , );
+            $pieChart->getOptions()->setTitle('   PAYMENT PER GRADE');
             $pieChart->getOptions()->setHeight(1000);
-            $pieChart->getOptions()->setWidth(2000);
+            $pieChart->getOptions()->setWidth(1000);
             $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
             $pieChart->getOptions()->getTitleTextStyle()->setFontSize(30);
 

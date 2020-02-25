@@ -2,13 +2,10 @@
 
 namespace ElitBundle\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 
@@ -17,7 +14,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *
  * @ORM\Table(name="module")
  * @ORM\Entity(repositoryClass="ElitBundle\Repository\ModuleRepository")
- * @UniqueEntity("title")
  * @Vich\Uploadable
  */
 
@@ -129,9 +125,9 @@ class Module
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="date", type="datetime")
+     * @ORM\Column(name="creationDate", type="datetime")
      */
-    private $date;
+    private $creationDate;
 
 
 
@@ -185,21 +181,28 @@ class Module
     }
 
     /**
-     * @return \DateTime
+     * Set creationDate
+     *
+     * @param \DateTime $creationDate
+     *
+     * @return Module
      */
-    public function getDate()
+    public function setCreationDate($creationDate)
     {
-        return $this->date;
+        $this->creationDate = $creationDate;
+
+        return $this;
     }
 
     /**
-     * @param \DateTime $date
-     */
-    public function setDate($date)
+     * Get creationDate
+     *
+     * @return \DateTime
+      */
+    public function getCreationDate()
     {
-        $this->date = $date;
+        return $this->creationDate;
     }
-
 
 
 

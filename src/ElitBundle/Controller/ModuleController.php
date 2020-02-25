@@ -5,7 +5,6 @@ namespace ElitBundle\Controller;
 use ElitBundle\Entity\Module;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use DateTime;
 
 /**
  * Module controller.
@@ -35,7 +34,6 @@ class ModuleController extends Controller
     public function newAction(Request $request)
     {
         $module = new Module();
-        $module->setDate(new DateTime());
         $form = $this->createForm('ElitBundle\Form\ModuleType', $module);
         $form->handleRequest($request);
 
@@ -59,12 +57,11 @@ class ModuleController extends Controller
      */
     public function showAction(Module $module)
     {
-        $em = $this->getDoctrine()->getManager();
+        $deleteForm = $this->createDeleteForm($module);
 
-        $lessons = $em->getRepository('ElitBundle:Lessons')->findBy(array('Module'=> $module));
-
-        return $this->render('lessons/index.html.twig', array(
-            'lessons' => $lessons,
+        return $this->render('module/show.html.twig', array(
+            'module' => $module,
+            'delete_form' => $deleteForm->createView(),
         ));
     }
 
