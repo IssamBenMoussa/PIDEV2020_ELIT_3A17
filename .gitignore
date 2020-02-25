@@ -47,3 +47,17 @@ var/logs/dev.log
 var/logs/prod.log
 .idea/PIDEV2020.iml
 .idea/workspace.xml
+var/logs/dev.log
+var/cache/dev/appDevDebugProjectContainerDeprecations.log
+var/cache/dev/appDevDebugProjectContainerCompiler.log
+var/cache/dev/appDevDebugProjectContainer.xml.meta
+var/cache/dev/appDevDebugProjectContainer.xml
+var/cache/dev/appDevDebugProjectContainer.php.meta
+var/cache/dev/appDevDebugProjectContainer.php
+var/cache/dev/annotations.map
+.idea/PIDEV2020.iml
+.idea/commandlinetools/Symfony_2_24_20__8_29_PM_s.xml
+.idea/commandlinetools/Symfony_23_02_2020_17_22_s.xml
+.idea/commandlinetools/Composer_2_24_20__8_29_PM_c.xml
+.idea/commandlinetools/Composer_23_02_2020_17_22_c.xml
+.idea/workspace.xml
