@@ -124,3 +124,4 @@ notifications:
     # Default false: work without ssl encryption
     # Set it to true to work with ssl encryption
     encrypted:  false
+

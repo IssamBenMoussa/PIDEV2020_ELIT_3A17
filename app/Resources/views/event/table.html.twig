@@ -94,8 +94,8 @@
                                     </thead>
                                     <tbody>
                                     {% for e in events %}
-                                        {%  if(e.startDate|date < ("Now"|date_modify("+7 day")|date))
-                                            and (e.startDate|date>=("Now"|date)) %}
+                                        {%  if  (date(e.startDate)< date('+7days'))
+                                            and (date(e.startDate)>=date()) %}
                                         <tr class="bg-info">
 
                                             <td class=""> {{e.title}}</td>

@@ -1857,14 +1857,6 @@
         <argument>2048</argument>
       </call>
       <call method="addListener">
-        <argument>console.command</argument>
-        <argument type="collection">
-          <argument type="service" id="debug.debug_handlers_listener"/>
-          <argument>configure</argument>
-        </argument>
-        <argument>2048</argument>
-      </call>
-      <call method="addListener">
         <argument>kernel.request</argument>
         <argument type="collection">
           <argument type="service" id="router_listener"/>
@@ -2635,6 +2627,7 @@
         <argument type="service" id="security.request_matcher.shgv5l6"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_STUDENT</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -2642,6 +2635,7 @@
         <argument type="service" id="security.request_matcher.mj8tiva"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_STUDENT</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -2656,6 +2650,49 @@
         <argument type="service" id="security.request_matcher.xagqdbz"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.ujhyuy."/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_TEACHER</argument>
+          <argument>ROLE_STUDENT</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.pmqbz.4"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_TEACHER</argument>
+          <argument>ROLE_STUDENT</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.s49tmlv"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_TEACHER</argument>
+          <argument>ROLE_STUDENT</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.pxghzzp"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_STUDENT</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service" id="security.request_matcher.45ct3qj"/>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_TEACHER</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -3166,6 +3203,21 @@
     </service>
     <service id="security.request_matcher.xagqdbz" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
       <argument>^/E/module</argument>
+    </service>
+    <service id="security.request_matcher.ujhyuy." class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/book</argument>
+    </service>
+    <service id="security.request_matcher.pmqbz.4" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/reservation</argument>
+    </service>
+    <service id="security.request_matcher.s49tmlv" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/categorybook</argument>
+    </service>
+    <service id="security.request_matcher.pxghzzp" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/complaints</argument>
+    </service>
+    <service id="security.request_matcher.45ct3qj" class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+      <argument>^/E/schoolmeeting</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand" public="false">
       <tag name="console.command" command="security:encode-password"/>

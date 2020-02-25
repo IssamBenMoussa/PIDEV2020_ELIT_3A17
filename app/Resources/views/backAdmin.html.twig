@@ -114,28 +114,6 @@
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <span class="educate-icon educate-home icon-wrap"></span>
-                            <span class="mini-click-non">logistics</span>
-                        </a>
-                        <ul class="submenu-angle" aria-expanded="true">
-
-                            <li><a title="Dashboard v.1" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}"><span
-                                            class="mini-sub-pro">Dashboard v.1</span></a></li>
-                            <li><a title="Dashboard v.2"
-                                   href="{{ asset('kiaalap-master/kiaalap-master/index-1.html') }}"><span
-                                            class="mini-sub-pro">Dashboard v.2</span></a></li>
-                            <li><a title="Dashboard v.3"
-                                   href="{{ asset('kiaalap-master/kiaalap-master/index-2.html') }}"><span
-                                            class="mini-sub-pro">Dashboard v.3</span></a></li>
-                            <li><a title="Analytics" href="{{ asset('kiaalap-master/kiaalap-master/analytics.html') }}"><span
-                                            class="mini-sub-pro">Analytics</span></a></li>
-                            <li><a title="Widgets"
-                                   href="{{ asset('kiaalap-master/kiaalap-master/widgets.html') }}"><span
-                                            class="mini-sub-pro">Widgets</span></a></li>
-                        </ul>
-                    </li>
-                    <li class="">
-                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
-                            <span class="educate-icon educate-home icon-wrap"></span>
                             <span class="mini-click-non">complaints</span>
                         </a>
                         <ul class="submenu-angle" aria-expanded="true">
@@ -260,27 +238,7 @@
                     <li>
                         <a title="Landing Page" href="{{ asset('kiaalap-master/kiaalap-master/events.html') }}"
                            aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg"
-                                                       aria-hidden="true"></span> <span
-                                    class="mini-click-non">teacher</span></a>
-                    </li>
-                    <li>
-                        <a title="Landing Page" href="{{ asset('kiaalap-master/kiaalap-master/events.html') }}"
-                           aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg"
-                                                       aria-hidden="true"></span> <span
-                                    class="mini-click-non">student</span></a>
-                    </li>
-
-                    <li>
-                        <a title="Landing Page" href="{{ asset('kiaalap-master/kiaalap-master/events.html') }}"
-                           aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg"
                                                        aria-hidden="true"></span> <span class="mini-click-non">complaints</span></a>
-
-                    </li>
-                    <li>
-                        <a title="Landing Page" href="{{ asset('kiaalap-master/kiaalap-master/events.html') }}"
-                           aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg"
-                                                       aria-hidden="true"></span> <span
-                                    class="mini-click-non">chatbox</span></a>
 
                     </li>
                     <li>
@@ -1317,6 +1275,7 @@
                     </div>
                 </a>
             </div>
+            {% if ((is_granted('ROLE_ADMIN'))) %}
             <div class="col-lg-2">
                 <a href="{{ path('classes_index') }}">
                     <div class="container1">
@@ -1326,15 +1285,30 @@
                     </div>
                 </a>
             </div>
+            {% endif %}
+            {% if ((is_granted('ROLE_ADMIN'))) %}
             <div class="col-lg-2">
                 <a href="{{ path('classrooms_index') }}">
                     <div class="container1">
                         <img  class="img" src="{{ asset('img/classroom.png') }}" alt="Classroom" width="200" height="200">
-                        <div class="center1">Classes</div>
+                        <div class="center1">classroom</div>
 
                     </div>
                 </a>
             </div>
+            {% endif %}
+            {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_STUDENT'))) ) %}
+                <div class="col-lg-2">
+                    <a href="{{ path('book_index') }}">
+                        <div class="container1">
+                            <img  class="img" src="{{ asset('img/classroom.png') }}" alt="Classroom" width="200" height="200">
+                            <div class="center1">book</div>
+
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+            {% if ((is_granted('ROLE_ADMIN'))) %}
             <div class="col-lg-2">
                 <a href="{{ path('equipement_index') }}">
                     <div class="container1">
@@ -1344,7 +1318,18 @@
                     </div>
                 </a>
             </div>
+            {% endif %}
+            {% if ((is_granted('ROLE_ADMIN'))) %}
+                <div class="col-lg-2">
+                    <a href="{{ path('application_index') }}">
+                        <div class="container1">
+                            <img  class="img" src="{{ asset('img/equipment.jpg') }}" alt="Equipment" width="200" height="200">
+                            <div class="center1">application</div>
 
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
             {% if ((is_granted('ROLE_ADMIN'))) %}
                 <div class="col-lg-2">
                     <a href="{{ path('module_index') }}">

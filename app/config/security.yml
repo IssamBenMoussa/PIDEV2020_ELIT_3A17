@@ -35,11 +35,16 @@ security:
         - { path: ^/E/application, role: ROLE_ADMIN }
         - { path: ^/S/, role: ROLE_STUDENT }
         - { path: ^/T/, role: ROLE_TEACHER }
-        - {path: ^/E/rendez, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/E/rendez, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^/E/lessons, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT] }
         - { path: ^/E/classrooms, role: ROLE_ADMIN }
         - { path: ^/E/equipement, role: ROLE_ADMIN }
-        - { path: ^/E/club, role: ROLE_ADMIN }
-        - { path: ^/E/event, role: ROLE_ADMIN }
+        - { path: ^/E/club, role:[ ROLE_ADMIN , ROLE_STUDENT]}
+        - { path: ^/E/event, role: [ROLE_ADMIN ,ROLE_STUDENT]}
         - { path: ^/E/classes, role: ROLE_ADMIN }
         - { path: ^/E/module, role: ROLE_ADMIN }
+        - { path: ^/E/book, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT]}
+        - { path: ^/E/reservation, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT]}
+        - { path: ^/E/categorybook, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT]}
+        - { path: ^/E/complaints, role: [ROLE_ADMIN ,ROLE_STUDENT] }
+        - { path: ^/E/schoolmeeting, role: [ROLE_ADMIN ,ROLE_TEACHER] }

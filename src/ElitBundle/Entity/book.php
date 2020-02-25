@@ -49,7 +49,7 @@ class book
     private $description;
 
     /**
-     * @ORM\ManyToOne(targetEntity="ElitBundle\Entity\CategoryBook")
+     * @ORM\ManyToOne(targetEntity="ElitBundle\Entity\Categorybook")
      * @ORM\JoinColumn(name="category",referencedColumnName="id")
      *
      */

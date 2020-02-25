@@ -1,50 +1,57 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-<section class="content">
-    <div class="row">
-        <div class="col-xs-12">
-            <div class="box">
-                <div class="box-header"><center>
-                        <br></br>
-                        <h3 class="box-title">classes List </h3></center>
-                </div><!-- /.box-header -->
-                <div class="box-body table-responsive">
-                    <table id="example2" class="table table-bordered table-hover">
-                        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Capacity</th>
-                <th>Bloc</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for classroom in classrooms %}
-            <tr>
-                <td><a href="{{ path('classrooms_show', { 'id': classroom.id }) }}">{{ classroom.id }}</a></td>
-                <td>{{ classroom.name }}</td>
-                <td>{{ classroom.capacity }}</td>
-                <td>{{ classroom.bloc }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('classrooms_show', { 'id': classroom.id }) }}" class="btn btn-danger">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('classrooms_edit', { 'id': classroom.id }) }}" class="btn btn-success">edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <div class="data-table-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <h1>Events List</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline13-graph">
+                            <div class="datatable-dashv1-list custom-datatable-overright">
 
-    <ul>
-        <li>
-            <a href="{{ path('classrooms_new') }}">Create a new classroom</a>
-        </li>
-    </ul>
+                                <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                    <thead>
+                                    <tr>
+
+                                        <th data-field="id" data-editable="false">Class ID</th>
+                                        <th data-field="name">Class Name</th>
+                                        <th data-field="name1" data-editable="false">Capacity</th>
+                                        <th data-field="name2" data-editable="false">Bloc</th>
+                                        <th data-field="action">Action</th>
+
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for e in classrooms %}
+                                        <tr>
+
+                                            <td> {{e.id}}</td>
+                                            <td> {{e.name}}</td>
+                                            <td> {{e.capacity}}</td>
+                                            <td> {{e.bloc}}</td>
+
+                                            <td>
+                                                <a href="{{ path('classes_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                                                <a href="{{ path('classes_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+                                                <a href="{{ path('classes_altDelete', { 'id': e.id }) }}"><button type="button" class="btn btn-warning">Delete</button></a>
+                                            </td>
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}

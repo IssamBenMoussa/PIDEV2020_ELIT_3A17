@@ -52,8 +52,8 @@
                 <th>Weather prediction</th>
                 <input id="dateEvent" hidden value="{{ event.startDate|date('Y-m-d') }}T{{ event.startHour|date('H:i') }}">
                 <td><div class="weather"></div>
-                    {%  if((event.startDate|date < ("Now"|date_modify("+5 day")|date))
-                        and (event.startDate|date>=("Now")|date)) %}
+                    {%  if  (date(event.startDate)< date('+5days'))
+                        and (date(event.startDate)>=date()) %}
 
                         <script src="{{ asset('issam_scripts/weatherApi.js') }}"></script>
                     {% else %}
