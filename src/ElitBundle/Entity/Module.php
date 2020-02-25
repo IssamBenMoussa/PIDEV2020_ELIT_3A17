@@ -2,13 +2,10 @@
 
 namespace ElitBundle\Entity;
 
-
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 use Vich\UploaderBundle\Templating\Helper\UploaderHelper;
-use Symfony\Component\Validator\Constraints as Assert;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 
 
@@ -17,7 +14,6 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  *
  * @ORM\Table(name="module")
  * @ORM\Entity(repositoryClass="ElitBundle\Repository\ModuleRepository")
- * @UniqueEntity("title")
  * @Vich\Uploadable
  */
 
