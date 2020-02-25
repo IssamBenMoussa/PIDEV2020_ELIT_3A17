@@ -119,44 +119,42 @@ class applicationController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('application_delete', array('id' => $application->getId())))
             ->setMethod('DELETE')
-            ->getForm()
-        ;
+            ->getForm();
     }
 
-    public function statAction()
+        public function statAction()
     {
+        $pieChart = new PieChart();
+        $em= $this->getDoctrine();
+        $classes = $em->getRepository(application::class)->findAll();
+        $totalEtudiant=0;
+        foreach($classes as $classe) {
+            $totalEtudiant=$totalEtudiant+$classe->getfrais();
+        }
 
-        {
-            $pieChart = new PieChart();
-            $em= $this->getDoctrine();
-            $classes = $em->getRepository(application::class)->findAll();
-            $totalEtudiant=0;
-            foreach($classes as $classe) {
-                $totalEtudiant=$totalEtudiant+$classe->getfrais();
-            }
-
-            $data= array();
-            $stat=['classe', 'nbEtudiant'];
-            $nb=0;
+        $data= array();
+        $stat=['classe', 'nbEtudiant'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach($classes as $classe) {
+            $stat=array();
+            array_push($stat,$classe->getniveauscolaire(),(($classe->getfrais()) *100)/$totalEtudiant);
+            $nb=($classe->getfrais() *100)/$totalEtudiant;
+            $stat=[$classe->getniveauscolaire(),$nb];
             array_push($data,$stat);
-            foreach($classes as $classe) {
-                $stat = array();
-                array_push($stat, $classe->getNiveauScolaire(), (($classe->getfrais()) * 100) / $totalEtudiant);
-                $nb = ($classe->getfrais() * 100) / $totalEtudiant;
-                $stat = [$classe->getNiveauScolaire(), $nb];
-                array_push($data, $stat);
 
-            }
-            $pieChart->getData()->setArrayToDataTable(
+        }
+
+
+        $pieChart->getData()->setArrayToDataTable(
                 $data
-
             );
 
-            $pieChart->getOptions()->setTitle('payment per student');
-            $pieChart->getOptions()->setHeight(400);
-            $pieChart->getOptions()->setWidth(400);
-            $pieChart->getOptions()->getTitleTextStyle()->setColor('#07600');
-            $pieChart->getOptions()->getTitleTextStyle()->setFontSize(25);
+            $pieChart->getOptions()->setTitle('   PAYMENT PER GRADE');
+            $pieChart->getOptions()->setHeight(1000);
+            $pieChart->getOptions()->setWidth(1000);
+            $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+            $pieChart->getOptions()->getTitleTextStyle()->setFontSize(30);
 
 
             return $this->render('application/stat.html.twig', array(
@@ -165,4 +163,4 @@ class applicationController extends Controller
 
             );
         }
-    }}
+}

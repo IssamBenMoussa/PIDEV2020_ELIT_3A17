@@ -5,13 +5,25 @@
 
  <div class="courses-area">
      <div class="container-fluid">
+
+
+
+<br>
+         <br>
+             <h3 class="box-title">Sort By </h3>
+
+         {{ knp_pagination_sortable(pagination, 'Title', 'c.title') }}
+
+         {{ knp_pagination_sortable(pagination, 'Description', 'c.description') }}
+
+
          <div class="row">
-        {% for club in clubs %}
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                <div class="courses-inner res-mg-b-30">
+        {% for club in pagination %}
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <div class="courses-inner res-mg-b-15">
                 <a href="{{ path('club_show',{'id':club.id}) }}">
-                    <img src="{{ asset('uploads/issam_pic/')~ club.logo }}"  style="width: 200px; /* width of container */
-    height: 200px; /* height of container */
+                    <img src="{{ asset('uploads/issam_pic/')~ club.logo }}"  style="width: 150px; /* width of container */
+    height: 150px; /* height of container */
     object-fit: cover;
     object-position: center;
   display: block;
@@ -55,13 +67,31 @@
         {% endfor %}
          </div>
      </div>
+     <div class="container">
+         <div class="row justify-content-md-center">
+
+     <div class="navigation">
+         <div class="container">
+             <br>
+             <h3 class="box-title">Filter by</h3>
+             {{ knp_pagination_filter(pagination,{'c.title':'Title','c.description':'Description','c.category':'Category'}) }}
+         </div>
+         {{ knp_pagination_render(pagination) }}
+     </div>
+         </div>
+     </div>
  </div>
+
     <br>
+<div class="container">
+    <div class="row justify-content-md-center">
     <ul>
         <li>
             <a  class="" href="{{ path('club_new') }}"><button type="button" class="btn btn-warning">Create a new Club !</button>
             </a>
         </li>
     </ul>
+    </div></div>
     <br>
+
 {% endblock %}

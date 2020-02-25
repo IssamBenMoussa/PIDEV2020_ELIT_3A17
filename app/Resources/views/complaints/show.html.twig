@@ -1,0 +1,90 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+    <hr>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="breadcome-list single-page-breadcome">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="breadcome-heading">
+                        <form role="search" class="sr-input-func">
+                            <input type="text" placeholder="Search..." class="search-int form-control">
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <ul class="breadcome-menu">
+                        <li><a href="#">Home</a> <span class="bread-slash">/</span>
+                        </li>
+                        <li><span class="bread-blod">View Mail</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">
+        <div class="hpanel email-compose mailbox-view">
+            <div class="panel-heading hbuilt">
+
+                <div class="p-xs h4">
+                    <small class="pull-right view-hd-ml">
+                        {{ complaints.date|date('Y-m-d H:i:s') }}
+                    </small> Complaint Detailed View
+
+                </div>
+            </div>
+            <div class="border-top border-left border-right bg-light">
+                <div class="p-m custom-address-mailbox">
+
+                    <div>
+                        <span class="font-extra-bold">Subject: </span> {{ complaints.title }}
+                    </div>
+                    <div>
+                        <span class="font-extra-bold">From: </span>
+                        <a >{{ complaints.email }}</a>
+                    </div>
+                    <div>
+                        <span class="font-extra-bold"><br>Content:</br> </span>
+                        {{ complaints.content }}
+                    </div>
+                    <br>    </br> <hr>
+                    <br class="hpanel vw-mb">
+                    <div class="panel-body file-body incon-ctn-view">
+                        <i class="fa fa-file-pdf-o text-info"></i>
+                    </div>
+                    <div class="panel-footer ft-pn">
+                        <a >{{complaints.file}}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+    </div>
+    <div class="panel-footer text-right ft-pn">
+        <div class="btn-group active-hook">
+            <a class="btn btn-default"  href="{{ path('complaints_index') }}">Back to the list</a>
+            <a class="btn btn-default"   href="{{ path('complaints_edit' , { 'id': complaints.id }) }}">Edit</a>
+
+            <li>
+                {{ form_start(delete_form) }}
+                <input class="btn btn-custon-four btn-primary" type="submit" value="Delete" />
+                {{ form_end(delete_form) }}
+            </li>
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}

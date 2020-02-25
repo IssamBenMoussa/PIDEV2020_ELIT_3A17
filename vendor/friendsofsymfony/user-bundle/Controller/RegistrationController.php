@@ -11,6 +11,7 @@
 
 namespace FOS\UserBundle\Controller;
 
+use ElitBundle\Entity\Student;
 use FOS\UserBundle\Event\FilterUserResponseEvent;
 use FOS\UserBundle\Event\FormEvent;
 use FOS\UserBundle\Event\GetResponseUserEvent;
@@ -27,6 +28,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Doctrine\Orm\EntityManager;
 
 /**
  * Controller managing the registration.
@@ -76,7 +78,21 @@ class RegistrationController extends Controller
                 $event = new FormEvent($form, $request);
                 $this->eventDispatcher->dispatch(FOSUserEvents::REGISTRATION_SUCCESS, $event);
 
+
                 $this->userManager->updateUser($user);
+                if(in_array('ROLE_ADMIN', $user->getRoles())){
+                    $query = "UPDATE `user` SET type = 'Admin' WHERE id = ".$user->getId();
+                }
+                else if(in_array('ROLE_STUDENT', $user->getRoles())){
+                    $query = "UPDATE `user` SET type = 'Student' WHERE id = ".$user->getId();
+                }else if(in_array('ROLE_TEACHER', $user->getRoles())){
+                    $query = "UPDATE `user` SET type = 'Teacher' WHERE id = ".$user->getId();
+                }
+
+                $entity_manager = $this->getDoctrine()->getManager();
+                $entity_manager->getConnection()->exec( $query );
+
+
 
                 if (null === $response = $event->getResponse()) {
                     $url = $this->generateUrl('fos_user_registration_confirmed');

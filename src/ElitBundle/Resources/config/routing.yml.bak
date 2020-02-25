@@ -1,0 +1,64 @@
+elit_module:
+    resource: "@ElitBundle/Resources/config/routing/module.yml"
+    prefix:   /module
+
+elit_lessons:
+    resource: "@ElitBundle/Resources/config/routing/lessons.yml"
+    prefix:   /lessons
+
+elit_rendez:
+    resource: "@ElitBundle/Resources/config/routing/rendezvous.yml"
+    prefix:   /rendez
+
+elit_application:
+    resource: "@ElitBundle/Resources/config/routing/application.yml"
+    prefix:   /application
+
+elit_book:
+    resource: "@ElitBundle/Resources/config/routing/book.yml"
+    prefix:   /book
+    
+elit_categorybook:
+    resource: "@ElitBundle/Resources/config/routing/CategoryBook.yml"
+    prefix:   /categorybook
+
+elit_reservation:
+    resource: "@ElitBundle/Resources/config/routing/reservation.yml"
+    prefix:   /reservation
+
+elit_classes:
+    resource: "@ElitBundle/Resources/config/routing/classes.yml"
+    prefix:   /classes
+
+elit_homepage:
+    path:     /
+    defaults: { _controller: ElitBundle:Default:index }
+
+ajout_student:
+    path:     /S
+    defaults: { _controller: ElitBundle:Student:ajout }
+
+
+affiche_student:
+    path:     /A
+    defaults: { _controller: ElitBundle:Student:affiche }
+
+elit_classrooms:
+        resource: "@ElitBundle/Resources/config/routing/classrooms.yml"
+        prefix:   /classrooms
+elit_equipement:
+    resource: "@ElitBundle/Resources/config/routing/equipement.yml"
+    prefix:   /equipement
+
+elit_club:
+    resource: "@ElitBundle/Resources/config/routing/club.yml"
+    prefix:   /club
+
+
+elit_event:
+    resource: "@ElitBundle/Resources/config/routing/event.yml"
+    prefix:   /event
+elit_Notification:
+    path: /not
+    defaults: { _controller: ElitBundle:Notification:ajax }
+

@@ -1,0 +1,150 @@
+{% extends 'backAdmin.html.twig' %}
+
+{% block content %}
+
+<hr>
+<h1>Complaint list</h1>
+<br>
+<div class="row">
+    <div class="col-md-3 col-md-3 col-sm-3 col-xs-12">
+        <div class="hpanel responsive-mg-b-30">
+            <div class="panel-body">
+
+                <ul class="mailbox-list">
+                    <li class="active">
+                        <a href="#">
+                            <span class="pull-right"></span>
+                            <i class="fa fa-envelope"></i> Inbox
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{{ path('complaints_new')}}"><i class="fa fa-pencil"></i>Create complaint</a>
+                    </li>
+                </ul>
+            </div>
+        </div> </div>
+    <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">
+        <div class="panel">
+
+
+            {#           <h2> search</h2>#}
+            {#            <div class="sidebar-search">#}
+            {#                <div class="input-group custom-search-form">#}
+            {#                    <input type="text" id="search" class="form-control" placeholder="search in complaints">#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <ul class="nav" id="side-menu">#}
+            {#            <li><a href="#">SEARCH RESULTS<span class="fa arrow"></span></a></li>#}
+            {#            </ul>#}
+
+
+            {#            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>#}
+            {#            <script type="text/javascript">#}
+            {#            jQuery(document).ready(function () {#}
+            {#                var searchRequest = null ;#}
+            {#$("search").keyup(function () {#}
+            {#var minlength=1 ;#}
+            {#var that= this ;#}
+            {#var value = $(this).val();#}
+            {#var entitySelector= $("entitiesNav").html('');#}
+            {#if (value.length>=minlength) {#}
+            {#    if (searchRequest != null) {#}
+            {#        searchRequest.abort() ;#}
+            {#        searchRequest=$.ajax({#}
+            {#            type: "GET" ,#}
+            {#            url: "{{ path('ajax_search') }}",#}
+            {#            data: {#}
+            {#                'q':value#}
+            {#            },#}
+            {#            dataType: "text" ,#}
+            {#            success: function (msg) {#}
+            {#                if (value===$(that).val() ) {#}
+            {#                    var result=JSON.parse(msg) ;#}
+            {#                    $.each(result, function (key,arr) {#}
+            {#                        $.each(arr, function(id, value){#}
+            {#                            if (key==='complaints') {#}
+            {#                                if (id!=='error') {#}
+            {#                                    console.log(value[1]) ;#}
+            {#                                    entitySelector.append('<li><b>'+value[1]+ '</b><a href="/'+id+'/show">'+'</a></li>' );#}
+            {#                                } else#}
+            {#                                {entitySelector.append('<li class"errorLi">'+value+'</li>') ;}#}
+            {#                                                    }#}
+            {#                                                        }#}
+
+            {#                        )#}
+
+            {#                    })#}
+            {#                }#}
+
+            {#            }#}
+            {#        })#}
+
+            {#    }#}
+            {#}#}
+            {#})#}
+
+            {#            })#}
+            {#            </script>#}
+            <script>
+                $(document).ready(function(){
+                    $("#myInput").on("keyup", function() {
+                        var value = $(this).val().toLowerCase();
+                        $("#myTab tr").filter(function() {
+                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                        });
+                    });
+                });
+            </script>
+
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-6 col-md-6 col-sm-6 col-xs-8">
+                        <div class="btn-group ib-btn-gp active-hook mail-btn-sd mg-b-15">
+
+                            <a href="{{ path('complaints_index')}}"><i class="fa fa-refresh"></i>Refresh</a>
+                        </div>
+                    </div>
+
+                </div>
+                <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                <div class="table-responsive ib-tb">
+
+                    <table class="table table-hover table-mailbox" >
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>From</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody id="myTab">
+
+                        {% for complaint in complaints %}
+                            <tr class="unread">
+                                <td><a href="{{ path('complaints_show', { 'id': complaint.id }) }}">{{ complaint.id }}</a></td>
+                                <td>{{ complaint.title }}</td>
+                                <td>{{ complaint.email }}</td>
+                                <td class="text-left mail-date"> {{ complaint.date|date('Y-m-d H:i:s') }} </td>
+
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('complaints_show', { 'id': complaint.id }) }}">show</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+
+
+                        {% endfor %}
+
+                        {{ knp_pagination_render(complaints) }}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            {% endblock %}

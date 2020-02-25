@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- icons fontawesome -->
     <link href="{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     {% block stylesheets %}
         <style>
@@ -146,6 +147,20 @@
                                             class="mini-sub-pro">inbox</span></a></li>
                         </ul>
                     </li>
+{#                    <li class="">#}
+{#                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">#}
+{#                            <span class="educate-icon educate-home icon-wrap"></span>#}
+{#                            <span class="mini-click-non">complaints</span>#}
+{#                        </a>#}
+{#                        <ul class="submenu-angle" aria-expanded="true">#}
+
+{#                            <li><a title="Dashboard v.1" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}"><span#}
+{#                                            class="mini-sub-pro">respond list</span></a></li>#}
+{#                            <li><a title="Dashboard v.2"#}
+{#                                   href="{{ asset('kiaalap-master/kiaalap-master/index-1.html') }}"><span#}
+{#                                            class="mini-sub-pro">inbox</span></a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <span class="educate-icon educate-department icon-wrap"></span>
@@ -154,6 +169,34 @@
                         <ul class="submenu-angle" aria-expanded="true">
 
                             <li><a title="Dashboard v.2" href="{{ path('rendez_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
+                            <span class="educate-icon educate-department icon-wrap"></span>
+                            <span class="mini-click-non"> Complaints</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="true">
+
+                            <li><a title="Dashboard v.2" href="{{ path('complaints_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
+                            <span class="educate-icon educate-department icon-wrap"></span>
+                            <span class="mini-click-non"> School Meetings</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="true">
+
+                            <li><a title="Dashboard v.2" href="{{ path('schoolmeeting_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                            </li>
+                            <li><a title="Dashboard v.3" href="{{ path('schoolmeeting_new') }}"><span class="mini-sub-pro">new</span></a>
+                            </li>
+                            <li><a title="Dashboard v.2" href="{{ path('schoolmeeting_calendrier') }}"><span class="mini-sub-pro">Calendar</span></a>
                             </li>
 
                         </ul>
@@ -321,6 +364,7 @@
                     </li>
 
                     <!--event -->
+
                 </ul>
             </nav>
         </div>
@@ -462,65 +506,19 @@
                                                         <h1>Notifications</h1>
                                                     </div>
                                                     <ul class="notification-menu">
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="educate-icon educate-checked edu-checked-pro admin-check-pro"
-                                                                       aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Advanda Cro</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="fa fa-cloud edu-cloud-computing-down"
-                                                                       aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Sulaiman din</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="fa fa-eraser edu-shield"
-                                                                       aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Victor Jara</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#">
-                                                                <div class="notification-icon">
-                                                                    <i class="fa fa-line-chart edu-analytics-arrow"
-                                                                       aria-hidden="true"></i>
-                                                                </div>
-                                                                <div class="notification-content">
-                                                                    <span class="notification-date">16 Sept</span>
-                                                                    <h2>Victor Jara</h2>
-                                                                    <p>Please done this project as soon possible.</p>
-                                                                </div>
-                                                            </a>
-                                                        </li>
+                                                        <div class="notification-content" id="notif">
+                                                            
+                                                        </div>
+
+                                                      
+
                                                     </ul>
                                                     <div class="notification-view">
                                                         <a href="#">View All Notification</a>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li><a href="{{ path('homepage') }}" <i class="fab fa-audible"></i> ELIT
+                                            <li><a href="{{ path('homepage') }}"><i class="fab fa-audible"></i> ELIT
                                                 Front Site</a></li>
                                             <li class="nav-item">
 
@@ -1288,24 +1286,62 @@
         <br>
         <br>
         <br>
+
+        <div class="row">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-2">
                     <a href="{{ path('club_index') }}">
                         <div class="container1">
                             <img class="img" src="{{ asset('uploads/issam_pic/club.png') }}" alt="Clubs" width="200" height="200">
                             <div class="center1">Clubs</div>
-
+                        </div>
                     </a>
                 </div>
-
+{% if ((is_granted('ROLE_STUDENT'))) %}
+            <div class="col-lg-2">
+                <a href="{{ path('club_index') }}">
+                    <div class="container1">
+                        <img class="img" src="{{ asset('uploads/issam_pic/club.png') }}" alt="Clubs" width="200" height="200">
+                        <div class="center1">Student clubs</div>
+                    </div>
+                </a>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+ {% endif %}
+
+            <div class="col-lg-2">
                 <a href="{{ path('event_index') }}">
                     <div class="container1">
-                        <img  class="img" src="{{ asset('uploads/issam_pic/event.png') }}" alt="Clubs" width="200" height="200">
+                        <img  class="img" src="{{ asset('uploads/issam_pic/event.png') }}" alt="Event" width="200" height="200">
                         <div class="center1">Events</div>
 
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="{{ path('classes_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/class.jpg') }}" alt="Class" width="200" height="200">
+                        <div class="center1">Classes</div>
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="{{ path('classrooms_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/classroom.png') }}" alt="Classroom" width="200" height="200">
+                        <div class="center1">Classes</div>
+
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-2">
+                <a href="{{ path('equipement_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/equipment.jpg') }}" alt="Equipment" width="200" height="200">
+                        <div class="center1">Equipment</div>
+
+                    </div>
                 </a>
             </div>
 
@@ -1391,6 +1427,52 @@
 <!-- tawk chat JS
     ============================================ -->
 <script src="{{ asset('kiaalap-master/kiaalap-master/js/tawk-chat.js') }}"></script>
+<!-- main Notifications bundle script
+    ============================================ -->
+{# Call NotificationsBundles's assets #}
+{{ notifications_assets() }}
+<script>
+    /**
+     * After calling notifications_assets() "pusher" is now available
+     * and you can use it this way
+     */
+
+        // select the channel you want to listen to
+    var channel = pusher.subscribe("notifications");// notifications channel
+    channel.bind("my-event", function(data) {
+        console.log('from notifications channel', data);
+    });
+
+    var channel = pusher.subscribe("messages");// messages channel
+    channel.bind("my-event", function(data) {
+        console.log('from messages channel', data);
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        var url='{{ path('elit_Notification') }}';
+        var notifDiv = $('#notif');
+        var notifs = function () {
+            $.ajax({
+                url: url,
+
+                success: function (json) {
+                    for(i = 0; i < json.length; i++) {
+
+                        notifDiv.append($('<h5  style="color:darkblue">').text(json[i]['Title']));
+                        notifDiv.append($('<h6 style="color : grey">').text('At : '+(json[i]['Date']['date'])));
+                        notifDiv.append($('<p>').text(json[i]['description']));
+                        notifDiv.append($('<hr>'));
+                    }
+
+                }
+            })
+        };
+        notifs();
+
+
+
+    });</script>
 {% block javascripts %}{% endblock %}
 </body>
 
