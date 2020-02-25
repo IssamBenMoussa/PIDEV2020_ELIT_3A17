@@ -4,13 +4,15 @@ namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
-
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 /**
  * Lessons
  *
  * @ORM\Table(name="lessons")
  * @ORM\Entity(repositoryClass="ElitBundle\Repository\LessonsRepository")
  * @Vich\Uploadable
+ * @UniqueEntity("nomCours")
  */
 class Lessons
 {
@@ -50,6 +52,7 @@ class Lessons
      * @var string
      *
      * @ORM\Column(name="admin", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $admin;
 
@@ -63,6 +66,7 @@ class Lessons
 
     /**
      * @param string $admin
+     *
      */
     public function setAdmin($admin)
     {
@@ -93,13 +97,14 @@ class Lessons
 
      * @ORM\ManyToOne(targetEntity="Module",inversedBy="Lessons")
      * @ORM\JoinColumn(name="id_Module",referencedColumnName="id")
-     *
+     * @Assert\NotBlank(message="Le module doit avoir un nom")
      */
     private $Module;
 
 
     /**
      * @ORM\Column(type="string")
+     * @Assert\NotBlank(message="Lesson must have a file")
      */
     private $brochureFilename;
 

@@ -57,11 +57,12 @@ class ModuleController extends Controller
      */
     public function showAction(Module $module)
     {
-        $deleteForm = $this->createDeleteForm($module);
+        $em = $this->getDoctrine()->getManager();
 
-        return $this->render('module/show.html.twig', array(
-            'module' => $module,
-            'delete_form' => $deleteForm->createView(),
+        $lessons = $em->getRepository('ElitBundle:Lessons')->findBy(array('Module'=> $module));
+
+        return $this->render('lessons/index.html.twig', array(
+            'lessons' => $lessons,
         ));
     }
 
