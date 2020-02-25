@@ -16,7 +16,7 @@ framework:
     #translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
-        resource: '%kernel.project_dir%/app/config/routing.yml'
+        resource: '%kernel.project_dir%/config/routing.yml'
         strict_requirements: ~
     form: ~
     csrf_protection: ~
@@ -79,7 +79,7 @@ vich_uploader:
 
     mappings:
         modules:
-            uri_prefix: /../images/modules
+            uri_prefix: /../images/module
             upload_destination: '%kernel.project_dir%/web/images/module'
 
 

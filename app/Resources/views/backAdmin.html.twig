@@ -147,6 +147,20 @@
                                             class="mini-sub-pro">inbox</span></a></li>
                         </ul>
                     </li>
+{#                    <li class="">#}
+{#                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">#}
+{#                            <span class="educate-icon educate-home icon-wrap"></span>#}
+{#                            <span class="mini-click-non">complaints</span>#}
+{#                        </a>#}
+{#                        <ul class="submenu-angle" aria-expanded="true">#}
+
+{#                            <li><a title="Dashboard v.1" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}"><span#}
+{#                                            class="mini-sub-pro">respond list</span></a></li>#}
+{#                            <li><a title="Dashboard v.2"#}
+{#                                   href="{{ asset('kiaalap-master/kiaalap-master/index-1.html') }}"><span#}
+{#                                            class="mini-sub-pro">inbox</span></a></li>#}
+{#                        </ul>#}
+{#                    </li>#}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <span class="educate-icon educate-department icon-wrap"></span>
@@ -155,6 +169,34 @@
                         <ul class="submenu-angle" aria-expanded="true">
 
                             <li><a title="Dashboard v.2" href="{{ path('rendez_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
+                            <span class="educate-icon educate-department icon-wrap"></span>
+                            <span class="mini-click-non"> Complaints</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="true">
+
+                            <li><a title="Dashboard v.2" href="{{ path('complaints_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="">
+                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
+                            <span class="educate-icon educate-department icon-wrap"></span>
+                            <span class="mini-click-non"> School Meetings</span>
+                        </a>
+                        <ul class="submenu-angle" aria-expanded="true">
+
+                            <li><a title="Dashboard v.2" href="{{ path('schoolmeeting_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                            </li>
+                            <li><a title="Dashboard v.3" href="{{ path('schoolmeeting_new') }}"><span class="mini-sub-pro">new</span></a>
+                            </li>
+                            <li><a title="Dashboard v.2" href="{{ path('schoolmeeting_calendrier') }}"><span class="mini-sub-pro">Calendar</span></a>
                             </li>
 
                         </ul>
@@ -322,6 +364,7 @@
                     </li>
 
                     <!--event -->
+
                 </ul>
             </nav>
         </div>
