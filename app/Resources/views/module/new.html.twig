@@ -10,9 +10,6 @@
 
     {{ form_row(form.title) }}
     {{ form_row(form.description) }}
-        {{ form_row(form.creationDate)}}
-<h6 style="color:red"  id="er2">*Invalid date (must be superior of today)<h6>
-
 {{ form_row(form.admin) }}
 
 
@@ -29,29 +26,5 @@
 {% block javascripts %}
     <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
 
-    <script type="text/javascript">
-        $(function()
-        {
-            $('.js-datepicker').datepicker();
-            $("#er").hide();
-            $("#er2").hide();
-        });
 
-                $(".js-datepicker").on('change', function () {
-                    var selectedDate =new Date( $(this).val());
-                    var todaysDate = new Date();
-
-                    //alert(todaysDate+" "+selectedDate);
-                    if (selectedDate < todaysDate) {
-                      //  alert('Selected date must be greater than today date');
-                        $(this).val('');
-                        $("#er2").show();
-                    }else
-                    $("#er2").hide();
-                });
-
-
-
-
-    </script>
 {% endblock %}

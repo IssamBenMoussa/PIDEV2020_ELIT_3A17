@@ -31,7 +31,7 @@
                                 <div class="course-des">
 
                                     <p style="color:red;font-weight: bold ">Creation date :</p
-                                    ><p> {% if module.creationDate %}{{ module.creationDate|date('d/m/Y') }}{% endif %}</p>
+                                    ><p> {{ module.Date|date('d/m/Y') }}</p>
                                     <p style="color:red;font-weight: bold ">Description : </p>
                                     <p>{{ module.description }}</p>
                                 </div>
