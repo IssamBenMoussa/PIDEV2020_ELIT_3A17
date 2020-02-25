@@ -25,6 +25,21 @@ class LessonsController extends Controller
         ));
     }
 
+
+    public function findOneByIdJoinedToCategory($id)
+    {
+        $entityManager = $this->getEntityManager();
+
+        $query = $entityManager->createQuery(
+            'SELECT p, c
+        FROM App\Entity\Lessons p
+        INNER JOIN p.category c
+        WHERE p.id = :id'
+        )->setParameter('id', $id);
+
+        return $query->getOneOrNullResult();
+    }
+
     /**
      * Creates a new lesson entity.
      *
