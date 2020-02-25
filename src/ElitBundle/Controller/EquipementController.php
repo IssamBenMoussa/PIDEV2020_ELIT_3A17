@@ -3,7 +3,6 @@
 namespace ElitBundle\Controller;
 
 use ElitBundle\Entity\Equipement;
-use ElitBundle\Entity\Notification;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -22,10 +21,9 @@ class EquipementController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $equipements = $em->getRepository('ElitBundle:Equipement')->findAll();
-        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+
         return $this->render('equipement/index.html.twig', array(
             'equipements' => $equipements,
-            'notifications' => $notif,
         ));
     }
 
@@ -46,11 +44,10 @@ class EquipementController extends Controller
 
             return $this->redirectToRoute('equipement_show', array('id' => $equipement->getId()));
         }
-        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+
         return $this->render('equipement/new.html.twig', array(
             'equipement' => $equipement,
             'form' => $form->createView(),
-            'notifications' => $notif,
         ));
     }
 
@@ -61,11 +58,10 @@ class EquipementController extends Controller
     public function showAction(Equipement $equipement)
     {
         $deleteForm = $this->createDeleteForm($equipement);
-        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+
         return $this->render('equipement/show.html.twig', array(
             'equipement' => $equipement,
             'delete_form' => $deleteForm->createView(),
-            'notifications' => $notif,
         ));
     }
 
@@ -84,12 +80,11 @@ class EquipementController extends Controller
 
             return $this->redirectToRoute('equipement_edit', array('id' => $equipement->getId()));
         }
-        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+
         return $this->render('equipement/edit.html.twig', array(
             'equipement' => $equipement,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
-            'notifications' => $notif
         ));
     }
 

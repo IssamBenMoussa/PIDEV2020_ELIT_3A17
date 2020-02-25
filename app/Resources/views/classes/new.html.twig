@@ -3,7 +3,7 @@
 {% block content %}
     <br><br> <h1>Class creation</h1>
     {% form_theme form 'bootstrap_4_layout.html.twig' %}
-    {{ form_start(form,{'attr':{'novalidate':'novalidate'}}) }}
+    {{ form_start(form) }}
         {{ form_widget(form) }}
         <input class="btn btn-custon-four btn-primary" type="submit" value="Create" />
     {{ form_end(form) }}

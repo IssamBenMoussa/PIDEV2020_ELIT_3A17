@@ -4,9 +4,7 @@ namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
-use SBC\NotificationsBundle\Builder\NotificationBuilder;
-use SBC\NotificationsBundle\Model\NotifiableInterface;
-use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Event
@@ -14,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="event")
  * @ORM\Entity(repositoryClass="ElitBundle\Repository\EventRepository")
  */
-class Event implements NotifiableInterface
+class Event
 {
     /**
      * @var int
@@ -27,15 +25,14 @@ class Event implements NotifiableInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Empty Title")
-     * @Assert\Length(min="3",minMessage="Title too Short")
+     *
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var \DateTime
-     *@Assert\NotBlank(message="Empty Date")
+     *
      * @ORM\Column(name="startDate", type="datetime")
      */
     private $startDate;
@@ -49,8 +46,7 @@ class Event implements NotifiableInterface
 
     /**
      * @var string
-     ** @Assert\NotBlank(message="Empty Description")
-     * @Assert\Length(min="3",minMessage="Description too Short")
+     *
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
@@ -61,28 +57,6 @@ class Event implements NotifiableInterface
      * @ORM\Column(name="logo", type="string", length=255)
      */
     private $logo;
-
-    /**
-     * @return string
-     */
-    public function getSearchkey()
-    {
-        return $this->searchkey;
-    }
-
-    /**
-     * @param string $searchkey
-     */
-    public function setSearchkey($searchkey)
-    {
-        $this->searchkey = $searchkey;
-    }
-    /**
-     * @var string
-     * @Assert\NotBlank(message="Search key is empty ! ")
-     * @ORM\Column(name="searchkey", type="string", length=255)
-     */
-    private $searchkey;
 
     /**
      * @return mixed
@@ -305,49 +279,5 @@ class Event implements NotifiableInterface
         $this->equipements[] = $e;
     }
 
-    /**
-     * Build notifications on entity creation
-     * @param NotificationBuilder $builder
-     * @return NotificationBuilder
-     */
-    public function notificationsOnCreate(NotificationBuilder $builder)
-    {
-        $notification = new Notification();
-        $notification
-            ->setTitle('Event '.$this->title.' Created ')
-            ->setDescription($this->description)
-            ->setRoute('event_show')
-            ->setParameters(array('id' => $this->id));
-        $builder->addNotification($notification);
-        return $builder;
-
-    }
-
-    /**
-     * Build notifications on entity update
-     * @param NotificationBuilder $builder
-     * @return NotificationBuilder
-     */
-    public function notificationsOnUpdate(NotificationBuilder $builder)
-    {
-        $notification = new Notification();
-        $notification
-            ->setTitle('Event  '.$this->title.' Updated ')
-            ->setDescription($this->description)
-            ->setRoute('event_show')
-            ->setParameters(array('id' => $this->id));
-        $builder->addNotification($notification);
-        return $builder;
-    }
-
-    /**
-     * Build notifications on entity delete
-     * @param NotificationBuilder $builder
-     * @return NotificationBuilder
-     */
-    public function notificationsOnDelete(NotificationBuilder $builder)
-    {
-        return $builder;
-    }
 }
 

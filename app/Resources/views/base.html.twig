@@ -2,14 +2,9 @@
 <html class="no-js" lang="zxx">
 
 <head>
-    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-core.js"
-            type="text/javascript" charset="utf-8"></script>
-    <script src="https://js.api.here.com/v3/3.1/mapsjs-service.js"
-            type="text/javascript" charset="utf-8"></script>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>ELIT</title>
+    <title>Edumark</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,24 +27,12 @@
     <link rel="stylesheet" href="{{ asset('edumark/css/style.css') }}">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
 </head>
-
+{% block body %}
 <body>
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/5e49d56ba89cda5a18864837/default';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
-</script>
-<!--End of Tawk.to Script-->
+
 <!-- header-start -->
 <header>
     <div class="header-area ">
@@ -130,18 +113,14 @@
 <!-- header-end -->
 
 <!-- slider_area_start -->
-
 <div class="slider_area ">
     <div class="single_slider d-flex align-items-center justify-content-center slider_bg_1">
-        {% block body %}
         <div class="container">
             <div class="row align-items-center justify-content-center">
                 <div class="col-xl-6 col-md-6">
                     <div class="illastrator_png">
-
                         <img src="{{ asset('edumark/img/elit.png') }}" alt="">
                     </div>
-
                 </div>
                 <div class="col-xl-6 col-md-6">
                     <div class="slider_info">
@@ -149,15 +128,12 @@
                             TO OUR SCHOOL <br>
                              WEBSITE</h3>
                         <a href="{{ path('fos_user_registration_register') }}" class="boxed_btn"> GET STARTED </a>
-
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
-
 <!-- slider_area_end -->
 {% block hey %}
 <!-- about_area_start -->
@@ -1950,7 +1926,6 @@
 <!-- our_latest_blog_end -->
 
 {% endblock %}
-
 <!-- footer -->
 <footer class="footer footer_bg_1">
     <div class="footer_top">
@@ -2030,9 +2005,9 @@
                             Address
                         </h3>
                         <p>
-                          ELIT SCHOOL <br>
-                            +216 25696969 <br>
-                            ELIT@gmail.com
+                            200, D-block, Green lane USA <br>
+                            +10 367 467 8934 <br>
+                            edumark@contact.com
                         </p>
                     </div>
                 </div>
@@ -2046,7 +2021,7 @@
                 <div class="col-xl-12">
                     <p class="copy_right text-center">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">CYBERKNIGHTS</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </p>
                 </div>

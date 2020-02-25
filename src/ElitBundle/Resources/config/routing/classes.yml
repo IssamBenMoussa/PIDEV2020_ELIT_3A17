@@ -22,6 +22,3 @@ classes_delete:
     path:     /{id}/delete
     defaults: { _controller: "ElitBundle:Classes:delete" }
     methods:  DELETE
-classes_altDelete:
-    path:     /deleteAlt/{id}
-    defaults: { _controller: "ElitBundle:Classes:altDelete" }

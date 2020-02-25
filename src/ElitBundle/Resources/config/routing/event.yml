@@ -22,15 +22,3 @@ event_delete:
     path:     /{id}/delete
     defaults: { _controller: "ElitBundle:Event:delete" }
     methods:  DELETE
-event_calendar:
-    path:     /calendar
-    defaults: { _controller: "ElitBundle:Event:calendar" }
-
-event_del:
-    path:     /del/{id}
-    defaults: { _controller: "ElitBundle:Event:del" }
-
-
-event_pdf:
-  path:     /pdf
-  defaults: { _controller: "ElitBundle:Event:pdf" }

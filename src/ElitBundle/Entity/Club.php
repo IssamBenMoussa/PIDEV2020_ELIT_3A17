@@ -3,16 +3,14 @@
 namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use SBC\NotificationsBundle\Builder\NotificationBuilder;
-use SBC\NotificationsBundle\Model\NotifiableInterface;
-use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * Club
  *
  * @ORM\Table(name="club")
  * @ORM\Entity(repositoryClass="ElitBundle\Repository\ClubRepository")
  */
-class Club implements NotifiableInterface
+class Club
 {
     /**
      * @var int
@@ -25,16 +23,14 @@ class Club implements NotifiableInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Empty title")
-     * @Assert\Length(min="3",minMessage="Title too Short !")
+     *
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
-     *@Assert\NotBlank(message="Empty description")
-     * @Assert\Length(min="3",minMessage="Description too Short !")
+     *
      * @ORM\Column(name="description", type="string", length=255)
      */
     private $description;
@@ -57,16 +53,14 @@ class Club implements NotifiableInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Empty Category")
-     * @Assert\Choice({"Art","Music","Electronics","Other","Computing","Communication","Entrepreneurship"}
-     *     ,message="Valid categories are : Art,Music,Electronics,Computing,Communication,Entrepreneurship and Other")
+     *
      * @ORM\Column(name="category", type="string", length=255)
      */
     private $category;
 
     /**
      * @var \DateTime
-     **@Assert\NotBlank(message="Empty Date")
+     *
      * @ORM\Column(name="creationDate", type="datetime")
      */
     private $creationDate;
@@ -220,50 +214,6 @@ class Club implements NotifiableInterface
     public function getLogo()
     {
         return $this->logo;
-    }
-    /**
-     * Build notifications on entity creation
-     * @param NotificationBuilder $builder
-     * @return NotificationBuilder
-     */
-    public function notificationsOnCreate(NotificationBuilder $builder)
-    {
-        $notification = new Notification();
-        $notification
-            ->setTitle('Club Updated '.$this->title)
-            ->setDescription($this->description)
-            ->setRoute('event_show')
-            ->setParameters(array('id' => $this->id));
-        $builder->addNotification($notification);
-        return $builder;
-
-    }
-
-    /**
-     * Build notifications on entity update
-     * @param NotificationBuilder $builder
-     * @return NotificationBuilder
-     */
-    public function notificationsOnUpdate(NotificationBuilder $builder)
-    {
-        $notification = new Notification();
-        $notification
-            ->setTitle('Event '.$this->title.' updated')
-            ->setDescription($this->description)
-            ->setRoute('event_show')
-            ->setParameters(array('id' => $this->id));
-        $builder->addNotification($notification);
-        return $builder;
-    }
-
-    /**
-     * Build notifications on entity delete
-     * @param NotificationBuilder $builder
-     * @return NotificationBuilder
-     */
-    public function notificationsOnDelete(NotificationBuilder $builder)
-    {
-        return $builder;
     }
 }
 

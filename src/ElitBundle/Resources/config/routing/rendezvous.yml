@@ -22,8 +22,3 @@ rendez_delete:
     path:     /{id}/delete
     defaults: { _controller: "ElitBundle:rendezvous:delete" }
     methods:  DELETE
-rendez_map:
-    path:     /map
-    defaults: { _controller: "ElitBundle:rendezvous:map" }
-    methods:  GET
-
