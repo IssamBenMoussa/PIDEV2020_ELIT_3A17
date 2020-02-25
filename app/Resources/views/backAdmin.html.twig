@@ -111,20 +111,7 @@
             {% block aliBar %}
             <nav class="sidebar-nav left-sidebar-menu-pro">
                 <ul class="metismenu" id="menu1">
-                    <li class="">
-                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
-                            <span class="educate-icon educate-home icon-wrap"></span>
-                            <span class="mini-click-non">complaints</span>
-                        </a>
-                        <ul class="submenu-angle" aria-expanded="true">
 
-                            <li><a title="Dashboard v.1" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}"><span
-                                            class="mini-sub-pro">respond list</span></a></li>
-                            <li><a title="Dashboard v.2"
-                                   href="{{ asset('kiaalap-master/kiaalap-master/index-1.html') }}"><span
-                                            class="mini-sub-pro">inbox</span></a></li>
-                        </ul>
-                    </li>
 {#                    <li class="">#}
 {#                        <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">#}
 {#                            <span class="educate-icon educate-home icon-wrap"></span>#}
@@ -240,19 +227,9 @@
 
                         </ul>
                     </li>
-                    <li>
-                        <a title="Landing Page" href="{{ asset('kiaalap-master/kiaalap-master/events.html') }}"
-                           aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg"
-                                                       aria-hidden="true"></span> <span class="mini-click-non">complaints</span></a>
 
-                    </li>
-                    <li>
-                        <a title="Landing Page" href="{{ asset('kiaalap-master/kiaalap-master/events.html') }}"
-                           aria-expanded="false"><span class="educate-icon educate-event icon-wrap sub-icon-mg"
-                                                       aria-hidden="true"></span> <span
-                                    class="mini-click-non">module</span></a>
 
-                    </li>
+
 
                     {% if ((is_granted('ROLE_ADMIN'))) %}
                     <li class=" ">
@@ -1270,7 +1247,26 @@
                 </a>
             </div>
  {% endif %}
+            {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_STUDENT'))) ) %}
+            <div class="col-lg-2">
+                <a href="{{ path('complaints_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/classroom.png') }}" alt="Classroom" width="200" height="200">
+                        <div class="center1">complaints</div>
 
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            <div class="col-lg-2">
+                <a href="{{ path('reservation_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/classroom.png') }}" alt="Classroom" width="200" height="200">
+                        <div class="center1">reservation</div>
+
+                    </div>
+                </a>
+            </div>
             <div class="col-lg-2">
                 <a href="{{ path('event_index') }}">
                     <div class="container1">
@@ -1323,6 +1319,10 @@
                     </div>
                 </a>
             </div>
+
+
+
+
             {% endif %}
             {% if ((is_granted('ROLE_ADMIN'))) %}
                 <div class="col-lg-2">
@@ -1356,7 +1356,7 @@
                         </div>
                     </a>
                 </div>
-            {% endif %}
+            {% endif %} 
             <div class="col-lg-2">
                 <a href="{{ path('lessons_index') }}">
                     <div class="container1">
