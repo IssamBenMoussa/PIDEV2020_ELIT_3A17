@@ -36,7 +36,7 @@ security:
         - { path: ^/S/, role: ROLE_STUDENT }
         - { path: ^/T/, role: ROLE_TEACHER }
         - {path: ^/E/rendez, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/E/lessons, role: ROLE_ADMIN }
+        - { path: ^/E/lessons, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT] }
         - { path: ^/E/classrooms, role: ROLE_ADMIN }
         - { path: ^/E/equipement, role: ROLE_ADMIN }
         - { path: ^/E/club, role: ROLE_ADMIN }

@@ -1345,6 +1345,28 @@
                 </a>
             </div>
 
+            {% if ((is_granted('ROLE_ADMIN'))) %}
+                <div class="col-lg-2">
+                    <a href="{{ path('module_index') }}">
+                        <div class="container1">
+                            <img  class="img" src="{{ asset('img/module.png') }}" alt="Event" width="200" height="200">
+                            <div class="center1">Modules</div>
+
+                        </div>
+                    </a>
+                </div>
+            {% endif %}
+
+            <div class="col-lg-2">
+                <a href="{{ path('lessons_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/lesson.png') }}" alt="Event" width="200" height="200">
+                        <div class="center1">Lessons</div>
+
+                    </div>
+                </a>
+            </div>
+
         </div>
         </div>
     </div>
