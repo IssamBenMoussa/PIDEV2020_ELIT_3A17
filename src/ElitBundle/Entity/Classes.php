@@ -3,7 +3,6 @@
 namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Classes
@@ -19,7 +18,6 @@ class Classes
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
-     *
      */
     private $id;
 
@@ -27,8 +25,6 @@ class Classes
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
-     * @Assert\NotBlank(message="Capacity can't stay blank")
-     * @Assert\Length(min="3",max="10",minMessage="Name too short",maxMessage="Name too short")
      */
     private $name;
 
@@ -36,7 +32,6 @@ class Classes
      * @var string
      *
      * @ORM\Column(name="level", type="string", length=255)
-     * @Assert\Length(min="5",max="15",maxMessage="level too long",minMessage="Level too short")
      */
     private $level;
 
@@ -44,7 +39,7 @@ class Classes
 
      * @ORM\ManyToOne(targetEntity="ElitBundle\Entity\Classrooms")
      * @ORM\JoinColumn(name="idClassroom",referencedColumnName="id")
-     * @Assert\NotBlank(message="Choose a classe")
+     *
      */
     private $idClassroom;
 

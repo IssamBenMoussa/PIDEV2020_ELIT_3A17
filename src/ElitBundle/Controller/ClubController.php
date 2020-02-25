@@ -4,7 +4,6 @@ namespace ElitBundle\Controller;
 
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use ElitBundle\Entity\Club;
-use ElitBundle\Entity\Notification;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\File\Exception\FileException;
@@ -22,22 +21,15 @@ class ClubController extends Controller
      * Lists all club entities.
      *
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        $paginator=$this->get('knp_paginator');
         $em = $this->getDoctrine()->getManager();
-        $clubRep = $em->getRepository(Club::class);
-        $allClubsQuery = $clubRep->createQueryBuilder('c')->getQuery();
 
-        $clubs = $paginator->paginate(
-            $allClubsQuery,
-            $request->query->getInt('page', 1),
-            3
+        $clubs = $em->getRepository('ElitBundle:Club')->findAll();
 
-        );
-        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
-        return $this->render('club/index.html.twig', array('notifications'=>$notif, 'pagination' => $clubs));
-
+        return $this->render('club/index.html.twig', array(
+            'clubs' => $clubs,
+        ));
     }
 
     /**
@@ -83,17 +75,16 @@ try{
 
             $em->persist($club);
             $em->flush();
-            $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+
             return $this->redirectToRoute('club_show', array('id' => $club->getId()));
         }
 }catch (UniqueConstraintViolationException $e)
 {
     $form->get('president')->addError(new FormError('Duplicated value !'));
-}       $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+}
         return $this->render('club/new.html.twig', array(
             'club' => $club,
             'form' => $form->createView(),
-            'notifications' => $notif
         ));
     }
 
@@ -104,11 +95,10 @@ try{
     public function showAction(Club $club)
     {
         $deleteForm = $this->createDeleteForm($club);
-        $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
+
         return $this->render('club/show.html.twig', array(
             'club' => $club,
             'delete_form' => $deleteForm->createView(),
-            'notifications' => $notif
         ));
     }
 
@@ -159,8 +149,8 @@ try{
 
 
             $this->getDoctrine()->getManager()->flush();
-            $notif = $this->getDoctrine()->getRepository(Notification::class)->findAll();
-            return $this->redirectToRoute('club_edit', array('id' => $club->getId(), 'notifications'=>$notif));
+
+            return $this->redirectToRoute('club_edit', array('id' => $club->getId()));
         }
 }catch (UniqueConstraintViolationException $e)
 {
