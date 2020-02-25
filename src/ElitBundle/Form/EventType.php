@@ -6,6 +6,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
+use Symfony\Component\Form\Extension\Core\Type\TimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -24,8 +25,8 @@ class EventType extends AbstractType
                     'format'=>'M/d/y']
 
             )
-            ->add('startHour')
-            ->add('description')
+            ->add('startHour',TimeType::class,['input'=>'datetime'])
+            ->add('description')->add('searchKey')
             ->add('logo',FileType::class, [
                 'label' => 'Logo Picture',
                 'mapped' => false,

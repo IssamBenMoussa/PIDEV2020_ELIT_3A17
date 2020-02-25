@@ -1,0 +1,139 @@
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Dashboard ELIT</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- icons fontawesome -->
+<link href="{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}" rel="stylesheet">
+
+{% block stylesheets %}
+    <style>
+        .container1 {
+            position: relative;
+        }
+
+        .center1 {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .img {
+            width: 200px;
+            height: auto;
+            opacity: 0.5;
+        }
+
+        body {
+            background-image: url({{ asset('uploads/issam_pic/back.jpg') }});
+            background-size: 200px 200px;
+            background-repeat: repeat;
+            background-color: #cccccc;
+
+        }
+
+    </style>
+
+{% endblock %}
+<!-- favicon
+    ============================================ -->
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}">
+<!-- Google Fonts
+    ============================================ -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
+<!-- Bootstrap CSS
+    ============================================ -->
+<link rel="stylesheet" href="{{ asset('kiaalap-master/kiaalap-master/css/bootstrap.min.css') }}">
+
+
+
+<script src="{{ asset('kiaalap-master/kiaalap-master/js/vendor/modernizr-2.8.3.min.js') }}"></script>
+
+{% block content %}
+
+    <br>
+
+    <br>
+    <BR>
+    <!-- Static Table Start -->
+    <div class="">
+        <div class="container-fluid">
+            <div class="">
+                <div class="">
+                    <div class="">
+                        <div class="container">
+                        <div class="row justify-content-md-center" style="background: whitesmoke;opacity: 0.9">
+                            <div class="col col-md-auto">
+                                <h2 class="text-center" style="font-family: Bodoni MT;color : cornflowerblue">Events upcoming for the next 7 days</h2>
+                                <h4 class="text-center" style="color : grey; font-family: Courier New"> From {{ ("Now"|date('d/m/Y')) }} to
+                                {{ ("Now"|date_modify("+7 day")|date('d/m/Y')) }}</h4>
+                            </div>
+                        </div>
+                        </div>
+                            <img class="img" src="{{ asset('uploads/issam_pic/elit.png') }}" align="left">
+
+                                <img class="img" src="{{ asset('uploads/issam_pic/elit.png') }}" align="right">
+
+
+                        <table class="table table-bordered">
+                                    <thead>
+                                    <tr class="bg-primary">
+
+                                        <th data-field="xx" data-editable="false">Title</th>
+                                        <th data-field="id">Start Date</th>
+                                        <th data-field="name" data-editable="false">Start Hour</th>
+                                        <th data-field="email" data-editable="fasle">Description</th>
+                                        <th data-field="phone" data-editable="false">Logo</th>
+                                        <th data-field="complete">Club</th>
+                                        <th data-field="task" data-editable="false">Classroom</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for e in events %}
+                                        {%  if(e.startDate|date < ("Now"|date_modify("+7 day")|date))
+                                            and (e.startDate|date>=("Now"|date)) %}
+                                        <tr class="bg-info">
+
+                                            <td class=""> {{e.title}}</td>
+                                            <td class=""> {{e.startDate|date('d/m/Y')}}</td>
+                                            <td class=""> {{e.startHour|date('H:i')}}</td>
+                                            <td class=""> {{e.description}}</td>
+                                            <td class=""> <img src="{{ asset('uploads/issam_pic/')~e.logo }}"  style="width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;"></td>
+
+                                            <td class=""> {{e.idClub}}</td>
+                                            <td> {{ e.idClassroom }}</td>
+
+
+                                        </tr>
+                                        {% endif %}
+                                    {% endfor %}
+                                    </tbody>
+
+                                </table>
+                        <img class="img" src="{{ asset('uploads/issam_pic/elit.png') }}" align="left">
+                        <img class="img" src="{{ asset('uploads/issam_pic/elit.png') }}" align="right">
+                            </div>
+                        </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Static Table End -->
+
+
+{% endblock %}
+{% block javascripts %}
+
+
+{% endblock %}
+

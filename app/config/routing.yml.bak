@@ -1,0 +1,10 @@
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+elit:
+    resource: "@ElitBundle/Resources/config/routing.yml"
+    prefix:   /E
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

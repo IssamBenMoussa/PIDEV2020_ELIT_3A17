@@ -8,3 +8,6 @@ elit:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+event_imp:
+    path:     /imp
+    defaults: { _controller: "ElitBundle:Event:imp" }

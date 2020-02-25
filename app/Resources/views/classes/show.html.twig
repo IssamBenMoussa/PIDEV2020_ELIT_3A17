@@ -1,7 +1,9 @@
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
-<section class="content">
+
+    <br> <br>
+    <section class="content">
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
@@ -28,6 +30,10 @@
                 <th>Level</th>
                 <td>{{ class.level }}</td>
             </tr>
+                        <tr>
+                            <th>Classroom</th>
+                            <td>{{ class.idClassroom }}</td>
+                        </tr>
         </tbody>
     </table>
 
@@ -44,4 +50,10 @@
             {{ form_end(delete_form) }}
         </li>
     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endblock %}
