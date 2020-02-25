@@ -2,7 +2,7 @@
 <container xmlns="http://symfony.com/schema/dic/services" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://symfony.com/schema/dic/services https://symfony.com/schema/dic/services/services-1.0.xsd">
   <parameters>
     <parameter key="kernel.root_dir">C:\wamp\www\PIDEV2020_ELIT_3A17\app</parameter>
-    <parameter key="kernel.project_dir">C:\wamp\www\PIDEV2020_ELIT_3A17\app</parameter>
+    <parameter key="kernel.project_dir">C:\wamp\www\PIDEV2020_ELIT_3A17</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
     <parameter key="kernel.name">app</parameter>
@@ -152,10 +152,10 @@
     <parameter key="mailer_user">null</parameter>
     <parameter key="mailer_password">null</parameter>
     <parameter key="secret">ThisTokenIsNotSoSecretChangeIt</parameter>
-    <parameter key="brochures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17\app/web/uploads/brochures</parameter>
+    <parameter key="brochures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/brochures</parameter>
     <parameter key="locale">en</parameter>
-    <parameter key="pictures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17\app/web/uploads/issam_pic</parameter>
-    <parameter key="images_directory">C:\wamp\www\PIDEV2020_ELIT_3A17\app/web/uploads/imageheni</parameter>
+    <parameter key="pictures_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/issam_pic</parameter>
+    <parameter key="images_directory">C:\wamp\www\PIDEV2020_ELIT_3A17/web/uploads/imageheni</parameter>
     <parameter key="fragment.renderer.hinclude.global_template"></parameter>
     <parameter key="fragment.path">/_fragment</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
@@ -171,7 +171,7 @@
       <parameter key="gc_probability">1</parameter>
       <parameter key="use_strict_mode">true</parameter>
     </parameter>
-    <parameter key="session.save_path">C:\wamp\www\PIDEV2020_ELIT_3A17\app/var/sessions/dev</parameter>
+    <parameter key="session.save_path">C:\wamp\www\PIDEV2020_ELIT_3A17/var/sessions/dev</parameter>
     <parameter key="session.metadata.update_threshold" type="string">0</parameter>
     <parameter key="form.type_extension.csrf.enabled">true</parameter>
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
@@ -196,7 +196,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">C:\wamp\www\PIDEV2020_ELIT_3A17\app/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">C:\wamp\www\PIDEV2020_ELIT_3A17/web/config/routing_dev.yml</parameter>
     <parameter key="router.cache_class_prefix">appDevDebugProjectContainer</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -226,7 +226,7 @@
       <parameter>@GregwarCaptcha/captcha.html.twig</parameter>
       <parameter>form_div_layout.html.twig</parameter>
     </parameter>
-    <parameter key="twig.default_path">C:\wamp\www\PIDEV2020_ELIT_3A17\app/templates</parameter>
+    <parameter key="twig.default_path">C:\wamp\www\PIDEV2020_ELIT_3A17/templates</parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
     <parameter key="monolog.handlers_to_channels" type="collection">
@@ -439,7 +439,7 @@
     <parameter key="vich_uploader.mappings" type="collection">
       <parameter key="modules" type="collection">
         <parameter key="uri_prefix">/../images/module</parameter>
-        <parameter key="upload_destination">C:\wamp\www\PIDEV2020_ELIT_3A17\app/web/images/module</parameter>
+        <parameter key="upload_destination">C:\wamp\www\PIDEV2020_ELIT_3A17/web/images/module</parameter>
         <parameter key="namer" type="collection">
           <parameter key="service">null</parameter>
           <parameter key="options">null</parameter>
@@ -1137,7 +1137,7 @@
       </argument>
     </service>
     <service id="1_NativeFileSessionHandler~s3nufib" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler" public="false">
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app/var/sessions/dev</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17/var/sessions/dev</argument>
     </service>
     <service id="session" class="Symfony\Component\HttpFoundation\Session\Session" public="true">
       <argument type="service" id="session.storage.native"/>
@@ -1674,7 +1674,7 @@
     <service id="debug.file_link_formatter" class="Symfony\Component\HttpKernel\Debug\FileLinkFormatter" public="false">
       <argument>null</argument>
       <argument type="service" id="request_stack" on-invalid="ignore"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17</argument>
       <argument type="service" id="debug.file_link_formatter.url_format"/>
     </service>
     <service id="debug.stopwatch" class="Symfony\Component\Stopwatch\Stopwatch">
@@ -2279,7 +2279,7 @@
     </service>
     <service id="router.default" class="Symfony\Bundle\FrameworkBundle\Routing\Router" public="false">
       <argument type="service" id="service_container"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app/config/routing_dev.yml</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17/web/config/routing_dev.yml</argument>
       <argument type="collection">
         <argument key="cache_dir">C:\wamp\www\PIDEV2020_ELIT_3A17\var\cache\dev</argument>
         <argument key="debug">true</argument>
@@ -2320,7 +2320,7 @@
       <argument type="service" id="request_stack"/>
       <argument type="service" id="router.request_context" on-invalid="ignore"/>
       <argument type="service" id="monolog.logger.request" on-invalid="ignore"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17</argument>
       <argument>true</argument>
     </service>
     <service id="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" class="Symfony\Bundle\FrameworkBundle\Controller\RedirectController" public="true">
@@ -3284,7 +3284,7 @@
       <argument type="collection">
         <argument key="C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\symfony\symfony\src\Symfony\Bridge\Twig/Resources/views/Form">null</argument>
       </argument>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app/templates</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17/templates</argument>
     </service>
     <service id="twig.template_cache_warmer" class="Symfony\Bundle\TwigBundle\CacheWarmer\TemplateCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
@@ -3295,7 +3295,7 @@
     <service id="twig.loader.native_filesystem" class="Twig\Loader\FilesystemLoader" public="false">
       <tag name="twig.loader"/>
       <argument type="collection"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17</argument>
       <call method="addPath">
         <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\symfony\symfony\src\Symfony\Bundle\FrameworkBundle/Resources/views</argument>
         <argument>Framework</argument>
@@ -3505,7 +3505,7 @@
     <service id="twig.command.debug" class="Symfony\Bridge\Twig\Command\DebugCommand" public="false">
       <tag name="console.command" command="debug:twig"/>
       <argument type="service" id="twig"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17</argument>
       <call method="setName">
         <argument>debug:twig</argument>
       </call>
@@ -4774,7 +4774,7 @@
       <argument>%data_collector.templates%</argument>
       <argument>bottom</argument>
       <argument type="service" id="web_profiler.csp.handler"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17</argument>
     </service>
     <service id="web_profiler.controller.router" class="Symfony\Bundle\WebProfilerBundle\Controller\RouterController" public="true">
       <argument type="service" id="profiler" on-invalid="null"/>
@@ -4821,7 +4821,7 @@
     </service>
     <service id="web_server.command.server_run" class="Symfony\Bundle\WebServerBundle\Command\ServerRunCommand" public="false">
       <tag name="console.command" command="server:run"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app/public</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17/public</argument>
       <argument>dev</argument>
       <call method="setName">
         <argument>server:run</argument>
@@ -4829,7 +4829,7 @@
     </service>
     <service id="web_server.command.server_start" class="Symfony\Bundle\WebServerBundle\Command\ServerStartCommand" public="false">
       <tag name="console.command" command="server:start"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17\app/public</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17/public</argument>
       <argument>dev</argument>
       <call method="setName">
         <argument>server:start</argument>

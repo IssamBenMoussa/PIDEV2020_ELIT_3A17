@@ -191,7 +191,7 @@
       <workItem from="1582635033214" duration="285000" />
       <workItem from="1582661314534" duration="102000" />
       <workItem from="1582661424953" duration="239000" />
-      <workItem from="1582661735683" duration="494000" />
+      <workItem from="1582661735683" duration="1263000" />
     </task>
     <servers />
   </component>
@@ -216,6 +216,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581773766722" />
+    <state x="654" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582662327027">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="654" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1582662327027" />
     <state x="765" y="235" key="#com.intellij.ide.util.MemberChooser" timestamp="1581774212193">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -232,22 +236,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="739" y="261" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582661454567" />
-    <state width="1523" height="279" key="GridCell.Tab.0.bottom" timestamp="1582662157203">
+    <state width="1540" height="279" key="GridCell.Tab.0.bottom" timestamp="1582662711501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1523" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582662157203" />
-    <state width="1523" height="279" key="GridCell.Tab.0.center" timestamp="1582662157203">
+    <state width="1540" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582662711501" />
+    <state width="1540" height="279" key="GridCell.Tab.0.center" timestamp="1582662711501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1523" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582662157203" />
-    <state width="1523" height="279" key="GridCell.Tab.0.left" timestamp="1582662157203">
+    <state width="1540" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582662711501" />
+    <state width="1540" height="279" key="GridCell.Tab.0.left" timestamp="1582662711501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1523" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582662157203" />
-    <state width="1523" height="279" key="GridCell.Tab.0.right" timestamp="1582662157203">
+    <state width="1540" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582662711501" />
+    <state width="1540" height="279" key="GridCell.Tab.0.right" timestamp="1582662711501">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1523" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582662157203" />
+    <state width="1540" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582662711501" />
     <state x="461" y="162" key="SettingsEditor" timestamp="1582661742316">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -260,9 +264,9 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="378" y="209" key="com.intellij.ide.util.TipDialog/0.0.1366.768@0.0.1366.768" timestamp="1582635035660" />
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1582662157222">
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup" timestamp="1582662724538">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582662157222" />
+    <state x="616" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1582662724538" />
   </component>
 </project>
