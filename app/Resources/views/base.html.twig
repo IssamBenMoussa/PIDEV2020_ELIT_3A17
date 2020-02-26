@@ -101,11 +101,13 @@
                                 <span style="margin-left: 20px"class="boxed_btn">log in   </span>
                             </a>
 
-                                <a href="{{ path('fos_user_registration_register') }}" >
+                                <!-- You will not be able to see this text.
+
+                                Read more: https://html.com/tags/comment-tag/#ixzz6F0y4SKGm <a href="{{ path('fos_user_registration_register') }}" >
 
                                     <span style="margin-left: 20px" class="boxed_btn">register</span>
                                 </a>
-
+                                -->
                             {% endif %}
                             {% if (is_granted('IS_AUTHENTICATED_FULLY')) %}
                                 <a href="{{ path('fos_user_security_logout') }}" >

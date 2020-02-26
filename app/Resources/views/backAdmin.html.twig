@@ -126,6 +126,7 @@
 {#                                            class="mini-sub-pro">inbox</span></a></li>#}
 {#                        </ul>#}
 {#                    </li>#}
+                    {% if ((is_granted('ROLE_ADMIN')) ) %}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <span class="educate-icon educate-department icon-wrap"></span>
@@ -138,6 +139,8 @@
 
                         </ul>
                     </li>
+                    {% endif %}
+                    {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_TEACHER'))) ) %}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <span class="educate-icon educate-department icon-wrap"></span>
@@ -150,6 +153,7 @@
 
                         </ul>
                     </li>
+                    {% endif %}
                     {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_TEACHER'))) ) %}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
@@ -185,7 +189,8 @@
                         </ul>
                     </li>
                     {% endif %}
-  <li class="">
+
+                    <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <span class="educate-icon educate-department icon-wrap"></span>
                             <span class="mini-click-non">CategoryBook</span>
@@ -275,7 +280,7 @@
 
                     <!-- event issou -->
 
-
+                    {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_STUDENT'))) ) %}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
 
@@ -290,6 +295,7 @@
                         </ul>
                     </li>
 
+
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <i class="fab fa-hubspot"></i>
@@ -302,6 +308,7 @@
 
                         </ul>
                     </li>
+                    {% endif %}
 
                     <!--event -->
 
@@ -1227,7 +1234,7 @@
         <br>
         <br>
 
-        <div class="row">
+
         <div class="container-fluid">
                 <div class="col-lg-2">
                     <a href="{{ path('club_index') }}">
@@ -1267,7 +1274,9 @@
                     </div>
                 </a>
             </div>
+            {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_STUDENT'))) ) %}
             <div class="col-lg-2">
+
                 <a href="{{ path('event_index') }}">
                     <div class="container1">
                         <img  class="img" src="{{ asset('uploads/issam_pic/event.png') }}" alt="Event" width="200" height="200">
@@ -1276,6 +1285,7 @@
                     </div>
                 </a>
             </div>
+            {% endif %}
             {% if ((is_granted('ROLE_ADMIN'))) %}
             <div class="col-lg-2">
                 <a href="{{ path('classes_index') }}">
@@ -1297,18 +1307,19 @@
                     </div>
                 </a>
             </div>
-            {% endif %}
-            {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_STUDENT'))) ) %}
-                <div class="col-lg-2">
-                    <a href="{{ path('book_index') }}">
-                        <div class="container1">
-                            <img  class="img" src="{{ asset('img/classroom.png') }}" alt="Classroom" width="200" height="200">
-                            <div class="center1">book</div>
+                {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_STUDENT'))) ) %}
+                    <div class="col-lg-2">
+                        <a href="{{ path('book_index') }}">
+                            <div class="container1">
+                                <img  class="img" src="{{ asset('img/classroom.png') }}" alt="Classroom" width="200" height="200">
+                                <div class="center1">book</div>
 
-                        </div>
-                    </a>
-                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endif %}
             {% endif %}
+
             {% if ((is_granted('ROLE_ADMIN'))) %}
             <div class="col-lg-2">
                 <a href="{{ path('equipement_index') }}">
@@ -1319,8 +1330,6 @@
                     </div>
                 </a>
             </div>
-
-
 
 
             {% endif %}
@@ -1356,7 +1365,7 @@
                         </div>
                     </a>
                 </div>
-            {% endif %} 
+            {% endif %}
             <div class="col-lg-2">
                 <a href="{{ path('lessons_index') }}">
                     <div class="container1">
@@ -1366,10 +1375,33 @@
                     </div>
                 </a>
             </div>
+            {% if ( (is_granted('ROLE_ADMIN')) or (is_granted('ROLE_TEACHER')) ) %}
+            <div class="col-lg-2">
+                <a href="{{ path('schoolmeeting_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/lesson.png') }}" alt="Event" width="200" height="200">
+                        <div class="center1">School Meeting</div>
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+            {% if ((is_granted('ROLE_ADMIN')) or (is_granted('ROLE_TEACHER')) or (is_granted('ROLE_TEACHER')) ) %}
+            <div class="col-lg-2">
+                <a href="{{ path('categorybook_index') }}">
+                    <div class="container1">
+                        <img  class="img" src="{{ asset('img/lesson.png') }}" alt="Event" width="200" height="200">
+                        <div class="center1">Category Book</div>
+
+                    </div>
+                </a>
+            </div>
+            {% endif %}
+
 
         </div>
-        </div>
-    </div>
+
+
 
 
 
