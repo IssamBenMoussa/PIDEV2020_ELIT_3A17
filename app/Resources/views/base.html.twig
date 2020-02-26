@@ -51,6 +51,23 @@
 </script>
 <!--End of Tawk.to Script-->
 <!-- header-start -->
+<!-- headstart generator -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript">var settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://ronreiter-meme-generator.p.rapidapi.com/meme?font=Impact&font_size=50&meme=Condescending-Wonka&top=Top%20text&bottom=Bottom%20text",
+        "method": "GET",
+        "headers": {
+            "x-rapidapi-host": "ronreiter-meme-generator.p.rapidapi.com",
+            "x-rapidapi-key": "4b6f8f0525msh78b4cb1da122668p1a14c1jsn4e3449ab4d72"
+        }
+    }
+
+    $.ajax(settings).done(function (response) {
+        console.log(response);
+    });
+</script>
 <header>
     <div class="header-area ">
         <div id="sticky-header" class="main-header-area">
@@ -68,7 +85,7 @@
                             <nav>
                                 <ul id="navigation">
                                     <li><a class="active" href="#">home</a></li>
-                                    <li><a href="#">Courses</a></li>
+                                    <li><a href="{{ path('module_index') }}">Courses</a></li>
                                     <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                         <ul class="submenu">
                                             <li><a href="#">course details</a></li>

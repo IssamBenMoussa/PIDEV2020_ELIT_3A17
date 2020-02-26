@@ -190,6 +190,37 @@
                     </li>
                     {% endif %}
 
+
+                    {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_TEACHER'))) or ((is_granted('ROLE_STUDENT'))) ) %}
+                        <li class="">
+                            <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
+                                <span class="educate-icon educate-department icon-wrap"></span>
+
+                                <span class="mini-click-non"> Modules</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="true">
+
+                                <li><a title="Dashboard v.2" href="{{ path('module_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+
+                    {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_TEACHER'))) or ((is_granted('ROLE_STUDENT'))) ) %}
+                        <li class="">
+                            <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
+                                <span class="educate-icon educate-department icon-wrap"></span>
+
+                                <span class="mini-click-non"> Lessons</span>
+                            </a>
+                            <ul class="submenu-angle" aria-expanded="true">
+
+                                <li><a title="Dashboard v.2" href="{{ path('lessons_index') }}"><span class="mini-sub-pro">Browse</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
                             <span class="educate-icon educate-department icon-wrap"></span>

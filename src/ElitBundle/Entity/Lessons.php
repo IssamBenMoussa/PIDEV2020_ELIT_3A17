@@ -45,6 +45,7 @@ class Lessons
      * @var string
      *
      * @ORM\Column(name="nom_cours", type="string", length=255)
+     * @Assert\NotBlank
      */
     private $nomCours;
 
