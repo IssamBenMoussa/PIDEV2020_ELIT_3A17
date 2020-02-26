@@ -25,6 +25,7 @@
       <parameter key="KnpSnappyBundle">Knp\Bundle\SnappyBundle\KnpSnappyBundle</parameter>
       <parameter key="KnpPaginatorBundle">Knp\Bundle\PaginatorBundle\KnpPaginatorBundle</parameter>
       <parameter key="NotificationsBundle">SBC\NotificationsBundle\NotificationsBundle</parameter>
+      <parameter key="GifExceptionBundle">Joli\GifExceptionBundle\GifExceptionBundle</parameter>
       <parameter key="DebugBundle">Symfony\Bundle\DebugBundle\DebugBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -112,6 +113,11 @@
         <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\mrad\notifications-bundle\SBC\NotificationsBundle</parameter>
         <parameter key="namespace">SBC\NotificationsBundle</parameter>
       </parameter>
+      <parameter key="GifExceptionBundle" type="collection">
+        <parameter key="parent">null</parameter>
+        <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\jolicode\gif-exception-bundle</parameter>
+        <parameter key="namespace">Joli\GifExceptionBundle</parameter>
+      </parameter>
       <parameter key="DebugBundle" type="collection">
         <parameter key="parent">null</parameter>
         <parameter key="path">C:\wamp\www\PIDEV2020_ELIT_3A17\vendor\symfony\symfony\src\Symfony\Bundle\DebugBundle</parameter>
@@ -144,7 +150,7 @@
     <parameter key="container.dumper.inline_class_loader">true</parameter>
     <parameter key="database_host">127.0.0.1</parameter>
     <parameter key="database_port">null</parameter>
-    <parameter key="database_name">pidevelit1</parameter>
+    <parameter key="database_name">pidevelit</parameter>
     <parameter key="database_user">root</parameter>
     <parameter key="database_password">null</parameter>
     <parameter key="mailer_transport">smtp</parameter>
@@ -196,7 +202,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">C:\wamp\www\PIDEV2020_ELIT_3A17/web/config/routing_dev.yml</parameter>
+    <parameter key="router.resource">C:\wamp\www\PIDEV2020_ELIT_3A17/app/config/routing_dev.yml</parameter>
     <parameter key="router.cache_class_prefix">appDevDebugProjectContainer</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -637,6 +643,7 @@
       <parameter key="console.command.fos_userbundle_command_deactivateusercommand">fos_user.command.deactivate_user</parameter>
       <parameter key="console.command.fos_userbundle_command_demoteusercommand">fos_user.command.demote_user</parameter>
       <parameter key="console.command.fos_userbundle_command_promoteusercommand">fos_user.command.promote_user</parameter>
+      <parameter key="console.command.joli_gifexceptionbundle_command_gifoptimizercommand">Joli\GifExceptionBundle\Command\GifOptimizerCommand</parameter>
       <parameter key="console.command.sensiolabs_security_command_securitycheckercommand">sensio_distribution.security_checker.command</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverruncommand">web_server.command.server_run</parameter>
       <parameter key="console.command.symfony_bundle_webserverbundle_command_serverstartcommand">web_server.command.server_start</parameter>
@@ -690,6 +697,7 @@
       <parameter key="fos_user.command.deactivate_user">true</parameter>
       <parameter key="fos_user.command.demote_user">true</parameter>
       <parameter key="fos_user.command.promote_user">true</parameter>
+      <parameter key="Joli\GifExceptionBundle\Command\GifOptimizerCommand">true</parameter>
       <parameter key="sensio_distribution.security_checker.command">true</parameter>
       <parameter key="web_server.command.server_run">true</parameter>
       <parameter key="web_server.command.server_start">true</parameter>
@@ -1707,6 +1715,14 @@
       <call method="addListener">
         <argument>kernel.response</argument>
         <argument type="collection">
+          <argument type="service" id="gif_exception.listener.replace_image"/>
+          <argument>onKernelResponse</argument>
+        </argument>
+        <argument>-1000</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.response</argument>
+        <argument type="collection">
           <argument type="service" id="response_listener"/>
           <argument>onKernelResponse</argument>
         </argument>
@@ -2271,7 +2287,7 @@
     </service>
     <service id="router.default" class="Symfony\Bundle\FrameworkBundle\Routing\Router" public="false">
       <argument type="service" id="service_container"/>
-      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17/web/config/routing_dev.yml</argument>
+      <argument>C:\wamp\www\PIDEV2020_ELIT_3A17/app/config/routing_dev.yml</argument>
       <argument type="collection">
         <argument key="cache_dir">C:\wamp\www\PIDEV2020_ELIT_3A17\var\cache\dev</argument>
         <argument key="debug">true</argument>
@@ -3878,7 +3894,7 @@
         <argument key="driver">pdo_mysql</argument>
         <argument key="host">127.0.0.1</argument>
         <argument key="port">null</argument>
-        <argument key="dbname">pidevelit1</argument>
+        <argument key="dbname">pidevelit</argument>
         <argument key="user">root</argument>
         <argument key="password">null</argument>
         <argument key="charset">UTF8</argument>
@@ -4763,6 +4779,91 @@
       <tag name="twig.extension"/>
       <argument type="service" id="service_container"/>
     </service>
+    <service id="Joli\GifExceptionBundle\Command\GifOptimizerCommand" class="Joli\GifExceptionBundle\Command\GifOptimizerCommand">
+      <tag name="console.command" command="jolicode:gifexception:optimize"/>
+      <call method="setName">
+        <argument>jolicode:gifexception:optimize</argument>
+      </call>
+    </service>
+    <service id="gif_exception.listener.replace_image" class="Joli\GifExceptionBundle\EventListener\ReplaceImageListener">
+      <tag name="kernel.event_listener" event="kernel.response" priority="-1000"/>
+      <tag name="container.hot_path"/>
+      <argument type="collection">
+        <argument key="403" type="collection">
+          <argument>cat-lizzard.gif</argument>
+          <argument>cat-puppy.gif</argument>
+          <argument>dog-cat-stairs.gif</argument>
+          <argument>gandalf.gif</argument>
+          <argument>goat-motorbike.gif</argument>
+          <argument>men-in-black-flash.gif</argument>
+          <argument>netbook-horse.gif</argument>
+        </argument>
+        <argument key="404" type="collection">
+          <argument>confused-travolta.gif</argument>
+          <argument>looping-bird.gif</argument>
+          <argument>missing-stapler.gif</argument>
+          <argument>not-the-droids.gif</argument>
+          <argument>nothing-to-see-here.gif</argument>
+        </argument>
+        <argument key="503" type="collection">
+          <argument>swivel-chair.gif</argument>
+          <argument>talk-to-the-hand.gif</argument>
+        </argument>
+        <argument key="other" type="collection">
+          <argument>athletic.gif</argument>
+          <argument>bottle.gif</argument>
+          <argument>captain-america.gif</argument>
+          <argument>car-accident.gif</argument>
+          <argument>carousel-fail-o.gif</argument>
+          <argument>castle.gif</argument>
+          <argument>dunk.gif</argument>
+          <argument>facepalm.gif</argument>
+          <argument>garbage.gif</argument>
+          <argument>hitme.gif</argument>
+          <argument>kangaroo.gif</argument>
+          <argument>karate.gif</argument>
+          <argument>life-sometimes.gif</argument>
+          <argument>metro.gif</argument>
+          <argument>nope.gif</argument>
+          <argument>panda.gif</argument>
+          <argument>pingou.gif</argument>
+          <argument>plane.gif</argument>
+          <argument>plouf.gif</argument>
+          <argument>pool.gif</argument>
+          <argument>truck-bridge.gif</argument>
+          <argument>try-fail-repeat.gif</argument>
+          <argument>tupper.gif</argument>
+          <argument>you-blew-it.gif</argument>
+          <argument>athletic.gif</argument>
+          <argument>bottle.gif</argument>
+          <argument>captain-america.gif</argument>
+          <argument>car-accident.gif</argument>
+          <argument>carousel-fail-o.gif</argument>
+          <argument>castle.gif</argument>
+          <argument>dunk.gif</argument>
+          <argument>facepalm.gif</argument>
+          <argument>garbage.gif</argument>
+          <argument>hitme.gif</argument>
+          <argument>kangaroo.gif</argument>
+          <argument>karate.gif</argument>
+          <argument>life-sometimes.gif</argument>
+          <argument>metro.gif</argument>
+          <argument>nope.gif</argument>
+          <argument>panda.gif</argument>
+          <argument>pingou.gif</argument>
+          <argument>plane.gif</argument>
+          <argument>plouf.gif</argument>
+          <argument>pool.gif</argument>
+          <argument>truck-bridge.gif</argument>
+          <argument>try-fail-repeat.gif</argument>
+          <argument>tupper.gif</argument>
+          <argument>you-blew-it.gif</argument>
+        </argument>
+      </argument>
+      <argument>twig.controller.exception:showAction</argument>
+      <argument type="service" id="assets.packages"/>
+      <argument>null</argument>
+    </service>
     <service id="twig.extension.dump" class="Symfony\Bridge\Twig\Extension\DumpExtension" public="false">
       <tag name="twig.extension"/>
       <argument type="service" id="var_dumper.cloner"/>
@@ -5144,7 +5245,7 @@
       <argument>true</argument>
     </service>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
-      <argument type="service" id="service_locator.r4cvhz_"/>
+      <argument type="service" id="service_locator.qnh05.4"/>
       <argument type="collection">
         <argument key="about">console.command.about</argument>
         <argument key="assets:install">console.command.assets_install</argument>
@@ -5191,6 +5292,7 @@
         <argument key="fos:user:deactivate">fos_user.command.deactivate_user</argument>
         <argument key="fos:user:demote">fos_user.command.demote_user</argument>
         <argument key="fos:user:promote">fos_user.command.promote_user</argument>
+        <argument key="jolicode:gifexception:optimize">Joli\GifExceptionBundle\Command\GifOptimizerCommand</argument>
         <argument key="security:check">sensio_distribution.security_checker.command</argument>
         <argument key="server:run">web_server.command.server_run</argument>
         <argument key="server:start">web_server.command.server_start</argument>
@@ -5199,9 +5301,10 @@
         <argument key="server:log">web_server.command.server_log</argument>
       </argument>
     </service>
-    <service id="service_locator.r4cvhz_" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id="service_locator.qnh05.4" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
+        <argument key="Joli\GifExceptionBundle\Command\GifOptimizerCommand" type="service" id="Joli\GifExceptionBundle\Command\GifOptimizerCommand"/>
         <argument key="console.command.about" type="service" id="console.command.about"/>
         <argument key="console.command.assets_install" type="service" id="console.command.assets_install"/>
         <argument key="console.command.cache_clear" type="service" id="console.command.cache_clear"/>
