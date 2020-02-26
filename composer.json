@@ -20,6 +20,7 @@
         "doctrine/orm": "^2.5",
         "friendsofsymfony/user-bundle": "~2.0",
         "incenteev/composer-parameter-handler": "^2.0",
+        "jolicode/gif-exception-bundle": "^1.5",
         "knplabs/knp-paginator-bundle": "^3.0",
         "knplabs/knp-snappy-bundle": "^1.5",
         "mrad/notifications-bundle": "^1.3",

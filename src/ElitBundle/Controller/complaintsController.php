@@ -44,7 +44,7 @@ class complaintsController extends Controller
 
         $complaints = $this->get('knp_paginator')->paginate(
             $complaints, $request->query->get('page',1)/*page number*/,
-            2 /*limit per page*/
+            7 /*limit per page*/
         );
         return $this->render('complaints/index.html.twig', array(
             'complaints' => $complaints

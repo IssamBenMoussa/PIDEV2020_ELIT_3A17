@@ -24,14 +24,17 @@ class complaints
 
     /**
      * @var string
-     *
+      * @Assert\NotBlank(message="Empty Category")
+     * @Assert\Choice({"Marks","Professor","Absence","Late request"}
+     * ,message="Valid Subjects are : Marks , Professor ,Absence , Late request ")
      * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
-     *
+     *@Assert\NotBlank(message="Empty Content")
+     * @Assert\Length(min="3",minMessage="Content too Short !")
      * @ORM\Column(name="content", type="string", length=255)
      */
     private $content;

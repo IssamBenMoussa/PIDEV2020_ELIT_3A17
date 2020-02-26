@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3378cfe9fde7ad939a18e8cb19c79814",
+    "content-hash": "b57cdefa019fdca48882e7d29d408f1e",
     "packages": [
         {
             "name": "cmen/google-charts-bundle",
@@ -1183,6 +1183,64 @@
                 "yaml"
             ],
             "time": "2018-10-26T12:40:10+00:00"
+        },
+        {
+            "name": "jolicode/gif-exception-bundle",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jolicode/GifExceptionBundle.git",
+                "reference": "4519a083fa1bf3e2ce5fc8f5cc1075383b2787fa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jolicode/GifExceptionBundle/zipball/4519a083fa1bf3e2ce5fc8f5cc1075383b2787fa",
+                "reference": "4519a083fa1bf3e2ce5fc8f5cc1075383b2787fa",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0",
+                "symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0",
+                "symfony/twig-bundle": "^2.7 || ^3.0 || ^4.0"
+            },
+            "require-dev": {
+                "doctrine/annotations": "^1.2",
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "ps/image-optimizer": "^1.0.4",
+                "symfony/asset": "^2.7 || ^3.0 || ^4.0",
+                "symfony/config": "^2.7 || ^3.0 || ^4.0",
+                "symfony/dependency-injection": "^2.7 || ^3.0 || ^4.0",
+                "symfony/http-kernel": "^2.7 || ^3.0 || ^4.0",
+                "symfony/phpunit-bridge": "^3.4.23",
+                "symfony/templating": "^2.7 || ^3.0 || ^4.0",
+                "symfony/yaml": "^2.7 || ^3.0 || ^4.0"
+            },
+            "type": "symfony-bundle",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Joli\\GifExceptionBundle\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "The GhostBuster of your exception page",
+            "keywords": [
+                "exception",
+                "gif",
+                "random",
+                "symfony"
+            ],
+            "time": "2019-03-20T14:23:38+00:00"
         },
         {
             "name": "knplabs/knp-components",

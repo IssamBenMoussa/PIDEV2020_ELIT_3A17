@@ -3,7 +3,8 @@
 namespace ElitBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Schoolmeeting
  *
@@ -47,7 +48,8 @@ class Schoolmeeting
 
     /**
      * @var string
-     *
+     *  *@Assert\NotBlank(message="Empty description")
+     * @Assert\Length(min="4",minMessage="too Short !")
      * @ORM\Column(name="concerned", type="string", length=255)
      */
     private $concerned;

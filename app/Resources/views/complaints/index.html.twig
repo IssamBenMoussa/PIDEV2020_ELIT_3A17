@@ -2,149 +2,266 @@
 
 {% block content %}
 
-<hr>
-<h1>Complaint list</h1>
-<br>
-<div class="row">
-    <div class="col-md-3 col-md-3 col-sm-3 col-xs-12">
-        <div class="hpanel responsive-mg-b-30">
-            <div class="panel-body">
+{#<hr>#}
+{#<h1>Complaint list</h1>#}
+{#<br>#}
+{#<div class="row">#}
+{#    <div class="col-md-3 col-md-3 col-sm-3 col-xs-12">#}
+{#        <div class="hpanel responsive-mg-b-30">#}
+{#            <div class="panel-body">#}
 
-                <ul class="mailbox-list">
-                    <li class="active">
-                        <a href="#">
-                            <span class="pull-right"></span>
-                            <i class="fa fa-envelope"></i> Inbox
-                        </a>
-                    </li>
+{#                <ul class="mailbox-list">#}
+{#                    <li class="active">#}
+{#                        <a href="#">#}
+{#                            <span class="pull-right"></span>#}
+{#                            <i class="fa fa-envelope"></i> Inbox#}
+{#                        </a>#}
+{#                    </li>#}
 
-                    <li>
-                        <a href="{{ path('complaints_new')}}"><i class="fa fa-pencil"></i>Create complaint</a>
-                    </li>
-                </ul>
-            </div>
-        </div> </div>
-    <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">
-        <div class="panel">
-
-
-            {#           <h2> search</h2>#}
-            {#            <div class="sidebar-search">#}
-            {#                <div class="input-group custom-search-form">#}
-            {#                    <input type="text" id="search" class="form-control" placeholder="search in complaints">#}
-            {#                </div>#}
-            {#            </div>#}
-            {#            <ul class="nav" id="side-menu">#}
-            {#            <li><a href="#">SEARCH RESULTS<span class="fa arrow"></span></a></li>#}
-            {#            </ul>#}
+{#                    <li>#}
+{#                        <a href="{{ path('complaints_new')}}"><i class="fa fa-pencil"></i>Create complaint</a>#}
+{#                    </li>#}
+{#                </ul>#}
+{#            </div>#}
+{#        </div> </div>#}
+{#    <div class="col-md-9 col-md-9 col-sm-9 col-xs-12">#}
+{#        <div class="panel">#}
 
 
-            {#            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>#}
-            {#            <script type="text/javascript">#}
-            {#            jQuery(document).ready(function () {#}
-            {#                var searchRequest = null ;#}
-            {#$("search").keyup(function () {#}
-            {#var minlength=1 ;#}
-            {#var that= this ;#}
-            {#var value = $(this).val();#}
-            {#var entitySelector= $("entitiesNav").html('');#}
-            {#if (value.length>=minlength) {#}
-            {#    if (searchRequest != null) {#}
-            {#        searchRequest.abort() ;#}
-            {#        searchRequest=$.ajax({#}
-            {#            type: "GET" ,#}
-            {#            url: "{{ path('ajax_search') }}",#}
-            {#            data: {#}
-            {#                'q':value#}
-            {#            },#}
-            {#            dataType: "text" ,#}
-            {#            success: function (msg) {#}
-            {#                if (value===$(that).val() ) {#}
-            {#                    var result=JSON.parse(msg) ;#}
-            {#                    $.each(result, function (key,arr) {#}
-            {#                        $.each(arr, function(id, value){#}
-            {#                            if (key==='complaints') {#}
-            {#                                if (id!=='error') {#}
-            {#                                    console.log(value[1]) ;#}
-            {#                                    entitySelector.append('<li><b>'+value[1]+ '</b><a href="/'+id+'/show">'+'</a></li>' );#}
-            {#                                } else#}
-            {#                                {entitySelector.append('<li class"errorLi">'+value+'</li>') ;}#}
-            {#                                                    }#}
-            {#                                                        }#}
+{#            #}{#           <h2> search</h2>#}
+{#            #}{#            <div class="sidebar-search">#}
+{#            #}{#                <div class="input-group custom-search-form">#}
+{#            #}{#                    <input type="text" id="search" class="form-control" placeholder="search in complaints">#}
+{#            #}{#                </div>#}
+{#            #}{#            </div>#}
+{#            #}{#            <ul class="nav" id="side-menu">#}
+{#            #}{#            <li><a href="#">SEARCH RESULTS<span class="fa arrow"></span></a></li>#}
+{#            #}{#            </ul>#}
 
-            {#                        )#}
 
-            {#                    })#}
-            {#                }#}
+{#            #}{#            <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>#}
+{#            #}{#            <script type="text/javascript">#}
+{#            #}{#            jQuery(document).ready(function () #}{#}#}
+{#            #}{#                var searchRequest = null ;#}
+{#            #}{#$("search").keyup(function () #}{#}#}
+{#            #}{#var minlength=1 ;#}
+{#            #}{#var that= this ;#}
+{#            #}{#var value = $(this).val();#}
+{#            #}{#var entitySelector= $("entitiesNav").html('');#}
+{#            #}{#if (value.length>=minlength) #}{#}#}
+{#            #}{#    if (searchRequest != null) #}{#}#}
+{#            #}{#        searchRequest.abort() ;#}
+{#            #}{#        searchRequest=$.ajax(#}{#}#}
+{#            #}{#            type: "GET" ,#}
+{#            #}{#            url: "{{ path('ajax_search') }}",#}
+{#            #}{#            data: #}{#}#}
+{#            #}{#                'q':value#}
+{#            #}{#            },#}
+{#            #}{#            dataType: "text" ,#}
+{#            #}{#            success: function (msg) #}{#}#}
+{#            #}{#                if (value===$(that).val() ) #}{#}#}
+{#            #}{#                    var result=JSON.parse(msg) ;#}
+{#            #}{#                    $.each(result, function (key,arr) #}{#}#}
+{#            #}{#                        $.each(arr, function(id, value)#}{#}#}
+{#            #}{#                            if (key==='complaints') #}{#}#}
+{#            #}{#                                if (id!=='error') #}{#}#}
+{#            #}{#                                    console.log(value[1]) ;#}
+{#            #}{#                                    entitySelector.append('<li><b>'+value[1]+ '</b><a href="/'+id+'/show">'+'</a></li>' );#}
+{#            #}{#                                } else#}
+{#            #}{#                                {entitySelector.append('<li class"errorLi">'+value+'</li>') ;}#}
+{#            #}{#                                                    }#}
+{#            #}{#                                                        }#}
 
-            {#            }#}
-            {#        })#}
+{#            #}{#                        )#}
 
-            {#    }#}
-            {#}#}
-            {#})#}
+{#            #}{#                    })#}
+{#            #}{#                }#}
 
-            {#            })#}
-            {#            </script>#}
-            <script>
-                $(document).ready(function(){
-                    $("#myInput").on("keyup", function() {
-                        var value = $(this).val().toLowerCase();
-                        $("#myTab tr").filter(function() {
-                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                        });
-                    });
-                });
-            </script>
+{#            #}{#            }#}
+{#            #}{#        })#}
 
-            <div class="panel-body">
-                <div class="row">
-                    <div class="col-md-6 col-md-6 col-sm-6 col-xs-8">
-                        <div class="btn-group ib-btn-gp active-hook mail-btn-sd mg-b-15">
+{#            #}{#    }#}
+{#            #}{#}#}
+{#            #}{#})#}
 
-                            <a href="{{ path('complaints_index')}}"><i class="fa fa-refresh"></i>Refresh</a>
+{#            #}{#            })#}
+{#            #}{#            </script>#}
+{#            <script>#}
+{#                $(document).ready(function(){#}
+{#                    $("#myInput").on("keyup", function() {#}
+{#                        var value = $(this).val().toLowerCase();#}
+{#                        $("#myTab tr").filter(function() {#}
+{#                            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)#}
+{#                        });#}
+{#                    });#}
+{#                });#}
+{#            </script>#}
+
+{#            <div class="panel-body">#}
+{#                <div class="row">#}
+{#                    <div class="col-md-6 col-md-6 col-sm-6 col-xs-8">#}
+{#                        <div class="btn-group ib-btn-gp active-hook mail-btn-sd mg-b-15">#}
+
+{#                            <a href="{{ path('complaints_index')}}"><i class="fa fa-refresh"></i>Refresh</a>#}
+{#                        </div>#}
+{#                    </div>#}
+
+{#                </div>#}
+{#                <input class="form-control" id="myInput" type="text" placeholder="Search..">#}
+{#                <div class="table-responsive ib-tb">#}
+
+{#                    <table class="table table-hover table-mailbox" >#}
+{#                        <thead>#}
+{#                        <tr>#}
+{#                            <th>Id</th>#}
+{#                            <th>Title</th>#}
+{#                            <th>From</th>#}
+{#                            <th>Date</th>#}
+{#                            <th>Actions</th>#}
+{#                        </tr>#}
+{#                        </thead>#}
+{#                        <tbody id="myTab">#}
+
+{#                        {% for complaint in complaints %}#}
+{#                            <tr class="unread">#}
+{#                                <td><a href="{{ path('complaints_show', { 'id': complaint.id }) }}">{{ complaint.id }}</a></td>#}
+{#                                <td>{{ complaint.title }}</td>#}
+{#                                <td>{{ complaint.email }}</td>#}
+{#                                <td class="text-left mail-date"> {{ complaint.date|date('Y-m-d H:i:s') }} </td>#}
+
+{#                                <td>#}
+{#                                    <ul>#}
+{#                                        <li>#}
+{#                                            <a href="{{ path('complaints_show', { 'id': complaint.id }) }}">show</a>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </td>#}
+{#                            </tr>#}
+
+
+{#                        {% endfor %}#}
+
+{#                        {{ knp_pagination_render(complaints) }}#}
+{#                        </tbody>#}
+{#                    </table>#}
+{#                </div>#}
+{#            </div>#}
+
+{#            {% endblock %}#}
+
+    <br>
+    <BR>
+    <!-- Static Table Start -->
+    <div class="data-table-area mg-b-15">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="sparkline13-list">
+                        <div class="sparkline13-hd">
+                            <div class="main-sparkline13-hd">
+                                <h1>Complaints List</h1>
+                            </div>
+                        </div>
+                        <div class="sparkline13-graph">
+                            <div class="datatable-dashv1-list custom-datatable-overright">
+
+                                <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
+                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                    <thead>
+                                    <tr>
+
+                                        <th data-field="xx" data-editable="false">Title</th>
+                                        <th data-field="xx" data-editable="false">Email</th>
+                                        <th data-field="email" data-editable="false">Description</th>
+                                        <th data-field="phone" data-editable="false">date</th>
+
+
+                                        <th data-field="action">Action</th>
+
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for e in complaints %}
+                                        <tr>
+
+                                            <td> {{e.title}}</td>
+                                            <td>{{ e.email }}</td>
+                                            <td> {{e.content}}</td>
+                                            <td class="text-left mail-date"> {{ e.date|date('Y-m-d H:i:s') }} </td>
+
+{#                                            <td> <img src="{{ asset('uploads/issam_pic/')~e.logo }}"  style="width: 200px;#}
+{#    height: 200px;#}
+{#    object-fit: cover;#}
+{#    object-position: center;#}
+{#  display: block;#}
+{#  margin-left: auto;#}
+{#  margin-right: auto;"></td>#}
+
+
+                                            <td> <a href="{{ path('complaints_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                                                <a href="{{ path('complaints_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+                                                <a href="{{ path('complaints_delete', { 'id': e.id }) }}"><button type="button" class="btn btn-danger" id="{{ e.id }}">Delete</button></a>
+
+                                            </td>
+
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
-
-                </div>
-                <input class="form-control" id="myInput" type="text" placeholder="Search..">
-                <div class="table-responsive ib-tb">
-
-                    <table class="table table-hover table-mailbox" >
-                        <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Title</th>
-                            <th>From</th>
-                            <th>Date</th>
-                            <th>Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody id="myTab">
-
-                        {% for complaint in complaints %}
-                            <tr class="unread">
-                                <td><a href="{{ path('complaints_show', { 'id': complaint.id }) }}">{{ complaint.id }}</a></td>
-                                <td>{{ complaint.title }}</td>
-                                <td>{{ complaint.email }}</td>
-                                <td class="text-left mail-date"> {{ complaint.date|date('Y-m-d H:i:s') }} </td>
-
-                                <td>
-                                    <ul>
-                                        <li>
-                                            <a href="{{ path('complaints_show', { 'id': complaint.id }) }}">show</a>
-                                        </li>
-                                    </ul>
-                                </td>
-                            </tr>
-
-
-                        {% endfor %}
-
-                        {{ knp_pagination_render(complaints) }}
-                        </tbody>
-                    </table>
                 </div>
             </div>
+        </div>
+    </div>
+    <!-- Static Table End -->
+    <div class="container">
+        <div class="row justify-content-md-center">
 
-            {% endblock %}
+            <div class="navigation">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="{{ path('complaints_new') }}"><button type="button" class="btn btn-warning">Create a complaint !</button></a>
+
+{#                            <a href="{{ path('event_calendar') }}"><button type="button" class="btn btn-danger">View Calendar</button></a>#}
+
+
+
+{#                            <a href="{{ path('event_pdf') }}"><button type="button" class="btn btn-info">Print PDF</button></a>#}
+                        </li>
+                        <br>
+                    </ul>
+                </div></div></div></div>
+
+{% endblock %}
+{% block javascripts %}
+    <script language = "javascript"
+            src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                alert("The paragraph was clicked.");
+            });
+        });
+
+
+    </script>
+
+
+
+    <!-- data table JS
+		============================================ -->
+
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
+
+
+{% endblock %}

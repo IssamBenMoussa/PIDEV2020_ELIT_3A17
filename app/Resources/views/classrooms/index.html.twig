@@ -1,6 +1,70 @@
+{#{% extends 'backAdmin.html.twig' %}#}
+
+{#{% block content %}#}
+{#    <div class="data-table-area mg-b-15">#}
+{#        <div class="container-fluid">#}
+{#            <div class="row">#}
+{#                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">#}
+{#                    <div class="sparkline13-list">#}
+{#                        <div class="sparkline13-hd">#}
+{#                            <div class="main-sparkline13-hd">#}
+{#                                <h1>Events List</h1>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="sparkline13-graph">#}
+{#                            <div class="datatable-dashv1-list custom-datatable-overright">#}
+
+{#                                <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"#}
+{#                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">#}
+{#                                    <thead>#}
+{#                                    <tr>#}
+
+{#                                        <th data-field="id" data-editable="false">Class ID</th>#}
+{#                                        <th data-field="name">Class Name</th>#}
+{#                                        <th data-field="name1" data-editable="false">Capacity</th>#}
+{#                                        <th data-field="name2" data-editable="false">Bloc</th>#}
+{#                                        <th data-field="action">Action</th>#}
+
+
+{#                                    </tr>#}
+{#                                    </thead>#}
+{#                                    <tbody>#}
+{#                                    {% for e in classrooms %}#}
+{#                                        <tr>#}
+
+{#                                            <td> {{e.id}}</td>#}
+{#                                            <td> {{e.name}}</td>#}
+{#                                            <td> {{e.capacity}}</td>#}
+{#                                            <td> {{e.bloc}}</td>#}
+
+{#                                            <td>#}
+{#                                                <a href="{{ path('classes_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>#}
+{#                                                <a href="{{ path('classes_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>#}
+{#                                                <a href="{{ path('classes_altDelete', { 'id': e.id }) }}"><button type="button" class="btn btn-warning">Delete</button></a>#}
+{#                                            </td>#}
+
+{#                                        </tr>#}
+{#                                    {% endfor %}#}
+{#                                    </tbody>#}
+{#                                </table>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#{% endblock %}#}
+
 {% extends 'backAdmin.html.twig' %}
 
 {% block content %}
+
+    <br>
+
+    <br>
+    <BR>
+    <!-- Static Table Start -->
     <div class="data-table-area mg-b-15">
         <div class="container-fluid">
             <div class="row">
@@ -20,27 +84,27 @@
                                     <tr>
 
                                         <th data-field="id" data-editable="false">Class ID</th>
-                                        <th data-field="name">Class Name</th>
-                                        <th data-field="name1" data-editable="false">Capacity</th>
-                                        <th data-field="name2" data-editable="false">Bloc</th>
-                                        <th data-field="action">Action</th>
-
+                                                                       <th data-field="name">Class Name</th>
+                                                                  <th data-field="name1" data-editable="false">Capacity</th>
+                                                                 <th data-field="name2" data-editable="false">Bloc</th>
+                                                                   <th data-field="action">Action</th>
 
                                     </tr>
                                     </thead>
                                     <tbody>
                                     {% for e in classrooms %}
-                                        <tr>
+                                                                   <tr>
 
-                                            <td> {{e.id}}</td>
-                                            <td> {{e.name}}</td>
-                                            <td> {{e.capacity}}</td>
-                                            <td> {{e.bloc}}</td>
+                                                <td> {{e.id}}</td>
+                                              <td> {{e.name}}</td>
+                                             <td> {{e.capacity}}</td>
+                                              <td> {{e.bloc}}</td>
 
-                                            <td>
-                                                <a href="{{ path('classes_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
-                                                <a href="{{ path('classes_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
-                                                <a href="{{ path('classes_altDelete', { 'id': e.id }) }}"><button type="button" class="btn btn-warning">Delete</button></a>
+</td>
+
+                                            <td>  <a href="{{ path('classes_edit', { 'id': e.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                                            <a href="{{ path('classes_show', { 'id': e.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+                                            <a href="{{ path('classes_altDelete', { 'id': e.id }) }}"><button type="button" class="btn btn-warning">Delete</button></a>
                                             </td>
 
                                         </tr>
@@ -54,4 +118,50 @@
             </div>
         </div>
     </div>
+    <!-- Static Table End -->
+    <div class="container">
+        <div class="row justify-content-md-center">
+
+            <div class="navigation">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="{{ path('event_new') }}"><button type="button" class="btn btn-warning">Create a new Classroom !</button></a>
+
+
+                        </li>
+                        <br>
+                    </ul>
+                </div></div></div></div>
+
 {% endblock %}
+{% block javascripts %}
+    <script language = "javascript"
+            src = "https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("p").click(function(){
+                alert("The paragraph was clicked.");
+            });
+        });
+
+
+    </script>
+
+
+
+    <!-- data table JS
+		============================================ -->
+
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/tableExport.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/data-table-active.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-editable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
+    <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
+
+
+{% endblock %}
+
