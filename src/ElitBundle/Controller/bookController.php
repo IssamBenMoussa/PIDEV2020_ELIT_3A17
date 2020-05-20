@@ -2,7 +2,9 @@
 
 namespace ElitBundle\Controller;
 
+use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
 use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
+use ElitBundle\Entity\application;
 use ElitBundle\Entity\book;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\FormError;
@@ -19,14 +21,27 @@ class bookController extends Controller
      * Lists all book entities.
      *
      */
-    public function indexAction()
+//    public function indexAction()
+//    {
+//        $em = $this->getDoctrine()->getManager();
+//
+//        $books = $em->getRepository('ElitBundle:book')->findAll();
+//
+//        return $this->render('book/index.html.twig', array(
+//            'books' => $books,
+//        ));
+//    }
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+//
+        $books = $this->getDoctrine()->getRepository('ElitBundle:book')->findAll();
 
-        $books = $em->getRepository('ElitBundle:book')->findAll();
-
+        $books = $this->get('knp_paginator')->paginate(
+            $books, $request->query->get('page',1)/*page number*/,
+            3 /*limit per page*/
+        );
         return $this->render('book/index.html.twig', array(
-            'books' => $books,
+            'books' => $books
         ));
     }
     public function showbookAction()
@@ -38,6 +53,53 @@ class bookController extends Controller
         return $this->render('book/bookfront.html.twig', array(
             'books' => $books,
         ));
+    }
+    public function statAction()
+    {
+        $pieChart = new PieChart();
+        $em= $this->getDoctrine();
+        $books = $em->getRepository(book::class)->findAll();
+        $totalEtudiant=0;
+        foreach($books as $book) {
+            $totalEtudiant=$totalEtudiant+$book->getnbrbooks();
+        }
+
+        $data= array();
+        $stat=['classe', 'nbEtudiant'];
+        $nb=0;
+        array_push($data,$stat);
+        foreach($books as $book) {
+            $stat=array();
+            array_push($stat,$book->getisbn(),(($book->getnbrbooks()) *100)/$totalEtudiant);
+            $nb=($book->getnbrbooks() *100)/$totalEtudiant;
+            $stat=[$book->getisbn(),$nb];
+            array_push($data,$stat);
+
+        }
+
+        $data= array();
+        $stat=['book', 'nbrbooks'];
+        $nb=0;
+        array_push($data,$stat);
+
+
+
+        $pieChart->getData()->setArrayToDataTable(
+            $data
+        );
+
+        $pieChart->getOptions()->setTitle('  Nbr books' , );
+        $pieChart->getOptions()->setHeight(1000);
+        $pieChart->getOptions()->setWidth(2000);
+        $pieChart->getOptions()->getTitleTextStyle()->setColor('#009900');
+        $pieChart->getOptions()->getTitleTextStyle()->setFontSize(30);
+
+
+        return $this->render('book/stat.html.twig', array(
+                'piechart' => $pieChart,
+            )
+
+        );
     }
 
     public function showbookfrontAction(book $book)

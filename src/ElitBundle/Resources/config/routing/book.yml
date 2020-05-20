@@ -32,3 +32,7 @@ book_showbookfront:
     path:     /{id}/showfront
     defaults: { _controller: "ElitBundle:book:showbookfront" }
     methods:  GET
+book_stat:
+    path:     /stat
+    defaults: { _controller: "ElitBundle:book:stat" }
+    methods:  GET

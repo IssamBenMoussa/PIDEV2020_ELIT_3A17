@@ -42,7 +42,7 @@ security:
         - { path: ^/E/club, role:[ ROLE_ADMIN , ROLE_STUDENT]}
         - { path: ^/E/event, role: [ROLE_ADMIN ,ROLE_STUDENT]}
         - { path: ^/E/classes, role: ROLE_ADMIN }
-        - { path: ^/E/module, role: [ROLE_ADMIN,ROLE_STUDENT] }
+        - { path: ^/E/module, role: [ROLE_ADMIN,ROLE_STUDENT,ROLE_TEACHER] }
         - { path: ^/E/book, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT]}
         - { path: ^/E/reservation, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT]}
         - { path: ^/E/categorybook, role: [ROLE_ADMIN,ROLE_TEACHER,ROLE_STUDENT]}

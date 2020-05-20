@@ -48,7 +48,16 @@
                                             <td><a download href="{{ asset('/../uploads/brochures/'~ l.brochureFilename) }}">{{l.brochureFilename}}</a></td>
 
                                             <td> {{l.admin}}</td>
+
+                                            <td>   {% if ((is_granted('ROLE_ADMIN')) ) or ((is_granted('ROLE_TEACHER')) )  %}<a href="{{ path('lessons_edit', { 'id': l.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+                                                {% endif %}
+                                                <a href="{{ path('lessons_show', { 'id': l.id }) }}"><button type="button" class="btn btn-info">Show</button></a>
+
+
+                                            </td>
+
                                         </tr>
+                                        <center> <div id="player" src=""></div> </center>
                                     {% endfor %}
                                     </tbody>
                                 </table>
@@ -80,7 +89,48 @@
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
     <script src="{{ asset('m.js') }}"></script>
     <script async src="https://cse.google.com/cse.js?cx=000888210889775888983:pqb3ch1ewhg"></script>
+    <script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
 
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '390',
+                width: '640',
+                videoId: 'M7lc1UVf-VE',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        var done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+    </script>
 
 {% endblock %}
 

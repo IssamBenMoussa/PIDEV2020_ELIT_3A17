@@ -31,6 +31,8 @@
     <ul>
         <li>
             <a href="{{ path('lessons_index') }}"><button type="button" class="btn btn-info">Back to the list</button></a>
+            {% if ((is_granted('ROLE_ADMIN')) ) or ((is_granted('ROLE_TEACHER')) )  %}
+
             <a href="{{ path('lessons_edit', { 'id': lesson.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
         </li>
         <br>
@@ -39,6 +41,7 @@
             <input type="submit" value="Delete" class="btn btn-danger">
             {{ form_end(delete_form) }}
         </li>
+        {% endif %}
     </ul>
     <br>
 {% endblock %}

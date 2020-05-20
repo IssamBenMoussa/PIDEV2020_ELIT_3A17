@@ -40,14 +40,18 @@
     <ul>
         <li>
             <a href="{{ path('module_index') }}"><button type="button" class="btn btn-info">Back to the list</button></a>
+            {% if ((is_granted('ROLE_ADMIN')) ) %}
             <a href="{{ path('module_edit', { 'id': module.id }) }}"><button type="button" class="btn btn-success">Edit</button></a>
+            {% endif %}
         </li>
         <br>
+        {% if ((is_granted('ROLE_ADMIN')) ) %}
         <li>
             {{ form_start(delete_form) }}
             <input type="submit" value="Delete" class="btn btn-danger">
             {{ form_end(delete_form) }}
         </li>
+        {% endif %}
     </ul>
     <br>
 {% endblock %}

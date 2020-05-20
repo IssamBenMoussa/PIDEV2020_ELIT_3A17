@@ -3,9 +3,12 @@
 {% block content %}
     <h1>Book Collection</h1>
   <br>
-
+ <div class="gcse-searchbox-only" data-resultsUrl="https://googlecustomsearch.appspot.com/elementv2/two-page_results_elements_v2.html?query=test"></div>
     <br>
     <BR>
+    <li>
+                                <a href="{{ path('book_stat') }}"class="btn btn-success">statistique</a>
+                            </li>
     <!-- Static Table Start -->
     <div class="data-table-area mg-b-15">
         <div class="container-fluid">
@@ -21,7 +24,7 @@
                             <div class="datatable-dashv1-list custom-datatable-overright">
 
                                 <table id="table"  data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true"
-                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
+                                       data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar" class="sortable">
         <thead>
 
             <tr>
@@ -55,9 +58,12 @@
                         <li>
                             <a href="{{ path('book_edit', { 'id': book.id }) }}" class="btn btn-warning">edit</a>
                         </li>
+
                     </ul>
                 </td>
+
             </tr>
+
         {% endfor %}
         </tbody>
     </table>
@@ -67,6 +73,7 @@
             <a href="{{ path('book_new') }}" class="btn btn-secondary">Create a new book</a>
         </li>
     </ul>
+    {{ knp_pagination_render(books) }}
 {% endblock %}
 {% block javascripts %}
     <script>
@@ -85,6 +92,6 @@
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-resizable.js')}}"></script>
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/colResizable-1.5.source.js')}}"></script>
     <script src="{{ asset('kiaalap-master/kiaalap-master/js/data-table/bootstrap-table-export.js')}}"></script>
-
-
+   <script async src="https://cse.google.com/cse.js?cx=000888210889775888983:pqb3ch1ewhg"></script>
+  <script src="{{ asset('m.js') }}"></script>
 {% endblock %}

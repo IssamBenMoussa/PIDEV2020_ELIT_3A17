@@ -11,6 +11,48 @@
     <link href="{{ asset('fontawesome-free-5.12.0-web/css/all.css') }}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
+    <script>
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 3. This function creates an <iframe> (and YouTube player)
+        //    after the API code downloads.
+        var player;
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '390',
+                width: '640',
+                videoId: 'M7lc1UVf-VE',
+                events: {
+                    'onReady': onPlayerReady,
+                    'onStateChange': onPlayerStateChange
+                }
+            });
+        }
+
+        // 4. The API will call this function when the video player is ready.
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        // 5. The API calls this function when the player's state changes.
+        //    The function indicates that when playing a video (state=1),
+        //    the player should play for six seconds and then stop.
+        var done = false;
+        function onPlayerStateChange(event) {
+            if (event.data == YT.PlayerState.PLAYING && !done) {
+                setTimeout(stopVideo, 6000);
+                done = true;
+            }
+        }
+        function stopVideo() {
+            player.stopVideo();
+        }
+    </script>
     {% block stylesheets %}
         <style>
             .container1 {
@@ -93,10 +135,9 @@
 </head>
 
 <body>
-<!--[if lt IE 8]>
-<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
-    your browser</a> to improve your experience.</p>
-<![endif]-->
+
+
+
 <!-- Start Left menu area -->
 <div class="left-sidebar-pro">
     <nav id="sidebar" class="">
@@ -126,6 +167,13 @@
 {#                                            class="mini-sub-pro">inbox</span></a></li>#}
 {#                        </ul>#}
 {#                    </li>#}
+                    {% if ((is_granted('ROLE_ADMIN'))) %}
+                        <span class="educate-icon educate-department icon-wrap"></span>
+                        <a href="{{ path('fos_user_registration_register') }}" >
+
+                            <span style="margin-left: 20px" class="boxed_btn">Register:Add People</span>
+                        </a>
+                    {% endif %}
                     {% if ((is_granted('ROLE_ADMIN')) ) %}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
@@ -154,6 +202,7 @@
                         </ul>
                     </li>
                     {% endif %}
+
                     {% if ((is_granted('ROLE_ADMIN')) or ((is_granted('ROLE_TEACHER'))) ) %}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">
@@ -173,6 +222,7 @@
                         </ul>
                     </li>
                     {% endif %}
+
                     {% if ((is_granted('ROLE_ADMIN'))) %}
                     <li class="">
                         <a class="has-arrow" href="{{ asset('kiaalap-master/kiaalap-master/index.html') }}">

@@ -250,9 +250,9 @@ $editForm->get('idClassroom')->addError(new FormError('Classroom unavailable at 
 
         $events = $em->getRepository('ElitBundle:Event')->findAll();
 
-        $pageUrl = $this->generateUrl('event_imp', array('events'=>$events), UrlGeneratorInterface::ABSOLUTE_URL);
+        $pageUrl = $this->render('event/pdf.html.twig', array('events'=>$events));
         return new PdfResponse(
-            $this->get('knp_snappy.pdf')->getOutput($pageUrl),
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($pageUrl),
             'events.pdf'
         );
 

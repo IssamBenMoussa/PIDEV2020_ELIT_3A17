@@ -71,7 +71,7 @@
 {% endif %}
 
 
-{% if ((is_granted('ROLE_STUDENT')) ) %}
+{% if ((is_granted('ROLE_STUDENT')) ) or ((is_granted('ROLE_TEACHER')) ) %}
 
 
         <h1>modules list</h1>
